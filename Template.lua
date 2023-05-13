@@ -38,7 +38,7 @@ function get_sets()
     sets.FC = {}
 
     -- Precast sets
-    sets.precast = {}
+    sets.precast = {}  -- Leave empty
     sets.precast.RA = {}
 
     -- Weaponskill sets
@@ -47,7 +47,7 @@ function get_sets()
     })
 
     -- Job ability sets
-    sets.precast.JA = {}
+    sets.precast.JA = {}  -- Leave empty
     sets.precast.JA["SomeJA"] = {}
     
     -- Midcast sets

@@ -39,7 +39,7 @@ function get_sets()
     sets.FC = {}
 
     -- Precast sets
-    sets.precast = {}
+    sets.precast = {}  -- Leave empty
     sets.precast.RA = {
         range      = "Jinx Discus",
         ammo       = empty,
@@ -89,7 +89,7 @@ function get_sets()
     })
 
     -- Job ability sets
-    sets.precast.JA = {}
+    sets.precast.JA = {}  -- Leave empty
     sets.precast.JA["Conspirator"] = {
         body = "Skulker's Vest +2",
     }

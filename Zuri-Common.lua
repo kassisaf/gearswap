@@ -11,11 +11,13 @@ local lockables = {
     -- "Dim. Ring (Holla)",
     -- "Dim. Ring (Dem)",
     "Guide Beret",
+    "Reraise Ring",
     "Nexus Cape",
 }
 
 local modes = {
     TH = false,
+    weapon_lock = false,
 }
 
 
@@ -81,6 +83,8 @@ function equip_idle_set()
         safe_equip(sets.idle, {body = "Councilor's Garb"})
     elseif player.main_job_level == 99 then
         safe_equip(sets.idle, {right_ring = "Shneddick Ring"})
+    else
+        safe_equip(sets.idle)
     end
 end -- equip_idle_set()
 
@@ -163,6 +167,16 @@ function self_command(command)
     elseif command == "th" then
         modes["TH"] = not modes["TH"]
         send_command("input /echo TH is " .. tostring(modes['TH']) .. ".")
+        equip_idle_or_tp_set()
+    elseif command == "melee" then
+        modes["weapon_lock"] = not modes["weapon_lock"]
+        if modes["weapon_lock"] then
+            disable("main", "sub")
+            send_command("input /echo Weapon lock is on.")
+        else
+            enable("main", "sub")
+            send_command("input /echo Weapon lock is off.")
+        end
         equip_idle_or_tp_set()
     end
 end -- self_command()
