@@ -16,7 +16,7 @@ function get_sets()
         right_ring = "Shneddick Ring",
         back       = "Solemnity Cape",
     }
-    sets.tp = {
+    sets.TP = {
         main       = "Kaja Knife",
         sub        = "Shijo",
         range      = empty,
@@ -35,7 +35,7 @@ function get_sets()
         right_ring = "Meghanada Ring",
         back       = "Canny Cape",
     }
-    sets.fc = {}
+    sets.FC = {}
 
     -- Precast sets
     sets.precast = {}
@@ -119,16 +119,12 @@ function get_sets()
     sets.midcast = {}
 
     -- Other sets
-    sets.th = set_combine(sets.tp, {
+    sets.TH = set_combine(sets.tp, {
         hands = "Assassin's Armlets +2",
         feet  = "Skulker's Poulaines +2",
     })
-    sets.doomed = {
-        left_ring  = "Blenmot's Ring +1",
-        right_ring = "Blenmot's Ring +1",
-    }
     -- Maximize crit rate for Domain Invasion
-    sets.di = set_combine(sets.tp, {
+    sets.DI = set_combine(sets.tp, {
         main       = "Voluspa Knife",
         sub        = "Shijo",
         ammo       = "Yetshila",
@@ -137,5 +133,9 @@ function get_sets()
         left_ring  = "Mummu Ring",
         right_ring = "Meghanada Ring",
     })
+    sets.doomed = {
+        left_ring  = "Blenmot's Ring +1",
+        right_ring = "Blenmot's Ring +1",
+    }
 
 end -- get_sets()

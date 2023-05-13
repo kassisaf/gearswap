@@ -15,18 +15,18 @@ local lockables = {
 }
 
 -- Utility function takes a table and returns a set
-function to_set(t) {
-    local set = {}
-    for _, v in t do
+function to_set(t)
+    set = {}
+    for _, v in pairs(t) do
         set[v] = true
     end
     return set
-}
+end
 
 -- Custom equip function that respects items defined in `lockables`
 local lockables_set = to_set(lockables)
-function _equip(gearset) {
-    for slot, item in pairs(gearset)
+function _equip(gearset)
+    for slot, item in pairs(gearset) do
         if lockables_set[player.equipment[slot].name] then
             disable(slot)
         else
@@ -34,16 +34,16 @@ function _equip(gearset) {
         end
     end
     equip(gearset)
-}
+end
 
 -- Sets macro page and lockstyle set
-function _job_init(macro_book, macro_page, lockstyleset) {
+function _job_init(macro_book, macro_page, lockstyleset)
     set_macro_page(macro_book, macro_page)
     send_command('wait 1; input /macro book ' .. macro_book)
     send_command('wait 2; input /macro set ' .. macro_page)
     send_command('wait 3; input /lockstyleset ' .. lockstyleset)
     send_command('input /echo ** Job is ' .. player.main_job .. '/' .. player.sub_job .. '. Macros set to Book ' .. macro_book .. ' Page ' .. macro_page .. '. **')
-}
+end
 
 -- Helper functions for set swaps with custom logic
 
@@ -60,10 +60,10 @@ end -- equip_idle_set()
 
 
 function equip_tp_set()
-    if buffactive["Elvorseal"] then
-        equip(sets.di)
+    if buffactive["Elvorseal"] and sets.DI then
+        equip(sets.DI)
     else
-        equip(sets.tp)
+        equip(sets.TP)
     end
 end -- equip_tp()
 
@@ -85,10 +85,10 @@ function precast(spell, position)
         equip(sets.precas.RA)
     -- Use spell-specific precast set if it exists
     elseif sets.precast[spell.english] then
-        equip(sets.fc, sets.precast[spell.english])
+        equip(sets.FC, sets.precast[spell.english])
     -- Use fastcast set for magic if nothing else matched
     elseif string.find(spell.type, "Magic") or spell.type == "BardSong" then
-        equip(sets.fc)
+        equip(sets.FC)
     end
 end -- precast()
 
@@ -116,8 +116,8 @@ function aftercast(spell)
 end -- aftercast()
 
 
-function buff_change(name, gain, buff_details) {
-    if name == "Doomed"
+function buff_change(name, gain, buff_details)
+    if name == "Doomed" then
         if gain then
             equip(sets.doomed)
             send_command('/p Doomed.')
@@ -125,4 +125,4 @@ function buff_change(name, gain, buff_details) {
             send_command('/p Doom off.')
         end
     end
-}
+end
