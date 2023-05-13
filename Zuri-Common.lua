@@ -14,6 +14,20 @@ local lockables = {
     "Nexus Cape",
 }
 
+local modes = {
+    TH = false,
+}
+
+
+-- Sets macro page and lockstyle set
+function job_init(macro_book, macro_page, lockstyleset)
+    send_command("wait 1; input /macro book " .. macro_book)
+    send_command("wait 2; input /macro set " .. macro_page)
+    send_command("wait 3; input /lockstyleset " .. lockstyleset)
+    send_command("wait 3; input /echo ** Job is " .. player.main_job .. "/" .. player.sub_job .. ". Macros set to Book " .. macro_book .. " Page " .. macro_page .. ". **")
+end
+
+
 -- Utility function takes a table and returns a set
 function to_set(t)
     set = {}
@@ -30,7 +44,7 @@ function safe_equip(gearset)
     for slot, item in pairs(gearset) do
         if lockables_set[player.equipment[slot]] then
             disable(slot)
-            send_command('input /echo ' .. player.equipment[slot] .. ' is equipped, ' .. slot .. ' slot locked.')
+            -- send_command('input /echo ' .. player.equipment[slot] .. ' is equipped, ' .. slot .. ' slot locked.')
         else
             enable(slot)
         end
@@ -38,12 +52,14 @@ function safe_equip(gearset)
     equip(gearset)
 end
 
--- Sets macro page and lockstyle set
-function job_init(macro_book, macro_page, lockstyleset)
-    send_command('wait 1; input /macro book ' .. macro_book)
-    send_command('wait 2; input /macro set ' .. macro_page)
-    send_command('wait 3; input /lockstyleset ' .. lockstyleset)
-    send_command('wait 3; input /echo ** Job is ' .. player.main_job .. '/' .. player.sub_job .. '. Macros set to Book ' .. macro_book .. ' Page ' .. macro_page .. '. **')
+-- Re-enables all slots where lockables are current equipped
+function reset_lockables()
+    for slot, item in pairs(player.equipment) do
+        if lockables_set[item] then
+            enable(slot)
+        end
+    end
+    equip_idle_or_tp_set()
 end
 
 -- Helper functions for set swaps with custom logic
@@ -70,6 +86,9 @@ end -- equip_idle_set()
 function equip_tp_set()
     if buffactive["Elvorseal"] and sets.DI then
         safe_equip(sets.DI)
+    elseif modes["TH"] and sets.TH then
+        safe_equip(sets.TP)
+        safe_equip(sets.TH)
     else
         safe_equip(sets.TP)
     end
@@ -129,9 +148,22 @@ function buff_change(name, gain, buff_details)
     if name == "Doomed" then
         if gain then
             equip(sets.doomed)
-            send_command('/p Doomed.')
+            send_command("input /p Doomed.")
         else
-            send_command('/p Doom off.')
+            send_command("input /p Doom off.")
         end
     end
 end
+
+-- Command usage:
+--     //gs c r|reset:  Resets lockables
+--     //gs c th:       Toggles TH mode
+function self_command(command)
+    if command == "r" or command == "reset" then
+        unequip_lockables()
+    elseif command == "th" then
+        modes["TH"] = not modes["TH"]
+        send_command("input /echo TH is " .. tostring(modes['TH']) .. ".")
+        equip_idle_or_tp_set()
+    end
+end -- self_command()
