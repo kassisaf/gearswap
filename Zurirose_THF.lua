@@ -68,14 +68,14 @@ function get_sets()
         right_ring = "Rufescent Ring",
         back       = "Canny Cape",
     }
-    sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS,{
-    })
+    sets.precast.WS["Rudra's Storm"] = sets.precast.WS
     sets.precast.WS["Evisceration"] = set_combine(sets.precast.WS,{
         ammo      = "Yetshila",
         neck      = "Fotia Gorget",
         waist     = "Fotia Belt",
         left_ring = "Mummu Ring",
     })
+    sets.precast.WS["Dancing Edge"] = sets.precast.WS["Evisceration"]
     sets.precast.WS["Aeolian Edge"] = set_combine(sets.precast.WS,{
         ammo       = "Hydrocera",
         legs       = "Limbo Trousers",

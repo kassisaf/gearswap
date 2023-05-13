@@ -127,9 +127,6 @@ function midcast(spell)
     -- Use type-specific midcast set if it exists (i.e. elemental magic)
     elseif sets.midcast[spell.type] then
         safe_equip(sets.midcast[spell.type])
-    -- Fall back to idle set if nothing else matched
-    else
-        equip_idle_or_tp_set()
     end
 end -- midcast()
 
