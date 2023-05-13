@@ -23,7 +23,9 @@ local modes = {
 function job_init(macro_book, macro_page, lockstyleset)
     send_command("wait 1; input /macro book " .. macro_book)
     send_command("wait 2; input /macro set " .. macro_page)
-    send_command("wait 3; input /lockstyleset " .. lockstyleset)
+    if lockstyleset then
+        send_command("wait 3; input /lockstyleset " .. lockstyleset)
+    end
     send_command("wait 3; input /echo ** Job is " .. player.main_job .. "/" .. player.sub_job .. ". Macros set to Book " .. macro_book .. " Page " .. macro_page .. ". **")
 end
 
