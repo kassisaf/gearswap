@@ -93,7 +93,7 @@ function precast(spell, position)
         safe_equip(sets.precast.RA)
     -- Use spell-specific precast set if it exists
     elseif sets.precast[spell.english] then
-        safe_equip(sets.FC, sets.precast[spell.english])
+        safe_equip(sets.precast[spell.english])
     -- Use fastcast set for magic if nothing else matched
     elseif string.find(spell.type, "Magic") or spell.type == "BardSong" then
         safe_equip(sets.FC)
