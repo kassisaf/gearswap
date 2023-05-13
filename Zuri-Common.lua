@@ -161,6 +161,7 @@ end
 -- Command usage:
 --     //gs c r|reset:  Resets lockables
 --     //gs c th:       Toggles TH mode
+--     //gs c melee:    Locks/unlocks main and sub
 function self_command(command)
     if command == "r" or command == "reset" then
         unequip_lockables()
