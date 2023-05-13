@@ -1,5 +1,6 @@
 function get_sets()
     include('Zuri-Common.lua')
+    job_init(2, 2, 17)  -- Macro book, macro page, lockstyle set
 
     -- Basic sets
     sets.idle = {
