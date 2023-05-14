@@ -1,6 +1,7 @@
 function get_sets()
     include('Zuri-Common.lua')
     job_init(2, 2, 17)  -- Macro book, macro page, lockstyle set
+    equip_idle_or_tp_set()
 
     -- Basic sets
     sets.idle = {
@@ -51,7 +52,8 @@ function get_sets()
     }
 
     -- Weaponskill sets
-    sets.precast.WS = {
+    sets.precast.WS = {} -- Leave Empty
+    sets.precast.WS.base = {
         ammo       = "Yetshila",
         head       = "Skulker's Bonnet +2",
         body       = "Skulker's Vest +2",
@@ -68,15 +70,15 @@ function get_sets()
         right_ring = "Rufescent Ring",
         back       = "Canny Cape",
     }
-    sets.precast.WS["Rudra's Storm"] = sets.precast.WS
-    sets.precast.WS["Evisceration"] = set_combine(sets.precast.WS,{
+    sets.precast.WS["Rudra's Storm"] = sets.precast.WS.base
+    sets.precast.WS["Evisceration"] = set_combine(sets.precast.WS.base,{
         ammo      = "Yetshila",
         neck      = "Fotia Gorget",
         waist     = "Fotia Belt",
         left_ring = "Mummu Ring",
     })
     sets.precast.WS["Dancing Edge"] = sets.precast.WS["Evisceration"]
-    sets.precast.WS["Aeolian Edge"] = set_combine(sets.precast.WS,{
+    sets.precast.WS["Aeolian Edge"] = set_combine(sets.precast.WS.base,{
         ammo       = "Hydrocera",
         legs       = "Limbo Trousers",
         neck       = "Deviant Necklace",
@@ -84,7 +86,7 @@ function get_sets()
         left_ring  = "Stikini Ring",
         right_ring = "Stikini Ring",
     })
-    sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS,{
+    sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.base,{
         right_ear = "Ishvara Earring",
     })
 

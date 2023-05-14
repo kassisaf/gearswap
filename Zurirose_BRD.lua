@@ -1,6 +1,7 @@
 function get_sets()
     include('Zuri-Common.lua')
     job_init(1, 1, nil)  -- Macro book, macro page, lockstyle set
+    equip_idle_or_tp_set()
 
     -- Basic sets
     sets.idle = {
@@ -56,7 +57,8 @@ function get_sets()
     sets.precast.RA = {}
 
     -- Weaponskill sets
-    sets.precast.WS = {
+    sets.precast.WS = {} -- Leave empty
+    sets.precast.WS.base = {
         -- ammo       = "Yetshila",
         body       = "Bihu Justaucorps +3",
         neck       = "Fotia Gorget",
@@ -141,6 +143,12 @@ function get_sets()
     }
     sets.midcast["Sentinel's Scherzo"] = {
         feet = "Fili Cothurnes +2",
+    }
+    sets.midcast["Ballad"] = {
+        range = "Blurred Harp +1",
+    }
+    sets.midcast["Lullaby"] = {
+        range = "Blurred Harp +1",
     }
 
     sets.midcast["Cure"] = {

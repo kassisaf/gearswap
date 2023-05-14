@@ -163,7 +163,7 @@ function precast(spell, position)
         if sets.precast.WS[spell.english] then
             safe_equip(sets.precast.WS[spell.english])
         else
-            safe_equip(sets.precast.WS)
+            safe_equip(sets.precast.WS.base)
         end
     -- Use JA-specific set if it exists
     elseif spell.type == "JobAbility" and sets.precast.JA[spell.english] then
