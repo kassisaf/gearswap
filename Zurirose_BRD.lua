@@ -143,9 +143,6 @@ function get_sets()
     sets.midcast["Sentinel's Scherzo"] = {
         feet = "Fili Cothurnes +2",
     }
-    sets.midcast["Ballad"] = {
-        range = "Blurred Harp +1",
-    }
     sets.midcast["Lullaby"] = {
         range = "Blurred Harp +1",
     }

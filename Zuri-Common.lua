@@ -78,7 +78,7 @@ function safe_equip(gearset, skip_recheck)
         if modes["weapon_lock"] then
             disable("main", "sub")
         end
-        -- If player is wearing a lockable item in any slot in the gearset, disable that slot
+        -- If player is wearing a lockable item in any slot in this gearset, disable that slot
         for slot, item in pairs(gearset) do
             if lockables_set[player.equipment[slot]] then
                 disable(slot)
