@@ -45,7 +45,7 @@ function self_command(command)
     if command == "u" or command == "update" then
         equip_idle_or_tp_set()
     elseif command == "r" or command == "reset" then
-        unequip_lockables()
+        reset_lockables()
     elseif command == "th" then
         toggle_mode("TH")
     elseif command == "melee" then
