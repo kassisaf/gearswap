@@ -1,7 +1,6 @@
 function get_sets()
     include('Zuri-Common.lua')
     job_init(2, 2, 17)  -- Macro book, macro page, lockstyle set
-    equip_idle_or_tp_set()
 
     -- Basic sets
     sets.idle = {
@@ -119,7 +118,7 @@ function get_sets()
     sets.precast.JA["Quick Step"] = sets.th
     
     -- Midcast sets
-    sets.midcast = {}
+    sets.midcast = {} -- Leave empty
 
     -- Other sets
     sets.TH = {

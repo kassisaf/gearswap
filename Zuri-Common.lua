@@ -123,7 +123,7 @@ end -- equip_idle_or_tp_set()
 function equip_idle_set()
     -- Conditional movespeed gear
     if pet.isvalid and set.idle.pet_active then
-        safe_equip(sets.idle.pet_active)
+        safe_equip(sets.idle_with_pet)
     elseif string.find(world.zone, "Adoulin") and sets.idle.adoulin then
         safe_equip(sets.idle, {body = "Councilor's Garb"})
     elseif player.main_job_level == 99 then

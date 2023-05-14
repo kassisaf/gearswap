@@ -1,7 +1,6 @@
 function get_sets()
     include('Zuri-Common.lua')
     job_init(1, 1, nil)  -- Macro book, macro page, lockstyle set
-    equip_idle_or_tp_set()
 
     -- Basic sets
     sets.idle = {
@@ -91,7 +90,7 @@ function get_sets()
         left_ring  = "Stikini Ring",
         right_ring = "Stikini Ring",
     }
-    sets.midcast = {}
+    sets.midcast = {} -- Leave empty
     sets.midcast["EnhancingMagic"] = {
         -- sub        = "Ammurapi Shield",     -- Enhancing duration +10%
         hands      = "Inyanga Dastanas +2",
