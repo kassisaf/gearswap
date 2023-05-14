@@ -1,5 +1,6 @@
 -- Any items defined here will be locked when equipped manually
 lockables = {
+    "Blurred Harp +1",
     "Warp Ring",
     "Dim. Ring (Mea)",
     -- "Dim. Ring (Holla)",
