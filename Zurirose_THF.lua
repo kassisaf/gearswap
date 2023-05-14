@@ -120,10 +120,10 @@ function get_sets()
     sets.midcast = {}
 
     -- Other sets
-    sets.TH = set_combine(sets.tp, {
+    sets.TH = {
         hands = "Assassin's Armlets +2",
         feet  = "Skulker's Poulaines +2",
-    })
+    }
     -- Maximize crit rate for Domain Invasion
     sets.DI = set_combine(sets.tp, {
         main       = "Voluspa Knife",
