@@ -149,9 +149,6 @@ function equip_base_song_set(spell)
     end
 end
 
-function equip_spell_set(spell)
-end
-
 
 -----------------------------
 -- Standard Gearswap Hooks --
@@ -204,6 +201,10 @@ function status_change(new, old)
     equip_idle_or_tp_set()
 end -- status_change()
 
+function pet_change(pet,gain)
+    equip_idle_or_tp_set()
+end -- pet_change()
+
 function buff_change(name, gain, buff_details)
     if name == "Doom" then
         if gain then
@@ -214,4 +215,4 @@ function buff_change(name, gain, buff_details)
             send_command("input /p Doom removed.")
         end
     end
-end
+end -- buff_change()
