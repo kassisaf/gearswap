@@ -37,11 +37,14 @@ function toggle_mode(key)
 end
 
 -- Command usage:
---     //gs c r|reset:  Resets lockables
---     //gs c th:       Toggles TH mode
---     //gs c melee:    Locks/unlocks main and sub
+--  //gs c u|update: Calls an update to equip idle or TP set
+--  //gs c r|reset:  Resets lockables
+--  //gs c th:       Toggles TH mode
+--  //gs c melee:    Locks/unlocks main and sub slots
 function self_command(command)
-    if command == "r" or command == "reset" then
+    if command == "u" or command == "update" then
+        equip_idle_or_tp_set()
+    elseif command == "r" or command == "reset" then
         unequip_lockables()
     elseif command == "th" then
         toggle_mode("TH")
