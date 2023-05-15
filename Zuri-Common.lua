@@ -38,7 +38,6 @@ end
 
 -- Command usage:
 --  //gs c u|update: Calls an update to equip idle or TP set
---  //gs c r|reset:  Resets lockables
 --  //gs c th:       Toggles TH mode
 --  //gs c melee:    Locks/unlocks main and sub slots
 function self_command(command)
@@ -98,16 +97,6 @@ function safe_equip(gearset, skip_recheck)
     else
         equip(gearset)
     end
-end
-
--- Re-enables all slots where lockables are current equipped
-function reset_lockables()
-    for slot, item in pairs(player.equipment) do
-        if lockables_set[item] then
-            enable(slot)
-        end
-    end
-    equip_idle_or_tp_set()
 end
 
 
