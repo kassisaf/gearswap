@@ -8,7 +8,8 @@ function get_sets()
         body       = "Nyame Mail",
         hands      = "Nyame Gauntlets",
         legs       = "Nyame Flanchard",
-        feet       = "Nyame Sollerets",
+        -- feet       = "Nyame Sollerets",
+        feet       = "Skulker's Poulaines +2",
         neck       = "Anu Torque",
         waist      = "Sailfi Belt +1",
         left_ear   = "Eabani Earring",
@@ -25,7 +26,7 @@ function get_sets()
         head       = "Skulker's Bonnet +2",
         body       = "Adhemar Jacket",
         hands      = "Malignance Gloves",
-        legs       = "Meghanada Chausses +1",
+        legs       = "Meghanada Chausses +2",
         feet       = "Plunderer's Poulaines +1",
         neck       = "Anu Torque",
         waist      = "Sailfi Belt +1",
@@ -34,7 +35,7 @@ function get_sets()
         left_ring  = "Petrov Ring",
         -- left_ring  = "Epona's Ring",
         right_ring = "Meghanada Ring",
-        back       = "Canny Cape",
+        back       = "Toutatis's Cape",
     }
     sets.FC = {}
 
@@ -55,9 +56,9 @@ function get_sets()
     sets.precast.WS.base = {
         ammo       = "Yetshila",
         head       = "Skulker's Bonnet +2",
-        body       = "Skulker's Vest +2",
-        hands      = "Malignance Gloves",
-        legs       = "Meghanada Chausses +1",
+        body       = "Meghanada Cuirie +2",
+        hands      = "Meghanada Gloves +2",
+        legs       = "Meghanada Chausses +2",
         feet       = "Skulker's Poulaines +2",
         neck       = "Caro Necklace",
         waist      = "Grunfeld Rope",
@@ -72,6 +73,7 @@ function get_sets()
     sets.precast.WS["Rudra's Storm"] = sets.precast.WS.base
     sets.precast.WS["Evisceration"] = set_combine(sets.precast.WS.base,{
         ammo      = "Yetshila",
+        hands     = "Mummu Wrists +2",
         neck      = "Fotia Gorget",
         waist     = "Fotia Belt",
         left_ring = "Mummu Ring",

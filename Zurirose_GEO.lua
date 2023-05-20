@@ -12,10 +12,12 @@ function get_sets()
         body       = "Azimuth Coat +2",
         legs       = "azimuth tights +2",
         feet       = "Azimuth Gaiters +2",
+        neck       = "Sanctity Necklace",
         left_ear   = "Handler's Earring +1",
         right_ear  = "Lugalbanda Earring",
         left_ring  = "Defending Ring",
         right_ring = "Shneddick Ring",
+        waist      = "Luminary Sash",
         back       = "Solemnity Cape",
     }
     sets.idle_with_pet = set_combine(sets.idle, {
@@ -92,7 +94,7 @@ function get_sets()
         feet       = "Azimuth Gaiters +2",
         neck       = "Bagua Charm +1",
         left_ear   = "Malignance Earring",
-        right_ear  = "Gifted Earring",
+        right_ear  = "Dignitary's Earring",
         left_ring  = "Stikini Ring",
         right_ring = "Stikini Ring",
         waist      = "Luminary Sash",

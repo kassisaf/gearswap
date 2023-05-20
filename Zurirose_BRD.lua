@@ -83,10 +83,11 @@ function get_sets()
 
     -- Midcast sets
     sets.macc = {
-        -- Primarily magic accuracy
         main       = "Kaja Knife",
         sub        = "Genbu's Shield",
         range      = "Gjallarhorn",
+        -- left_ear   = "Malignance Earring",
+        right_ear  = "Dignitary's Earring",
         left_ring  = "Stikini Ring",
         right_ring = "Stikini Ring",
     }
