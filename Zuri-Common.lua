@@ -23,6 +23,7 @@ lockables_set = to_set(lockables) -- from Zuri-Settings.lua
 local modes = {
     TH = false,
     weapon_lock = false,
+    has_pet = false,
     -- skillup = false,  -- TODO: Implement skillup mode
 }
 
@@ -96,12 +97,10 @@ function equip_idle_or_tp_set()
 end -- equip_idle_or_tp_set()
 
 function equip_idle_set()
-    if pet.isvalid and set.idle_with_pet then
+    if modes["has_pet"] and sets.idle_with_pet then
         safe_equip(sets.idle_with_pet)
     elseif string.find(world.zone, "Adoulin") and sets.idle.adoulin then
         safe_equip(sets.idle, {body = "Councilor's Garb"})
-    -- elseif player.main_job_level == 99 then
-    --     safe_equip(sets.idle, {right_ring = "Shneddick Ring"})
     else
         safe_equip(sets.idle)
     end
@@ -188,7 +187,8 @@ function status_change(new, old)
     equip_idle_or_tp_set()
 end -- status_change()
 
-function pet_change(pet,gain)
+function pet_change(pet, gain)
+    modes["has_pet"] = gain
     equip_idle_or_tp_set()
 end -- pet_change()
 
@@ -203,7 +203,6 @@ function buff_change(name, gain, buff_details)
         end
     end
 end -- buff_change()
-
 
 -- Command usage:
 --  //gs c u|update: Calls an update to equip idle or TP set
