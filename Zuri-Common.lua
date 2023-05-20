@@ -1,9 +1,6 @@
 include('Mote-Mappings.lua')
 include('Zuri-Settings.lua')
 
-ENABLED_OR_DISABLED = { ["true"] = "enabled", ["false"] = "disabled" }
-DUMMY_INSTRUMENTS = { "Daurdabla", "Blurred Harp +1", "Terpander" }
-
 -- Generic table to set converter (equivalent to S{} in other Gearswap libs)
 function to_set(t)
     set = {}
@@ -13,7 +10,10 @@ function to_set(t)
     return set
 end
 
-lockables_set = to_set(lockables)
+ENABLED_OR_DISABLED = { ["true"] = "enabled", ["false"] = "disabled" }
+DUMMY_INSTRUMENTS = to_set({"Daurdabla", "Blurred Harp +1", "Terpander"})
+
+lockables_set = to_set(lockables) -- from Zuri-Settings.lua
 
 ------------------------
 -- Modes and commands --
