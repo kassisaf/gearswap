@@ -2,6 +2,7 @@ include('Mote-Mappings.lua')
 include('Zuri-Settings.lua')
 
 ENABLED_OR_DISABLED = { ["true"] = "enabled", ["false"] = "disabled" }
+DUMMY_INSTRUMENTS = { "Daurdabla", "Blurred Harp +1", "Terpander" }
 
 -- Generic table to set converter (equivalent to S{} in other Gearswap libs)
 function to_set(t)
@@ -36,22 +37,6 @@ function toggle_mode(key)
     end
 end
 
--- Command usage:
---  //gs c u|update: Calls an update to equip idle or TP set
---  //gs c th:       Toggles TH mode
---  //gs c melee:    Locks/unlocks main and sub slots
-function self_command(command)
-    if command == "u" or command == "update" then
-        equip_idle_or_tp_set()
-    elseif command == "r" or command == "reset" then
-        reset_lockables()
-    elseif command == "th" then
-        toggle_mode("TH")
-    elseif command == "melee" then
-        toggle_mode("weapon_lock")
-    end
-end -- self_command()
-
 
 ----------------------------------------------
 -- Utility functions for use in job scripts --
@@ -84,9 +69,7 @@ function safe_equip(gearset, skip_recheck)
         for slot, item in pairs(gearset) do
             if lockables_set[player.equipment[slot]] then
                 disable(slot)
-                -- send_command('input /echo ' .. player.equipment[slot] .. ' is equipped, ' .. slot .. ' slot locked.')
-            else
-                enable(slot)
+                send_command('input /echo ' .. player.equipment[slot] .. ' is equipped, ' .. slot .. ' is locked.')
             end
         end
     end
@@ -113,13 +96,12 @@ function equip_idle_or_tp_set()
 end -- equip_idle_or_tp_set()
 
 function equip_idle_set()
-    -- Conditional movespeed gear
-    if pet.isvalid and set.idle.pet_active then
+    if pet.isvalid and set.idle_with_pet then
         safe_equip(sets.idle_with_pet)
     elseif string.find(world.zone, "Adoulin") and sets.idle.adoulin then
         safe_equip(sets.idle, {body = "Councilor's Garb"})
-    elseif player.main_job_level == 99 then
-        safe_equip(sets.idle, {right_ring = "Shneddick Ring"})
+    -- elseif player.main_job_level == 99 then
+    --     safe_equip(sets.idle, {right_ring = "Shneddick Ring"})
     else
         safe_equip(sets.idle)
     end
@@ -134,6 +116,14 @@ function equip_tp_set()
 end -- equip_tp()
 
 function equip_base_song_set(spell)
+    -- Lock dummy instruments if they're equipped
+    if DUMMY_INSTRUMENTS[player.equipment["range"]] then
+        disable("range")
+    else
+        enable("range")
+    end
+
+    -- Safe to assume it's a debuff if we're targetting a monster, or lullaby in case of charmed party member
     if spell.target.type == "MONSTER" or string.find(spell.english, "Lullaby") then
         safe_equip(sets.midcast["BuffSong"])
     else
@@ -182,6 +172,9 @@ function midcast(spell)
         safe_equip(sets.midcast[spell.english], true)
     elseif spell_maps[spell.english] and sets.midcast[spell_maps[spell.english]] then
         safe_equip(sets.midcast[spell_maps[spell.english]], true)
+    -- Finally, if nothing else matched, go back to idle unless action is WS or JA
+    elseif spell.type ~= "WeaponSkill" and spell.type ~= "JobAbility" then
+        equip_idle_or_tp_set()
     end
 end -- midcast()
 
@@ -208,3 +201,19 @@ function buff_change(name, gain, buff_details)
         end
     end
 end -- buff_change()
+
+
+-- Command usage:
+--  //gs c u|update: Calls an update to equip idle or TP set
+--  //gs c th:       Toggles TH mode
+--  //gs c melee:    Locks/unlocks main and sub slots
+function self_command(command)
+    if command == "u" or command == "update" then
+        equip_idle_or_tp_set()
+    elseif command == "th" then
+        toggle_mode("TH")
+        equip_idle_or_tp_set()
+    elseif command == "melee" then
+        toggle_mode("weapon_lock")
+    end
+end -- self_command()
