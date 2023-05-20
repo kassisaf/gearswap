@@ -159,22 +159,24 @@ function precast(spell, position)
 end -- precast()
 
 function midcast(spell)
-    -- First, equip base set for spell type
+    -- Transition from precast to idle unless action is WS or JA
+    if spell.type ~= "WeaponSkill" and spell.type ~= "JobAbility" then
+        equip_idle_or_tp_set()
+    end
+
+    -- Then equip base set for spell type
     if spell.type == "BardSong" then
         equip_base_song_set(spell)
     elseif sets.midcast[spell.type] then
         safe_equip(sets.midcast[spell.type])
     end
 
-    -- Then, if we have spell-specific gear, equip that on top
+    -- Then, if we have spell-specific gear, equip that last
     -- Look for exact matches first, then try the tiered spell map (i.e. sets.midcast["Fire IV"] and then sets.midcast.Fire)
     if sets.midcast[spell.english] then
         safe_equip(sets.midcast[spell.english], true)
     elseif spell_maps[spell.english] and sets.midcast[spell_maps[spell.english]] then
         safe_equip(sets.midcast[spell_maps[spell.english]], true)
-    -- Finally, if nothing else matched, go back to idle unless action is WS or JA
-    elseif spell.type ~= "WeaponSkill" and spell.type ~= "JobAbility" then
-        equip_idle_or_tp_set()
     end
 end -- midcast()
 
