@@ -2,6 +2,9 @@ function get_sets()
     include('Zuri-Common.lua')
     job_init(1, 1, nil)  -- Macro book, macro page, lockstyle set
 
+    -- main={ name="Kali", augments={'DMG:+15','CHR+15','Mag. Acc.+15',}},
+    -- sub={ name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1',}},
+
     -- Basic sets
     sets.idle = {
         main       = "Sangoma",
@@ -22,20 +25,19 @@ function get_sets()
     }
     sets.TP = {
         main       = "Kaja Sword",
-        sub        = "Centovente",
-        -- ammo       = "",
-        -- head       = "",
-        -- body       = "",
-        -- hands      = "",
-        -- legs       = "",
-        -- feet       = "",
-        neck       = "Subtlety Spectacles",
+        sub        = "Genbu's Shield",
+        head       = "Nyame Helm",
+        body       = "Nyame Mail",
+        hands      = "Nyame Gauntlets",
+        legs       = "Nyame Flanchard",
+        feet       = "Nyame Sollerets",
+        neck       = "Sanctity Necklace",
         waist      = "Sailfi Belt +1",
-        left_ear   = "Eabani Earring",
-        right_ear  = "Suppanomimi",
+        left_ear   = "Digni. Earring",
+        right_ear  = "Fili Earring",
         left_ring  = "Petrov Ring",
         right_ring = "Apate Ring",
-        -- back       = "",
+        back       = "Agema Cape",
     }
     sets.FC = {
         head       = "Welkin Crown",        -- Fast Cast +7%
@@ -61,13 +63,19 @@ function get_sets()
         -- ammo       = "Yetshila",
         body       = "Bihu Justaucorps +3",
         neck       = "Fotia Gorget",
-        waist      = "Fotia Belt",
         left_ear   = "Ishvara Earring",
         right_ear  = "Moonshade Earring",
         left_ring  = "Rufescent Ring",
         right_ring = "Apate Ring",
         back       = "Phalangite Mantle",
+        waist      = "Fotia Belt",
     }
+    sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.base, {
+        neck       = "Caro Necklace",
+        left_ring  = "Rufescent Ring",
+        right_ring = "Apate Ring",
+        waist      = "Grunfeld Rope",
+    })
 
     -- Job ability sets
     sets.precast.JA = {}  -- Leave empty
@@ -115,7 +123,7 @@ function get_sets()
     }
 
     sets.midcast["BuffSong"] = {
-        main       = "Kali",
+        main       = { name="Kali", augments={'DMG:+15','CHR+15','Mag. Acc.+15',}},
         sub        = "Genbu's Shield",
         head       = "Fili Calot +2",
         body       = "Fili Hongreline +2",
