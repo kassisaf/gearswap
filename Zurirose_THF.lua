@@ -57,7 +57,7 @@ function get_sets()
         ammo       = "Yetshila",
         head       = "Skulker's Bonnet +2",
         -- body       = "Meghanada Cuirie +2",
-        body       = "Skulker's Vest +2"
+        body       = "Skulker's Vest +2",
         hands      = "Meghanada Gloves +2",
         legs       = "Meghanada Chausses +2",
         feet       = "Skulker's Poulaines +2",
