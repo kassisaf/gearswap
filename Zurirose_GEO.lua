@@ -149,6 +149,9 @@ function get_sets()
         right_ring = "Stikini Ring",
         right_ring = "Kishar Ring", -- Enfeebling duration +10%
     })
+    sets.midcast["Dark Magic"] = set_combine(sets.macc, {
+        right_ring = "Evanescence Ring",
+    })
     sets.midcast["Stoneskin"] = {
         -- legs     = "Shedir Seraweels", -- Stoneskin +35
         neck     = "Nodens Gorget",    -- Stoneskin +30
