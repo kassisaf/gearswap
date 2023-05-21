@@ -133,7 +133,7 @@ function get_sets()
         right_ear  = "Azimuth Earring",
         left_ring  = "Jhakri Ring",
         right_ring = "Stikini Ring",
-        waist      = "Luminary Sash",
+        waist      = "Refoccilation Stone",
         -- back = "",
     })
     sets.midcast["Enhancing Magic"] = {
