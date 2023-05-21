@@ -12,7 +12,7 @@ function get_sets()
         body       = "Azimuth Coat +2",
         legs       = "azimuth tights +2",
         feet       = "Azimuth Gaiters +2",
-        neck       = "Loricate Torque",
+        neck       = "Loricate Torque +1",
         left_ear   = "Handler's Earring +1",
         right_ear  = "Lugalbanda Earring",
         left_ring  = "Defending Ring",

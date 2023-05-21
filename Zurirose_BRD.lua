@@ -12,7 +12,7 @@ function get_sets()
         hands      = "Fili Manchettes +2",
         legs       = "Fili Rhingrave +2",
         feet       = "Inyanga Crackows +2",
-        neck       = "Loricate Torque",
+        neck       = "Loricate Torque +1",
         waist      = "Sailfi Belt +1",
         left_ear   = "Handler's Earring +1",
         right_ear  = "Handler's Earring",

@@ -10,7 +10,7 @@ function get_sets()
         legs       = "Nyame Flanchard",
         -- feet       = "Nyame Sollerets",
         feet       = "Skulker's Poulaines +2",
-        neck       = "Loricate Torque",
+        neck       = "Loricate Torque +1",
         waist      = "Sailfi Belt +1",
         left_ear   = "Eabani Earring",
         right_ear  = "Handler's Earring +1",
