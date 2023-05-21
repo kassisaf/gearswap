@@ -25,7 +25,7 @@ function get_sets()
         ammo       = "Focal Orb",
         head       = "Skulker's Bonnet +2",
         body       = "Adhemar Jacket",
-        hands      = "Malignance Gloves",
+        hands      = "Adhemar Wristbands +1",
         legs       = "Meghanada Chausses +2",
         feet       = "Plunderer's Poulaines +1",
         neck       = "Anu Torque",
@@ -56,7 +56,8 @@ function get_sets()
     sets.precast.WS.base = {
         ammo       = "Yetshila",
         head       = "Skulker's Bonnet +2",
-        body       = "Meghanada Cuirie +2",
+        -- body       = "Meghanada Cuirie +2",
+        body       = "Skulker's Vest +2"
         hands      = "Meghanada Gloves +2",
         legs       = "Meghanada Chausses +2",
         feet       = "Skulker's Poulaines +2",
@@ -73,7 +74,8 @@ function get_sets()
     sets.precast.WS["Rudra's Storm"] = sets.precast.WS.base
     sets.precast.WS["Evisceration"] = set_combine(sets.precast.WS.base,{
         ammo      = "Yetshila",
-        hands     = "Mummu Wrists +2",
+        hands     = "Adhemar Wristbands +1",
+        feet      = "Adhemar Gamashes +1",
         neck      = "Fotia Gorget",
         waist     = "Fotia Belt",
         left_ring = "Mummu Ring",
