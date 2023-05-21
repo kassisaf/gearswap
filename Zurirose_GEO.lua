@@ -12,7 +12,7 @@ function get_sets()
         body       = "Azimuth Coat +2",
         legs       = "azimuth tights +2",
         feet       = "Azimuth Gaiters +2",
-        neck       = "Sanctity Necklace",
+        neck       = "Loricate Torque",
         left_ear   = "Handler's Earring +1",
         right_ear  = "Lugalbanda Earring",
         left_ring  = "Defending Ring",
@@ -86,7 +86,8 @@ function get_sets()
     sets.macc = {
         main       = "Malignance Pole",
         sub        = "Kaja Grip",
-        range      = "Hydrocera",
+        range      = empty,
+        ammo       = "Hydrocera",
         head       = "Azimuth Hood +2",
         body       = "Azimuth Coat +2",
         hands      = "Azimuth Gloves +2",
@@ -97,6 +98,7 @@ function get_sets()
         right_ear  = "Dignitary's Earring",
         left_ring  = "Stikini Ring",
         right_ring = "Stikini Ring",
+        -- back       = "",
         waist      = "Luminary Sash",
     }
     sets.midcast = {} -- Leave empty
@@ -113,6 +115,22 @@ function get_sets()
         left_ring  = "Stikini Ring",         -- Combined skill +10
         right_ring = "Stikini Ring",         -- Combined skill +10
         back       = "Lifestream Cape",      -- Geomancy skill +10
+    }
+    sets.midcast["ElementalMagic"] = {
+        main       = "Daybreak",
+        sub        = "Genbu's Shield",
+        head       = "Azimuth Hood +2",
+        body       = "Azimuth Coat +2",
+        hands      = "Azimuth Gloves +2",
+        legs       = "Azimuth Tights +2",
+        feet       = "Azimuth Gaiters +2",
+        neck       = "Sanctity Necklace",
+        left_ear   = "Malignance Earring",
+        right_ear  = "Dignitary's Earring",
+        left_ring  = "Stikini Ring",
+        right_ring = "Stikini Ring",
+        waist      = "Luminary Sash",
+        -- back = "",
     }
     sets.midcast["EnhancingMagic"] = {
         -- sub        = "Ammurapi Shield",     -- Enhancing duration +10%
@@ -148,12 +166,12 @@ function get_sets()
         legs       = "Vanya Slops",
         feet       = "Vanya Clogs",
         neck       = "Incanter's Torque",
-        waist      = "Luminary Sash",
         left_ear   = "Meili Earring",
         right_ear  = "Fili Earring",
         left_ring  = "Stikini Ring",
         right_ring = "Stikini Ring",
         back       = "Solemnity Cape",
+        waist      = "Luminary Sash",
     }
     sets.midcast["Curaga"] = sets.midcast["Cure"]
 

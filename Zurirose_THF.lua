@@ -10,13 +10,13 @@ function get_sets()
         legs       = "Nyame Flanchard",
         -- feet       = "Nyame Sollerets",
         feet       = "Skulker's Poulaines +2",
-        neck       = "Anu Torque",
+        neck       = "Loricate Torque",
         waist      = "Sailfi Belt +1",
         left_ear   = "Eabani Earring",
         right_ear  = "Handler's Earring +1",
         left_ring  = "Defending Ring",
         right_ring = "Shneddick Ring",
-        back       = "Solemnity Cape",
+        back       = "Toutatis's Cape",
     }
     sets.TP = {
         main       = "Kaja Knife",
@@ -68,7 +68,7 @@ function get_sets()
         -- right_ring = "Regal Ring",
         left_ring  = "Apate Ring",
         right_ring = "Rufescent Ring",
-        back       = "Canny Cape",
+        back       = "Toutatis's Cape",
     }
     sets.precast.WS["Rudra's Storm"] = sets.precast.WS.base
     sets.precast.WS["Evisceration"] = set_combine(sets.precast.WS.base,{
@@ -84,6 +84,7 @@ function get_sets()
         legs       = "Limbo Trousers",
         neck       = "Deviant Necklace",
         waist      = "Eschan Stone",
+        right_ear  = "Friomisi Earring",
         left_ring  = "Stikini Ring",
         right_ring = "Stikini Ring",
     })
@@ -124,7 +125,8 @@ function get_sets()
 
     -- Other sets
     sets.TH = {
-        hands = "Assassin's Armlets +2",
+        ammo  = "Perfect Lucky Egg",
+        -- hands = "Assassin's Armlets +2",
         feet  = "Skulker's Poulaines +2",
     }
     -- Maximize crit rate for Domain Invasion
@@ -132,7 +134,7 @@ function get_sets()
         main       = "Voluspa Knife",
         sub        = "Shijo",
         ammo       = "Yetshila",
-        hands      = "Mummu Wrists +1",
+        hands      = "Mummu Wrists +2",
         left_ear   = "Odr Earring",
         left_ring  = "Mummu Ring",
         right_ring = "Meghanada Ring",
