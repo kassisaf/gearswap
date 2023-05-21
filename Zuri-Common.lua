@@ -11,7 +11,6 @@ function to_set(t)
 end
 
 ENABLED_OR_DISABLED = { ["true"] = "enabled", ["false"] = "disabled" }
-DUMMY_INSTRUMENTS = to_set({"Daurdabla", "Blurred Harp +1", "Terpander"})
 
 lockables_set = to_set(lockables) -- from Zuri-Settings.lua
 
@@ -115,12 +114,7 @@ function equip_tp_set()
 end -- equip_tp()
 
 function equip_base_song_set(spell)
-    -- Lock dummy instruments if they're equipped
-    if DUMMY_INSTRUMENTS[player.equipment["range"]] then
-        disable("range")
-    else
-        enable("range")
-    end
+    -- Dummy instruments are handled by lockables, just add them to the settings lua
 
     -- Safe to assume it's a debuff if we're targetting a monster, or lullaby in case of charmed party member
     if spell.target.type == "MONSTER" or string.find(spell.english, "Lullaby") then
@@ -166,6 +160,8 @@ function midcast(spell)
     -- Then equip base set for spell type
     if spell.type == "BardSong" then
         equip_base_song_set(spell)
+    elseif sets.midcast[spell.skill] then
+        safe_equip(sets.midcast[spell.skill])
     elseif sets.midcast[spell.type] then
         safe_equip(sets.midcast[spell.type])
     end
@@ -173,10 +169,11 @@ function midcast(spell)
     -- Then, if we have spell-specific gear, equip that last
     -- Look for exact matches first, then try the tiered spell map (i.e. sets.midcast["Fire IV"] and then sets.midcast.Fire)
     if sets.midcast[spell.english] then
-        safe_equip(sets.midcast[spell.english], true)
+        safe_equip(sets.midcast[spell.english])
     elseif spell_maps[spell.english] and sets.midcast[spell_maps[spell.english]] then
-        safe_equip(sets.midcast[spell_maps[spell.english]], true)
+        safe_equip(sets.midcast[spell_maps[spell.english]])
     end
+    -- add_to_chat(122, "midcast() for " .. spell.english .. " (skill: " .. spell.skill .. ")")
 end -- midcast()
 
 function aftercast(spell)
