@@ -28,11 +28,15 @@ function get_sets()
         back      = "Nantosuelta's Cape",
     })
     sets.TP = {
-        head  = "Nyame Helm",
-        body  = "Nyame Mail",
-        hands = "Nyame Gauntlets",
-        legs  = "Nyame Flanchard",
-        feet  = "Nyame Sollerets",
+        head       = "Nyame Helm",
+        body       = "Nyame Mail",
+        hands      = "Nyame Gauntlets",
+        legs       = "Nyame Flanchard",
+        feet       = "Nyame Sollerets",
+        neck       = "Loricate Torque +1",
+        left_ring  = "Petrov Ring",
+        right_ring = "Apate Ring",
+        waist      = "Eschan Stone",
     }
     sets.FC = {
         main       = "Solstice",           -- Fast Cast + 5%
@@ -86,7 +90,6 @@ function get_sets()
     sets.macc = {
         main       = "Malignance Pole",
         sub        = "Kaja Grip",
-        range      = empty,
         ammo       = "Hydrocera",
         head       = "Azimuth Hood +2",
         body       = "Azimuth Coat +2",
@@ -116,9 +119,10 @@ function get_sets()
         right_ring = "Stikini Ring",         -- Combined skill +10
         back       = "Lifestream Cape",      -- Geomancy skill +10
     }
-    sets.midcast["ElementalMagic"] = {
+    sets.midcast["Elemental Magic"] = set_combine(sets.macc,{
         main       = "Daybreak",
         sub        = "Genbu's Shield",
+        ammo       = "Hydrocera",
         head       = "Azimuth Hood +2",
         body       = "Azimuth Coat +2",
         hands      = "Azimuth Gloves +2",
@@ -126,20 +130,20 @@ function get_sets()
         feet       = "Azimuth Gaiters +2",
         neck       = "Sanctity Necklace",
         left_ear   = "Malignance Earring",
-        right_ear  = "Dignitary's Earring",
-        left_ring  = "Stikini Ring",
+        right_ear  = "Azimuth Earring",
+        left_ring  = "Jhakri Ring",
         right_ring = "Stikini Ring",
         waist      = "Luminary Sash",
         -- back = "",
-    }
-    sets.midcast["EnhancingMagic"] = {
+    })
+    sets.midcast["Enhancing Magic"] = {
         -- sub        = "Ammurapi Shield",     -- Enhancing duration +10%
         neck       = "Incanter's Torque",
         left_ring  = "Stikini Ring",
         right_ring = "Stikini Ring",
         waist      = "Siegel Sash",         -- Enhancing cast time -8%
     }
-    sets.midcast["EnfeeblingMagic"] = set_combine(sets.macc, {
+    sets.midcast["Enfeebling Magic"] = set_combine(sets.macc, {
         neck       = "Incanter's Torque",
         left_ring  = "Stikini Ring",
         right_ring = "Stikini Ring",

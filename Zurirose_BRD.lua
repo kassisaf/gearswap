@@ -92,7 +92,7 @@ function get_sets()
         right_ring = "Stikini Ring",
     }
     sets.midcast = {} -- Leave empty
-    sets.midcast["EnhancingMagic"] = {
+    sets.midcast["Enhancing Magic"] = {
         -- sub        = "Ammurapi Shield",     -- Enhancing duration +10%
         hands      = "Inyanga Dastanas +2",
         neck       = "Incanter's Torque",
@@ -100,7 +100,7 @@ function get_sets()
         right_ring = "Stikini Ring",
         waist      = "Siegel Sash",         -- Enhancing cast time -8%
     }
-    sets.midcast["EnfeeblingMagic"] = set_combine(sets.macc, {
+    sets.midcast["Enfeebling Magic"] = set_combine(sets.macc, {
         right_ring = "Kishar Ring", -- Enfeebling duration +10%
     })
     sets.midcast["Stoneskin"] = {
