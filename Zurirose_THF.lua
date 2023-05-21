@@ -132,7 +132,7 @@ function get_sets()
         feet  = "Skulker's Poulaines +2",
     }
     -- Maximize crit rate for Domain Invasion
-    sets.DI = set_combine(sets.tp, {
+    sets.DI = set_combine(sets.TP, {
         main       = "Voluspa Knife",
         sub        = "Shijo",
         ammo       = "Yetshila",
