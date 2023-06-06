@@ -66,10 +66,12 @@ function safe_equip(gearset, skip_recheck)
             disable("main", "sub")
         end
         -- If player is wearing a lockable item in any slot in this gearset, disable that slot
-        for slot, item in pairs(gearset) do
-            if lockables_set[player.equipment[slot]] then
-                disable(slot)
-                send_command('input /echo ' .. player.equipment[slot] .. ' is equipped, ' .. slot .. ' is locked.')
+        if gearset then
+            for slot, item in pairs(gearset) do
+                if lockables_set[player.equipment[slot]] then
+                    disable(slot)
+                    send_command('input /echo ' .. player.equipment[slot] .. ' is equipped, ' .. slot .. ' is locked.')
+                end
             end
         end
     end
@@ -117,10 +119,13 @@ function equip_base_song_set(spell)
     -- Dummy instruments are handled by lockables, just add them to the settings lua
 
     -- Safe to assume it's a debuff if we're targetting a monster, or lullaby in case of charmed party member
-    if spell.target.type == "MONSTER" or string.find(spell.english, "Lullaby") then
-        safe_equip(sets.midcast["BuffSong"])
-    else
+    if string.find(spell.english, "Lullaby") then
+        equip({range = instrument_lullaby})
         safe_equip(sets.midcast["DebuffSong"])
+    elseif spell.target.type == "MONSTER" then
+        safe_equip(sets.midcast["DebuffSong"])
+    else
+        safe_equip(sets.midcast["BuffSong"])
     end
 end
 
@@ -177,6 +182,9 @@ function midcast(spell)
 end -- midcast()
 
 function aftercast(spell)
+    if player.equipment['range'] == empty or string.find(spell.english, "Lullaby") then
+        equip({range = instrument_general, ammo = empty})
+    end
     equip_idle_or_tp_set()
 end -- aftercast()
 

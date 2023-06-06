@@ -17,3 +17,5 @@ lockables = {
     "Warp Cudgel",
     "Nexus Cape",
 }
+instrument_general = "Gjallarhorn"
+instrument_lullaby = "Blurred Harp +1"
