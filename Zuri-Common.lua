@@ -118,11 +118,12 @@ end -- equip_tp()
 function equip_base_song_set(spell)
     -- Dummy instruments are handled by lockables, just add them to the settings lua
 
-    -- Safe to assume it's a debuff if we're targetting a monster, or lullaby in case of charmed party member
-    if string.find(spell.english, "Lullaby") then
+    -- String for AoE sleeps
+    if string.find(spell.english, "Horde Lullaby") then
         equip({range = instrument_lullaby})
-        safe_equip(sets.midcast["DebuffSong"])
-    elseif spell.target.type == "MONSTER" then
+
+    -- Safe to assume it's a debuff if we're targetting a monster, or lullaby in case of charmed party member
+    if spell.target.type == "MONSTER" or string.find(spell.english, "Lullaby") then
         safe_equip(sets.midcast["DebuffSong"])
     else
         safe_equip(sets.midcast["BuffSong"])
@@ -182,7 +183,7 @@ function midcast(spell)
 end -- midcast()
 
 function aftercast(spell)
-    if player.equipment['range'] == empty or string.find(spell.english, "Lullaby") then
+    if string.find(spell.english, "Lullaby") or (player.main_job == "BRD" and player.equipment['range'] == empty) then
         equip({range = instrument_general, ammo = empty})
     end
     equip_idle_or_tp_set()

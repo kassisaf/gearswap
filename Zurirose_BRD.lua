@@ -154,7 +154,20 @@ function get_sets()
         feet = "Fili Cothurnes +2",
     }
     sets.midcast["Lullaby"] = {
-        range = "Blurred Harp +1",
+        range      = "Blurred Harp +1",
+        -- sub        = "Ammurapi Shield",
+        -- head       = "Brioso Roundlet +3",  -- String +13
+        -- body       = "Brioso Justau. +3",   -- String +14
+        -- hands      = "Inyanga Dastanas +2", -- Combined +40
+        -- legs       = "Inyanga Shalwar +2",  -- Duration +17%
+        -- feet       = "Bihu Slippers +3",    -- String +15
+        -- neck       = "Incanter's Torque",   -- Combined +20, use Moonbow+1 at ML20
+        -- left_ear   = "Gersemi Earring",     -- String +10
+        -- right_ear  = "Darkside Earring",    -- Combined +10
+        -- left_ring  = "Stikini Ring + 1",    -- Combined +16
+        -- right_ring = "Stikini Ring + 1",    -- Combined +16
+        -- waist      = "Harfner's Sash",      -- Combined +10
+        -- back       = "Erato's Cape",        -- String +4
     }
 
     sets.midcast["Cure"] = {
