@@ -2,6 +2,9 @@ function get_sets()
     include('Zuri-Common.lua')
     job_init(1, 3, nil)  -- Macro book, macro page, lockstyle set
 
+    idle_cape = {name="Nantosuelta's Cape", augments={'Pet: "Regen"+10','Pet: Damage taken -2%',}} -- Add DT
+    nuke_cape = {name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}}
+
     -- Basic sets
     sets.idle = {
         main       = "Malignance Pole",
@@ -18,14 +21,14 @@ function get_sets()
         left_ring  = "Defending Ring",
         right_ring = "Shneddick Ring",
         waist      = "Luminary Sash",
-        back       = "Solemnity Cape",
+        back       = nuke_cape, -- Until I add DT to the other one
     }
     sets.idle_with_pet = set_combine(sets.idle, {
         main      = "Solstice",
         sub       = "Genbu's Shield",
         right_ear = "Handler's Earring",
         feet      = "Bagua Sandals +2",
-        back      = "Nantosuelta's Cape",
+        back      = idle_cape,
     })
     sets.TP = {
         head       = "Nyame Helm",
@@ -101,7 +104,7 @@ function get_sets()
         right_ear  = "Dignitary's Earring",
         left_ring  = "Stikini Ring",
         right_ring = "Stikini Ring",
-        -- back       = "",
+        back       = nuke_cape,
         waist      = "Luminary Sash",
     }
     sets.midcast = {} -- Leave empty
@@ -122,7 +125,7 @@ function get_sets()
     sets.midcast["Elemental Magic"] = set_combine(sets.macc,{
         main       = "Daybreak",
         sub        = "Genbu's Shield",
-        ammo       = "Hydrocera",
+        ammo       = "Hydrocera", -- Get Pemphredo Tathlum
         head       = "Azimuth Hood +2",
         body       = "Azimuth Coat +2",
         hands      = "Azimuth Gloves +2",
@@ -134,7 +137,7 @@ function get_sets()
         left_ring  = "Jhakri Ring",
         right_ring = "Stikini Ring",
         waist      = "Refoccilation Stone",
-        -- back = "",
+        back       = nuke_cape,
     })
     sets.midcast["Enhancing Magic"] = {
         -- sub        = "Ammurapi Shield",     -- Enhancing duration +10%

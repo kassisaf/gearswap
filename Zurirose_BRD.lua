@@ -2,8 +2,8 @@ function get_sets()
     include('Zuri-Common.lua')
     job_init(1, 1, nil)  -- Macro book, macro page, lockstyle set
 
-    -- main={ name="Kali", augments={'DMG:+15','CHR+15','Mag. Acc.+15',}},
-    -- sub={ name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1',}},
+    kali_a = { name="Kali", augments={'DMG:+15','CHR+15','Mag. Acc.+15',}}
+    kali_c = { name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1',}}
 
     -- Basic sets
     sets.idle = {
@@ -16,14 +16,14 @@ function get_sets()
         legs       = "Fili Rhingrave +2",
         feet       = "Inyanga Crackows +2",
         neck       = "Loricate Torque +1",
-        waist      = "Sailfi Belt +1",
-        left_ear   = "Handler's Earring +1",
-        right_ear  = "Handler's Earring",
+        waist      = "Luminary Sash",
+        left_ear   = "Eabani Earring",
+        right_ear  = "Meili Earring",
         left_ring  = "Shneddick Ring",
         right_ring = "Defending Ring",
         back       = "Intarabus's Cape",
     }
-    sets.TP = {
+    sets.TP = set_combine(sets.idle,{
         main       = "Kaja Sword",
         sub        = "Genbu's Shield",
         head       = "Nyame Helm",
@@ -38,7 +38,7 @@ function get_sets()
         left_ring  = "Petrov Ring",
         right_ring = "Apate Ring",
         back       = "Agema Cape",
-    }
+    })
     sets.FC = {
         head       = "Welkin Crown",        -- Fast Cast +7%
         body       = "Inyanga Jubbah +2",   -- Fast Cast +14%
@@ -123,8 +123,9 @@ function get_sets()
     }
 
     sets.midcast["BuffSong"] = {
-        main       = { name="Kali", augments={'DMG:+15','CHR+15','Mag. Acc.+15',}},
+        main       = kali_a,
         sub        = "Genbu's Shield",
+        range      = "Gjallarhorn",
         head       = "Fili Calot +2",
         body       = "Fili Hongreline +2",
         hands      = "Fili Manchettes +2",
