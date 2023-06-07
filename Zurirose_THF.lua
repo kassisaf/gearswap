@@ -20,7 +20,7 @@ function get_sets()
     }
     sets.TP = {
         main       = "Kaja Knife",
-        sub        = "Shijo",
+        sub        = "Gleti's Knife",
         range      = empty,
         ammo       = "Focal Orb",
         head       = "Skulker's Bonnet +2",

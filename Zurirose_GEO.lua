@@ -80,7 +80,7 @@ function get_sets()
     }
     sets.precast.JA["Life Cycle"] = {
         body = "Geomancy Tunic +1",
-        back = "Nantosuelta's Cape",
+        back = nuke_cape,
     }
     sets.precast.JA["Mending Halation"] = {
         legs = "Bagua Pants +1",
