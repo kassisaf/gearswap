@@ -14,6 +14,8 @@ ENABLED_OR_DISABLED = { ["true"] = "enabled", ["false"] = "disabled" }
 
 lockables_set = to_set(lockables) -- from Zuri-Settings.lua
 
+kali_c = { name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1',}}
+
 ------------------------
 -- Modes and commands --
 ------------------------
@@ -100,10 +102,12 @@ end -- equip_idle_or_tp_set()
 function equip_idle_set()
     if modes["has_pet"] and sets.idle_with_pet then
         safe_equip(sets.idle_with_pet)
-    elseif string.find(world.zone, "Adoulin") and sets.idle.adoulin then
-        safe_equip(sets.idle, {body = "Councilor's Garb"})
     else
         safe_equip(sets.idle)
+    end
+    
+    if string.find(world.zone, "Adoulin") then
+        equip({body = "Councilor's Garb"})
     end
 end -- equip_idle_set()
 
@@ -126,7 +130,11 @@ function equip_base_song_set(spell)
     -- Safe to assume it's a debuff if we're targetting a monster, or lullaby in case of charmed party member
     if spell.target.type == "MONSTER" or string.find(spell.english, "Lullaby") then
         safe_equip(sets.midcast["DebuffSong"])
-    else
+    else -- Buff song
+        -- Equip second kali in offhand for duration if dual weild is available
+        if player.sub_job == "NIN" then
+            equip({sub = kali_c})
+        end
         safe_equip(sets.midcast["BuffSong"])
     end
 end
