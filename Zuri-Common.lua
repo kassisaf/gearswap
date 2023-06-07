@@ -121,6 +121,7 @@ function equip_base_song_set(spell)
     -- String for AoE sleeps
     if string.find(spell.english, "Horde Lullaby") then
         equip({range = instrument_lullaby})
+    end
 
     -- Safe to assume it's a debuff if we're targetting a monster, or lullaby in case of charmed party member
     if spell.target.type == "MONSTER" or string.find(spell.english, "Lullaby") then
