@@ -14,8 +14,6 @@ ENABLED_OR_DISABLED = { ["true"] = "enabled", ["false"] = "disabled" }
 
 lockables_set = to_set(lockables) -- from Zuri-Settings.lua
 
-kali_c = { name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1',}}
-
 ------------------------
 -- Modes and commands --
 ------------------------
@@ -131,10 +129,6 @@ function equip_base_song_set(spell)
     if spell.target.type == "MONSTER" or string.find(spell.english, "Lullaby") then
         safe_equip(sets.midcast["DebuffSong"])
     else -- Buff song
-        -- Equip second kali in offhand for duration if dual weild is available
-        if player.sub_job == "NIN" then
-            equip({sub = kali_c})
-        end
         safe_equip(sets.midcast["BuffSong"])
     end
 end

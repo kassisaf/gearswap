@@ -2,6 +2,9 @@ function get_sets()
     include('Zuri-Common.lua')
     job_init(1, 1, nil)  -- Macro book, macro page, lockstyle set
 
+    dual_wield_available = player.sub_job == "NIN" -- TODO check for DW trait
+
+    -- Gear aliases
     kali_a = { name="Kali", augments={'DMG:+15','CHR+15','Mag. Acc.+15',}}
     kali_c = { name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1',}}
 
@@ -39,6 +42,9 @@ function get_sets()
         right_ring = "Apate Ring",
         back       = "Agema Cape",
     })
+    if dual_wield_available then
+        sets.midcast["TP"]["sub"] = "Centovente"
+    end
     sets.FC = {
         head       = "Welkin Crown",        -- Fast Cast +7%
         body       = "Inyanga Jubbah +2",   -- Fast Cast +14%
@@ -130,7 +136,7 @@ function get_sets()
         body       = "Fili Hongreline +2",
         hands      = "Fili Manchettes +2",
         legs       = "Inyanga Shalwar +2",
-        feet       = "Brioso Slippers +2",
+        feet       = "Brioso Slippers +3",
         neck       = "Moonbow Whistle +1",
         -- waist      = "Flume Belt +1",
         left_ear   = "Hermetic Earring",
@@ -139,6 +145,11 @@ function get_sets()
         right_ring = "Stikini Ring",
         back       = "Intarabus's Cape",
     }
+    -- Equip second kali in offhand for more duration if dual wield is available
+    if dual_wield_available then
+        sets.midcast["BuffSong"]["sub"] = kali_c
+    end
+
     sets.midcast["DebuffSong"] = set_combine(sets.midcast["BuffSong"], {
         feet  = "Fili Cothurnes +2",
         waist = "Luminary Sash",
