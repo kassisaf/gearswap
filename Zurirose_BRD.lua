@@ -139,7 +139,7 @@ function get_sets()
         feet       = "Brioso Slippers +3",
         neck       = "Moonbow Whistle +1",
         -- waist      = "Flume Belt +1",
-        left_ear   = "Hermetic Earring",
+        left_ear   = "Dignitary's Earring",
         right_ear  = "Fili Earring",
         left_ring  = "Stikini Ring",
         right_ring = "Stikini Ring",
@@ -154,17 +154,37 @@ function get_sets()
         feet  = "Fili Cothurnes +2",
         waist = "Luminary Sash",
     })
-    -- No swaps needed for minuet, march, madrigal
+    -- No swaps needed for minuet, march
+    sets.midcast["Madrigal"] = {
+        feet = "Fili Cothurnes +2", -- Normalizes duration, extra DEX from set bonus
+    }
     sets.midcast["Paeon"] = {
-        feet = "Fili Cothurnes +2",
+        head = "Brioso Roundlet +2",
     }
     sets.midcast["Prelude"] = {
-        feet = "Fili Cothurnes +2",
+        feet = "Fili Cothurnes +2", -- Normalizes duration
     }
     sets.midcast["Sentinel's Scherzo"] = {
         feet = "Fili Cothurnes +2",
     }
-    sets.midcast["Lullaby"] = {
+    -- sets.midcast["Etude"] = {
+    --     head = "Mousai Turban +1",
+    -- }
+    -- sets.midcast["Threnody"] = {
+    --     body = "Mousai Manteel +1",
+    -- }
+    -- sets.midcast["Carol"] = {
+    --     hands = "Mousai Gages +1",
+    -- }
+    -- sets.midcast["Minne"] = {
+    --     legs = "Mousai Seraweels +1",
+    -- }
+    -- sets.midcast["Mambo"] = {
+    --     feet = "Mousai Crackows +1",
+    -- }
+    sets.midcast["Horde Lullaby II"] = {
+        -- 486 string skill required for 6 yalm radius
+        -- 648 string skill required for 7 yalm radius
         range      = "Blurred Harp +1",
         -- sub        = "Ammurapi Shield",
         -- head       = "Brioso Roundlet +3",  -- String +13
@@ -180,6 +200,10 @@ function get_sets()
         -- waist      = "Harfner's Sash",      -- Combined +10
         -- back       = "Erato's Cape",        -- String +4
     }
+    sets.midcast["Lullaby"] = set_combine(sets.midcast["Horde Lullaby II"], {
+        body  = "Fili Hongreline +2",
+        hands = "Brioso Cuffs +2",
+    })
 
     sets.midcast["Cure"] = {
         main       = "Daybreak",

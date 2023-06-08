@@ -29,6 +29,12 @@ function get_sets()
         right_ear = "Handler's Earring",
         feet      = "Bagua Sandals +2",
         back      = idle_cape,
+
+        -- Telchine augs: pet DT -4%, pet regen +3
+        -- head  = "Telchine Cap",
+        -- legs  = "Telchine Braconi",
+        -- feet  = "Bagua Sandals +3",
+        -- waist = "Isa Belt"
     })
     sets.TP = {
         head       = "Nyame Helm",
@@ -83,7 +89,7 @@ function get_sets()
         back = nuke_cape,
     }
     sets.precast.JA["Mending Halation"] = {
-        legs = "Bagua Pants +1",
+        legs = "Bagua Pants +2",
     }
     sets.precast.JA["Cardinal Chant"] = {
         head = "Geomancy Galero +1",
@@ -109,18 +115,21 @@ function get_sets()
     }
     sets.midcast = {} -- Leave empty
     sets.midcast["Geomancy"] = {
-        main       = "Solstice",             -- Handbell skill +5
+        main       = "Solstice",
         sub        = "Genbu's Shield",
         range      = "Dunna",
-        head       = "Azimuth Hood +2",      -- Geomancy skill +20
-        body       = "Bagua Tunic +3",       -- Geomancy skill +16
-        hands      = "Geomancy Mitaines +3", -- Geomancy skill +17
-        legs       = "Bagua Pants +1",       -- Geomancy skill +15
-        feet       = "Azimuth Gaiters +2",   -- Indi duration +25
-        neck       = "Bagua Charm +1",       -- Geomancy +6
-        left_ring  = "Stikini Ring",         -- Combined skill +10
-        right_ring = "Stikini Ring",         -- Combined skill +10
-        back       = "Lifestream Cape",      -- Geomancy skill +10
+        head       = "Azimuth Hood +2",
+        body       = "Bagua Tunic +3",
+        hands      = "Geomancy Mitaines +3",
+        legs       = "Bagua Pants +2",
+        feet       = "Azimuth Gaiters +2",
+        neck       = "Bagua Charm +1",
+        left_ring  = "Stikini Ring",
+        right_ring = "Stikini Ring",
+        left_ear   = "Handler's Earring +1",
+        right_ear  = "Handler's Earring",
+        back       = "Lifestream Cape",
+        waist      = "Luminary Sash",        -- Get Isa Belt
     }
     sets.midcast["Elemental Magic"] = set_combine(sets.macc,{
         main       = "Daybreak",
