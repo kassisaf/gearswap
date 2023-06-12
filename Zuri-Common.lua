@@ -174,7 +174,6 @@ function midcast(spell)
     -- Then equip base set for spell type
     if spell.type == "BardSong" then
         equip_base_song_set(spell)
-        equip_instrument(spell)
     elseif sets.midcast[spell.skill] then
         safe_equip(sets.midcast[spell.skill])
     elseif sets.midcast[spell.type] then
@@ -189,6 +188,11 @@ function midcast(spell)
         safe_equip(sets.midcast[spell_maps[spell.english]])
     end
     -- add_to_chat(122, "midcast() for " .. spell.english .. " (skill: " .. spell.skill .. ")")
+
+    -- Equip the appropriate instrument last
+    if spell.type == "BardSong" then
+        equip_instrument(spell)
+    end
 end -- midcast()
 
 function aftercast(spell)
