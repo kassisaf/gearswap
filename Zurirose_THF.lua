@@ -19,7 +19,7 @@ function get_sets()
         back       = "Toutatis's Cape",
     }
     sets.TP = {
-        main       = "Aenas",
+        main       = "Aeneas",
         sub        = "Gleti's Knife",
         range      = empty,
         ammo       = "Focal Orb",
