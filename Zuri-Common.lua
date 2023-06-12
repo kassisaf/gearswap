@@ -23,6 +23,7 @@ local modes = {
     TH = false,
     weapon_lock = false,
     has_pet = false,
+    dummy_songs = false,
     -- skillup = false,  -- TODO: Implement skillup mode
 }
 
@@ -118,14 +119,6 @@ function equip_tp_set()
 end -- equip_tp()
 
 function equip_base_song_set(spell)
-    -- Dummy instruments are handled by lockables, just add them to the settings lua
-
-    -- String for AoE sleeps
-    if string.find(spell.english, "Horde Lullaby") then
-        equip({range = instrument_lullaby})
-    end
-
-    -- Safe to assume it's a debuff if we're targetting a monster, or lullaby in case of charmed party member
     if spell.target.type == "MONSTER" or string.find(spell.english, "Lullaby") then
         safe_equip(sets.midcast["DebuffSong"])
     else -- Buff song
@@ -133,6 +126,18 @@ function equip_base_song_set(spell)
     end
 end
 
+function equip_instrument(spell)
+    if string.find(spell.english, "Horde Lullaby II") then
+        instrument_to_equip = instrument_lullaby_h2
+    elseif string.find(spell.english, "Lullaby") then
+        instrument_to_equip = instrument_lullaby
+    elseif modes["dummy_songs"] then
+        instrument_to_equip = instrument_dummy
+    else
+        instrument_to_equip = instrument_general
+    end
+    equip({range = instrument_to_equip, ammo = empty})
+end
 
 -----------------------------
 -- Standard Gearswap Hooks --
@@ -169,6 +174,7 @@ function midcast(spell)
     -- Then equip base set for spell type
     if spell.type == "BardSong" then
         equip_base_song_set(spell)
+        equip_instrument(spell)
     elseif sets.midcast[spell.skill] then
         safe_equip(sets.midcast[spell.skill])
     elseif sets.midcast[spell.type] then
@@ -223,6 +229,8 @@ function self_command(command)
     elseif command == "th" then
         toggle_mode("TH")
         equip_idle_or_tp_set()
+    elseif command == "dummy" then
+        toggle_mode("dummy_songs")
     elseif command == "melee" then
         toggle_mode("weapon_lock")
     end

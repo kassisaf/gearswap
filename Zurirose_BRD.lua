@@ -1,22 +1,41 @@
 function get_sets()
     include('Zuri-Common.lua')
-    job_init(1, 1, nil)  -- Macro book, macro page, lockstyle set
+    job_init(1, 1, 16)  -- Macro book, macro page, lockstyle set
 
     dual_wield_available = player.sub_job == "NIN" -- TODO check for DW trait
 
     -- Gear aliases
-    kali_a = { name="Kali", augments={'DMG:+15','CHR+15','Mag. Acc.+15',}}
-    kali_c = { name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1',}}
+    instrument_general    = "Gjallarhorn"
+    instrument_lullaby    = "Gjallarhorn"     -- All lullaby not Horde II. Replace with Marsyas
+    instrument_lullaby_h2 = "Blurred Harp +1" -- Horde II only. Replace with Daurdabla
+    instrument_dummy      = "Blurred Harp +1" -- Replace with Daurdabla
+    kali_a                = { name="Kali", augments={'DMG:+15','CHR+15','Mag. Acc.+15',}}
+    kali_c                = { name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1',}}
+    af_head               = "Brioso Roundlet +2"
+    af_body               = "Brioso Justaucorps +2"
+    af_hands              = "Brioso Cuffs +2"
+    af_legs               = "Brioso Cannions +2"
+    af_feet               = "Brioso Slippers +3"
+    relic_head            = "Bihu Roundlet"
+    relic_body            = "Bihu Justaucorps +3"
+    relic_hands           = "Bihu Cuffs"
+    relic_legs            = "Bihu Cannions"
+    relic_feet            = "Bihu Slippers +2"
+    empy_head             = "Fili Calot +2"
+    empy_body             = "Fili Hongreline +2"
+    empy_hands            = "Fili Manchettes +2"
+    empy_legs             = "Fili Rhingrave +2"
+    empy_feet             = "Fili Cothurnes +2"
 
     -- Basic sets
     sets.idle = {
         main       = "Sangoma",
         sub        = "Genbu's Shield",
         range      = "Gjallarhorn",
-        head       = "Fili Calot +2",
+        head       = empy_head,
         body       = "Inyanga Jubbah +2",
-        hands      = "Fili Manchettes +2",
-        legs       = "Fili Rhingrave +2",
+        hands      = empy_hands,
+        legs       = empy_legs,
         feet       = "Inyanga Crackows +2",
         neck       = "Loricate Torque +1",
         waist      = "Luminary Sash",
@@ -50,7 +69,7 @@ function get_sets()
         body       = "Inyanga Jubbah +2",   -- Fast Cast +14%
         hands      = "Inyan. Dastanas +2",
         legs       = "Ayanmo Cosciales +2", -- Fast Cast +6%
-        feet       = "Fili Cothurnes +2",   -- Fast Cast +10%
+        feet       = empy_feet,             -- Fast Cast +10%
         waist      = "Channeler's Stone",   -- Fast Cast +2%
         left_ear   = "Malignance Earring",  -- Fast Cast +4%
         right_ear  = "Loquacious Earring",  -- Fast Cast +2%
@@ -67,7 +86,7 @@ function get_sets()
     sets.precast.WS = {} -- Leave empty
     sets.precast.WS.base = {
         -- ammo       = "Yetshila",
-        body       = "Bihu Justaucorps +3",
+        body       = relic_body,
         neck       = "Fotia Gorget",
         left_ear   = "Ishvara Earring",
         right_ear  = "Moonshade Earring",
@@ -86,13 +105,13 @@ function get_sets()
     -- Job ability sets
     sets.precast.JA = {}  -- Leave empty
     sets.precast.JA["Soul Voice"] = {
-        legs = "Bihu Cannions" -- Soul Voice duration +30s
+        legs = relic_legs -- Soul Voice duration +30s
     }
     sets.precast.JA["Nightingale"] = {
-        feet = "Bihu Slippers +2" -- Nightingale duration +20s (with full merits)
+        feet = relic_feet -- Nightingale duration +20s (with full merits)
     }
     sets.precast.JA["Troubador"] = {
-        body = "Bihu Justaucorps +3" -- Troubador duration +20s (with full merits)
+        body = relic_body -- Troubador duration +20s (with full merits)
     }
 
     -- Midcast sets
@@ -132,11 +151,11 @@ function get_sets()
         main       = kali_a,
         sub        = "Genbu's Shield",
         range      = "Gjallarhorn",
-        head       = "Fili Calot +2",
-        body       = "Fili Hongreline +2",
-        hands      = "Fili Manchettes +2",
+        head       = empy_head,
+        body       = empy_body,
+        hands      = empy_hands,
         legs       = "Inyanga Shalwar +2",
-        feet       = "Brioso Slippers +3",
+        feet       = af_feet,
         neck       = "Moonbow Whistle +1",
         -- waist      = "Flume Belt +1",
         left_ear   = "Dignitary's Earring",
@@ -151,21 +170,21 @@ function get_sets()
     end
 
     sets.midcast["DebuffSong"] = set_combine(sets.midcast["BuffSong"], {
-        feet  = "Fili Cothurnes +2",
+        feet  = empy_feet,
         waist = "Luminary Sash",
     })
     -- No swaps needed for minuet, march
     sets.midcast["Madrigal"] = {
-        feet = "Fili Cothurnes +2", -- Normalizes duration, extra DEX from set bonus
+        feet = empy_feet, -- Normalizes duration, extra DEX from set bonus
     }
     sets.midcast["Paeon"] = {
         head = "Brioso Roundlet +2",
     }
     sets.midcast["Prelude"] = {
-        feet = "Fili Cothurnes +2", -- Normalizes duration
+        feet = empy_feet, -- Normalizes duration
     }
     sets.midcast["Sentinel's Scherzo"] = {
-        feet = "Fili Cothurnes +2",
+        feet = empy_feet,
     }
     -- sets.midcast["Etude"] = {
     --     head = "Mousai Turban +1",
@@ -182,10 +201,21 @@ function get_sets()
     -- sets.midcast["Mambo"] = {
     --     feet = "Mousai Crackows +1",
     -- }
-    sets.midcast["Horde Lullaby II"] = {
+    sets.midcast["Lullaby"] = set_combine(sets.midcast["DebuffSong"], {
+        -- Carnwenhan (Level 119 III)
+        -- Ammurapi Shield
+        -- Marsyas
+        head  = af_head,
+        body  = empy_body,
+        hands = af_hands,
+        legs  = "Inyanga Shalwar +2",
+        feet  = af_feet,
+        -- waist = "Acuity Belt +1", -- Need to RP this
+    })
+
+    sets.midcast["Horde Lullaby II"] = set_combine(sets.midcast["Lullaby"], {
         -- 486 string skill required for 6 yalm radius
         -- 648 string skill required for 7 yalm radius
-        range      = "Blurred Harp +1",
         -- sub        = "Ammurapi Shield",
         -- head       = "Brioso Roundlet +3",  -- String +13
         -- body       = "Brioso Justau. +3",   -- String +14
@@ -199,10 +229,8 @@ function get_sets()
         -- right_ring = "Stikini Ring + 1",    -- Combined +16
         -- waist      = "Harfner's Sash",      -- Combined +10
         -- back       = "Erato's Cape",        -- String +4
-    }
-    sets.midcast["Lullaby"] = set_combine(sets.midcast["Horde Lullaby II"], {
-        body  = "Fili Hongreline +2",
-        hands = "Brioso Cuffs +2",
+        body  = relic_body,
+        hands = empy_hands,
     })
 
     sets.midcast["Cure"] = {

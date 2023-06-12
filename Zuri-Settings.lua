@@ -1,11 +1,9 @@
 -- Any items defined here will be locked when equipped manually
 lockables = {
-    -- "Daurdabla",
-    "Blurred Harp +1",
     "Warp Ring",
     "Dim. Ring (Mea)",
-    -- "Dim. Ring (Holla)",
-    -- "Dim. Ring (Dem)",
+    "Dim. Ring (Holla)",
+    "Dim. Ring (Dem)",
     "Endorsement Ring",
     "Trizek Ring",
     "Emporox's Ring",
@@ -17,5 +15,3 @@ lockables = {
     "Warp Cudgel",
     "Nexus Cape",
 }
-instrument_general = "Gjallarhorn"
-instrument_lullaby = "Blurred Harp +1"
