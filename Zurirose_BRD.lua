@@ -2,6 +2,11 @@ function get_sets()
     include('Zuri-Common.lua')
     job_init(1, 1, 16)  -- Macro book, macro page, lockstyle set
 
+    -- Usage notes:
+    -- Create the following macro to toggle dummy modes: /console gs c dummy
+    -- When enabled, your +songs instrument defined below in `instrument_dummy` will be equipped in midcast
+    -- When disabled, normal instrument logic applies
+
     dual_wield_available = player.sub_job == "NIN" -- TODO check for DW trait
 
     -- Gear aliases
