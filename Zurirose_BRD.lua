@@ -16,7 +16,7 @@ function get_sets()
     instrument_dummy      = "Blurred Harp +1" -- Replace with Daurdabla
     kali_a                = { name="Kali", augments={'DMG:+15','CHR+15','Mag. Acc.+15',}}
     kali_c                = { name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1',}}
-    af_head               = "Brioso Roundlet +2"
+    af_head               = "Brioso Roundlet +3"
     af_body               = "Brioso Justaucorps +2"
     af_hands              = "Brioso Cuffs +2"
     af_legs               = "Brioso Cannions +2"
@@ -67,7 +67,7 @@ function get_sets()
         back       = "Agema Cape",
     })
     if dual_wield_available then
-        sets.midcast["TP"]["sub"] = "Centovente"
+        sets.TP["sub"] = "Centovente"
     end
     sets.FC = {
         head       = "Welkin Crown",        -- Fast Cast +7%
