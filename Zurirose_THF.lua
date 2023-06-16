@@ -44,11 +44,18 @@ function get_sets()
     sets.precast.RA = {
         range      = "Jinx Discus",
         ammo       = empty,
-        head       = "Meghanada Visor",
-        body       = "Pursuer's Doublet",
-        left_ear   = "Odr Earring",
-        left_ring  = "Behemoth Ring",
-        right_ring = "Behemoth Ring",
+
+        body       = "Meghanada Cuirie +2",
+        hands      = "Meghanada Gloves +2",
+        legs       = "Meghanada Chausses +2",
+        feet       = "Malignance Boots",
+        back       = "Sokolski Mantle",
+        neck       = "Caro Necklace",
+        waist      = "Eschan Stone",
+        left_ring  = "Mummu Ring",
+        right_ring = "Meghanada Ring",
+        left_ear   = "Ethereal Earring",
+        right_ear  = "Odr Earring",
     }
 
     -- Weaponskill sets
