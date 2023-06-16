@@ -1,6 +1,11 @@
 include('Mote-Mappings.lua')
 include('Zuri-Settings.lua')
 
+
+----------------------
+-- Helper functions --
+----------------------
+
 -- Generic table to set converter (equivalent to S{} in other Gearswap libs)
 function to_set(t)
     set = {}
@@ -9,6 +14,14 @@ function to_set(t)
     end
     return set
 end
+
+function ends_with(str, ending)
+    return ending == "" or str:sub(-#ending) == ending
+end
+
+---------------------
+-- Misc. variables --
+---------------------
 
 ENABLED_OR_DISABLED = { ["true"] = "enabled", ["false"] = "disabled" }
 
@@ -139,11 +152,23 @@ function equip_instrument(spell)
     equip({range = instrument_to_equip, ammo = empty})
 end
 
+function equip_roll_set(spell)
+    -- Equip generic roll set first
+    safe_equip(sets.precast.JA["Phantom Roll"])
+    -- Add in set for specific roll if it exists
+    if sets.precast.JA[spell.english] then
+        safe_equip(sets.precast.JA[spell.english])
+    end
+end
+
 -----------------------------
 -- Standard Gearswap Hooks --
 -----------------------------
 
 function precast(spell, position)
+    -- Uncomment for debugging only
+    -- send_command('input /echo type: ' .. spell.type .. ', action_type:' .. spell.action_type)
+
     -- Use WS-specific set if it exists, or fall back to generic WS set
     if spell.type == "WeaponSkill" then
         if sets.precast.WS[spell.english] then
@@ -152,9 +177,11 @@ function precast(spell, position)
             safe_equip(sets.precast.WS.base)
         end
     -- Use JA-specific set if it exists
+    elseif player.main_job == "COR" and ends_with(spell.english, "Roll") then
+        equip_roll_set(spell)
     elseif spell.type == "JobAbility" and sets.precast.JA[spell.english] then
         safe_equip(sets.precast.JA[spell.english])
-    elseif spell.type == "Ranged Attack" then
+    elseif spell.action_type == "Ranged Attack" then
         safe_equip(sets.precast.RA)
     -- Use spell-specific precast set if it exists
     elseif sets.precast[spell.english] then
@@ -179,7 +206,6 @@ function midcast(spell)
     elseif sets.midcast[spell.type] then
         safe_equip(sets.midcast[spell.type])
     end
-
     -- Then, if we have spell-specific gear, equip that last
     -- Look for exact matches first, then try the tiered spell map (i.e. sets.midcast["Fire IV"] and then sets.midcast.Fire)
     if sets.midcast[spell.english] then
