@@ -1,5 +1,5 @@
 -- Modified version of Mote's map file
--- For now, all we care about is the map for tiered spells
+-- For now, all we care about is the map for tiered spells and ranged weaponskill set
 
 spell_maps = {
     ['Cure']='Cure',['Cure II']='Cure',['Cure III']='Cure',['Cure IV']='Cure',['Cure V']='Cure',['Cure VI']='Cure',
@@ -68,3 +68,9 @@ spell_maps = {
     ['Fira II']='GeoElem',['Blizzara II']='GeoElem',['Aerora II']='GeoElem',['Stonera II']='GeoElem',['Thundara II']='GeoElem',['Watera II']='GeoElem',
     ['Fira III']='GeoElem',['Blizzara III']='GeoElem',['Aerora III']='GeoElem',['Stonera III']='GeoElem',['Thundara III']='GeoElem',['Watera III']='GeoElem',
 }
+
+ranged_weaponskills = S{"Flaming Arrow", "Piercing Arrow", "Dulling Arrow", "Sidewinder", "Arching Arrow",
+    "Empyreal Arrow", "Refulgent Arrow", "Apex Arrow", "Namas Arrow", "Jishnu's Radiance",
+    "Hot Shot", "Split Shot", "Sniper Shot", "Slug Shot", "Heavy Shot", "Detonator", "Last Stand",
+    "Coronach", "Trueflight", "Leaden Salute", "Wildfire",
+    "Myrkr"}

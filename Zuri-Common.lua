@@ -169,13 +169,13 @@ function precast(spell, position)
     -- Uncomment for debugging only
     -- send_command('input /echo spell.english:' .. spell.english .. ', type: ' .. spell.type .. ', action_type:' .. spell.action_type)
 
-
-    -- Use WS-specific set if it exists, or fall back to generic WS set
+    -- Use WS-specific set if it exists, or fall back to generic ranged or melee WS set
     if spell.type == "WeaponSkill" then
         if sets.precast.WS[spell.english] then
             safe_equip(sets.precast.WS[spell.english])
+        elseif ranged_weaponskills[spell.english] then
+            safe_equip(sets.precast.WS.ranged)
         else
-            -- TODO: switch to preshot for ranged WS
             safe_equip(sets.precast.WS.melee)
         end
     -- Use JA-specific set if it exists

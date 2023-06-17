@@ -88,13 +88,9 @@ function get_sets()
         right_ear = "Ishvara Earring",
         left_ring = "Rufescent Ring",
     })
-    sets.precast.WS["Hot Shot"]      = sets.precast.WS.ranged
-    sets.precast.WS["Split Shot"]    = sets.precast.WS.ranged
-    sets.precast.WS["Sniper Shot"]   = sets.precast.WS.ranged
-    sets.precast.WS["Slug Shot"]     = sets.precast.WS.ranged
-    sets.precast.WS["Numbing Shot"]  = sets.precast.WS.ranged
-    sets.precast.WS["Leaden Salute"] = sets.precast.WS.ranged
-    sets.precast.WS["Last Stand"]    = sets.precast.WS.ranged
+    -- sets.precast.WS["Leaden Salute"] = sets.precast.WS.ranged
+    -- sets.precast.WS["Last Stand"]    = sets.precast.WS.ranged
+    -- sets.precast.WS["Wildfire"]      = sets.precast.WS.ranged
 
     -- Job ability sets
     sets.precast.JA["Phantom Roll"] = {
