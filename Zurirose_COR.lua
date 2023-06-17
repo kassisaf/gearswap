@@ -1,6 +1,6 @@
 function get_sets()
     include('Zuri-Common.lua')
-    -- job_init(2, 2, 17)  -- Macro book, macro page, lockstyle set
+    job_init(2, 9, 15)  -- Macro book, macro page, lockstyle set
 
     -- Basic sets
     sets.idle = {
@@ -22,9 +22,9 @@ function get_sets()
         sub        = "Gleti's Knife",
         range      = "Anarchy",
         ammo       = "Bronze Bullet",
-        
-        head       = "Meghanada Visor",
-        body       = "Meghanada Cuirie +2",
+
+        head       = "Adhemar Bonnet",
+        body       = "Adhemar Jacket",
         hands      = "Meghanada Gloves +2",
         legs       = "Meghanada Chausses +2",
         feet       = "Malignance Boots",
@@ -52,7 +52,7 @@ function get_sets()
         waist      = "Eschan Stone",
         left_ring  = "Mummu Ring",
         right_ring = "Meghanada Ring",
-        left_ear   = "Ethereal Earring",
+        left_ear   = "Telos Earring",
         right_ear  = "Odr Earring",
     }
 
@@ -84,7 +84,7 @@ function get_sets()
     sets.precast.JA = {}  -- Leave empty
     sets.precast.JA["Phantom Roll"] = {
         left_ring  = "Barataria Ring",
-        -- right_ring = "Luzaf's Ring",
+        right_ring = "Luzaf's Ring",
     }
 
     -- Use TH for targeted JA's

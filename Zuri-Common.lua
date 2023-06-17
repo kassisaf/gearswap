@@ -167,7 +167,7 @@ end
 
 function precast(spell, position)
     -- Uncomment for debugging only
-    -- send_command('input /echo type: ' .. spell.type .. ', action_type:' .. spell.action_type)
+    send_command('input /echo spell.english:' .. spell.english .. ', type: ' .. spell.type .. ', action_type:' .. spell.action_type)
 
     -- Use WS-specific set if it exists, or fall back to generic WS set
     if spell.type == "WeaponSkill" then
@@ -177,7 +177,7 @@ function precast(spell, position)
             safe_equip(sets.precast.WS.base)
         end
     -- Use JA-specific set if it exists
-    elseif player.main_job == "COR" and ends_with(spell.english, "Roll") then
+    elseif player.main_job == "COR" and (spell.english == "Double-Up" or spell.type == "CorsairRoll") then
         equip_roll_set(spell)
     elseif spell.type == "JobAbility" and sets.precast.JA[spell.english] then
         safe_equip(sets.precast.JA[spell.english])
@@ -194,7 +194,7 @@ end -- precast()
 
 function midcast(spell)
     -- Transition from precast to idle unless action is WS or JA
-    if spell.type ~= "WeaponSkill" and spell.type ~= "JobAbility" then
+    if spell.action_type == "Magic" then
         equip_idle_or_tp_set()
     end
 
