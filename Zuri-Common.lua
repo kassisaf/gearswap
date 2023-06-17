@@ -167,7 +167,9 @@ end
 
 function precast(spell, position)
     -- Uncomment for debugging only
-    send_command('input /echo spell.english:' .. spell.english .. ', type: ' .. spell.type .. ', action_type:' .. spell.action_type)
+    -- send_command('input /echo spell.english:' .. spell.english .. ', type: ' .. spell.type .. ', action_type:' .. spell.action_type)
+
+    -- TODO: switch to preshot for ranged WS?
 
     -- Use WS-specific set if it exists, or fall back to generic WS set
     if spell.type == "WeaponSkill" then
@@ -193,6 +195,11 @@ function precast(spell, position)
 end -- precast()
 
 function midcast(spell)
+    if spell.action_type == "Ranged Attack" then
+        safe_equip(sets.midcast.RA)
+        return
+    end
+
     -- Transition from precast to idle unless action is WS or JA
     if spell.action_type == "Magic" then
         equip_idle_or_tp_set()

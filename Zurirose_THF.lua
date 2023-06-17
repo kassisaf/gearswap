@@ -126,8 +126,8 @@ function get_sets()
         legs  = "Assassin's Culottes", -- Steal +5
         feet  = "Rogue's Poulaines",   -- Steal +2
     })
-    sets.precast.JA["Box Step"] = sets.th
-    sets.precast.JA["Quick Step"] = sets.th
+    sets.precast.JA["Box Step"]   = sets.TH
+    sets.precast.JA["Quick Step"] = sets.TH
     
     -- Midcast sets
     sets.midcast = {} -- Leave empty

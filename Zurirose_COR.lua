@@ -1,6 +1,12 @@
 function get_sets()
     include('Zuri-Common.lua')
-    job_init(2, 9, 15)  -- Macro book, macro page, lockstyle set
+    job_init(2, 9, 15)   -- Macro book, macro page, lockstyle set
+
+    -- Leave these empty
+    sets.precast    = {} 
+    sets.precast.WS = {}
+    sets.precast.JA = {}
+    sets.midcast    = {}
 
     -- Basic sets
     sets.idle = {
@@ -20,29 +26,31 @@ function get_sets()
     sets.TP = {
         main       = "Kaja Knife",
         sub        = "Gleti's Knife",
-        range      = "Anarchy",
+        range      = "Compensator",
         ammo       = "Bronze Bullet",
 
         head       = "Adhemar Bonnet",
         body       = "Adhemar Jacket",
-        hands      = "Meghanada Gloves +2",
+        hands      = "Malignance Gloves",
         legs       = "Meghanada Chausses +2",
         feet       = "Malignance Boots",
         neck       = "Subtlety Spectacles",
         waist      = "Sailfi Belt +1",
-        left_ear   = "Eabani Earring",
-        right_ear  = "Odr Earring",
+        left_ear   = "Telos Earring",
+        right_ear  = "Eabani Earring",
         left_ring  = "Mummu Ring",
         right_ring = "Meghanada Ring",
         back       = "Sokolski Mantle",
     }
     sets.FC = {}
 
-    -- Precast sets
-    sets.precast = {}  -- Leave empty
+    -- Preshot should contain: Snapshot, Rapid Shot
     sets.precast.RA = {
-        ammo       = "Anarchy",
-        head       = "Meghanada Visor",
+        ammo       = "Bronze Bullet",
+    }
+    -- Midshot should contain: R.acc, STP, crit, R.atk, Recycle, etc.
+    sets.midcast.RA = {
+        head       = "Meghanada Visor +2",
         body       = "Meghanada Cuirie +2",
         hands      = "Meghanada Gloves +2",
         legs       = "Meghanada Chausses +2",
@@ -56,57 +64,54 @@ function get_sets()
         right_ear  = "Odr Earring",
     }
 
+    -- Precast sets
+
     -- Weaponskill sets
-    sets.precast.WS = {} -- Leave Empty
     sets.precast.WS.base = {
-        -- ammo       = "Yetshila",
-        -- head       = "Skulker's Bonnet +2",
-        -- -- body       = "Meghanada Cuirie +2",
-        -- body       = "Skulker's Vest +2",
-        -- hands      = "Meghanada Gloves +2",
-        -- legs       = "Meghanada Chausses +2",
-        -- feet       = "Skulker's Poulaines +2",
-        -- neck       = "Caro Necklace",
-        -- waist      = "Grunfeld Rope",
-        -- left_ear   = "Moonshade Earring",
-        -- right_ear  = "Odr Earring",
-        -- -- left_ring  = "Ilabrat Ring",
-        -- -- right_ring = "Regal Ring",
-        -- left_ring  = "Apate Ring",
-        -- right_ring = "Rufescent Ring",
-        -- back       = "Toutatis's Cape",
+        hands     = "Meghanada Gloves +2",
+        left_ear  = "Moonshade Earring",
+        right_ear = "Odr Earring",
     }
-    sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.base,{
-        right_ear = "Ishvara Earring",
+    sets.precast.WS.ranged = set_combine(sets.midcast.RA, {
+        head      = "Meghanada Visor +2",
+        body      = "Meghanada Cuirie +2",
+        hands     = "Meghanada Gloves +2",
+        legs      = "Malignance Tights",
+        feet      = "Malignance Boots",
+        left_ear  = "Moonshade Earring",
+        right_ear = "Telos Earring",
+        right_ear = "Telos Earring",
+        left_ring = "Apate Ring",
     })
 
+    sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.base, {
+        right_ear = "Ishvara Earring",
+        left_ring = "Rufescent Ring",
+    })
+    sets.precast.WS["Hot Shot"]      = sets.precast.WS.ranged
+    sets.precast.WS["Split Shot"]    = sets.precast.WS.ranged
+    sets.precast.WS["Sniper Shot"]   = sets.precast.WS.ranged
+    sets.precast.WS["Slug Shot"]     = sets.precast.WS.ranged
+    sets.precast.WS["Numbing Shot"]  = sets.precast.WS.ranged
+    sets.precast.WS["Leaden Salute"] = sets.precast.WS.ranged
+    sets.precast.WS["Last Stand"]    = sets.precast.WS.ranged
+
     -- Job ability sets
-    sets.precast.JA = {}  -- Leave empty
     sets.precast.JA["Phantom Roll"] = {
         left_ring  = "Barataria Ring",
         right_ring = "Luzaf's Ring",
     }
 
     -- Use TH for targeted JA's
-    sets.precast.JA["Box Step"] = sets.th
-    sets.precast.JA["Quick Step"] = sets.th
-    
-    -- Midcast sets
-    sets.midcast = {} -- Leave empty
+    sets.precast.JA["Box Step"]   = sets.TH
+    sets.precast.JA["Quick Step"] = sets.TH
 
     -- Other sets
     sets.TH = {
-        ammo  = "Perfect Lucky Egg",
+        ammo = "Perfect Lucky Egg",
     }
-    -- Maximize crit rate for Domain Invasion
     sets.DI = set_combine(sets.TP, {
-        -- main       = "Voluspa Knife",
-        -- sub        = "Shijo",
-        -- ammo       = "Yetshila",
-        -- hands      = "Mummu Wrists +2",
-        -- left_ear   = "Odr Earring",
-        -- left_ring  = "Mummu Ring",
-        -- right_ring = "Meghanada Ring",
+        -- Maximize crit rate and multi-attack for Domain Invasion
     })
     sets.doomed = {
         left_ring  = "Blenmot's Ring +1",
