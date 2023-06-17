@@ -67,7 +67,7 @@ function get_sets()
     -- Precast sets
 
     -- Weaponskill sets
-    sets.precast.WS.base = {
+    sets.precast.WS.melee = {
         hands     = "Meghanada Gloves +2",
         left_ear  = "Moonshade Earring",
         right_ear = "Odr Earring",
@@ -84,7 +84,7 @@ function get_sets()
         left_ring = "Apate Ring",
     })
 
-    sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.base, {
+    sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
         right_ear = "Ishvara Earring",
         left_ring = "Rufescent Ring",
     })

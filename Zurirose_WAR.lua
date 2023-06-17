@@ -48,7 +48,7 @@ function get_sets()
 
     -- Weaponskill sets
     sets.precast.WS = {} -- Leave Empty
-    sets.precast.WS.base = {
+    sets.precast.WS.melee = {
         -- ammo       = "Yetshila",
         -- head       = "Skulker's Bonnet +2",
         -- body       = "Meghanada Cuirie +2",
@@ -66,8 +66,8 @@ function get_sets()
         right_ring = "Rufescent Ring",
         back       = "Phalangite Mantle",
     }
---     sets.precast.WS["Rudra's Storm"] = sets.precast.WS.base
---     sets.precast.WS["Evisceration"] = set_combine(sets.precast.WS.base,{
+--     sets.precast.WS["Rudra's Storm"] = sets.precast.WS.melee
+--     sets.precast.WS["Evisceration"] = set_combine(sets.precast.WS.melee,{
 --         ammo      = "Yetshila",
 --         hands     = "Adhemar Wristbands +1",
 --         feet      = "Adhemar Gamashes +1",
@@ -76,7 +76,7 @@ function get_sets()
 --         left_ring = "Mummu Ring",
 --     })
 --     sets.precast.WS["Dancing Edge"] = sets.precast.WS["Evisceration"]
---     sets.precast.WS["Aeolian Edge"] = set_combine(sets.precast.WS.base,{
+--     sets.precast.WS["Aeolian Edge"] = set_combine(sets.precast.WS.melee,{
 --         ammo       = "Hydrocera",
 --         legs       = "Limbo Trousers",
 --         neck       = "Deviant Necklace",
@@ -85,7 +85,7 @@ function get_sets()
 --         left_ring  = "Stikini Ring",
 --         right_ring = "Stikini Ring",
 --     })
---     sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.base,{
+--     sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee,{
 --         right_ear = "Ishvara Earring",
 --     })
 

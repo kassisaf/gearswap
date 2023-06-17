@@ -68,7 +68,7 @@ function get_sets()
 
     -- Weaponskill sets
     sets.precast.WS = {} -- Leave empty
-    sets.precast.WS.base = {
+    sets.precast.WS.melee = {
         neck  = "Fotia Gorget",
         waist = "Fotia Belt",
     }

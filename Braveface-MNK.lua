@@ -28,10 +28,10 @@ function get_sets()
 
     -- Weaponskill sets
     sets.precast.WS = {} -- Leave Empty
-    sets.precast.WS.base = {
+    sets.precast.WS.melee = {
     }
-    -- sets.precast.WS["Rudra's Storm"] = sets.precast.WS.base
-    -- sets.precast.WS["Evisceration"] = set_combine(sets.precast.WS.base,{
+    -- sets.precast.WS["Rudra's Storm"] = sets.precast.WS.melee
+    -- sets.precast.WS["Evisceration"] = set_combine(sets.precast.WS.melee,{
     -- })
 
     -- Job ability sets

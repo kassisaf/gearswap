@@ -89,7 +89,7 @@ function get_sets()
 
     -- Weaponskill sets
     sets.precast.WS = {} -- Leave empty
-    sets.precast.WS.base = {
+    sets.precast.WS.melee = {
         -- ammo       = "Yetshila",
         body       = relic_body,
         neck       = "Fotia Gorget",
@@ -100,7 +100,7 @@ function get_sets()
         back       = "Phalangite Mantle",
         waist      = "Fotia Belt",
     }
-    sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.base, {
+    sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
         neck       = "Caro Necklace",
         left_ring  = "Rufescent Ring",
         right_ring = "Apate Ring",
