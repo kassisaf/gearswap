@@ -30,8 +30,8 @@ function get_sets()
         back       = "Solemnity Cape",
     }
     sets.TP = {
-        main       = "Kaja Knife",
-        sub        = "Gleti's Knife",
+        main       = "Kaja Sword",
+        sub        = "Kaja Knife",
         range      = "Molybdosis",
         ammo       = "Bronze Bullet",
 
@@ -128,13 +128,17 @@ function get_sets()
         -- Actually helps with rolls
         range      = "Compensator",
         -- head       = "Lanun Tricorne",   -- Relic
-        hands      = "Chasseur's Gants", -- Empyrean
-        -- legs       = "Desultor Tassets",
+        -- hands      = "Chasseur's Gants", -- Empyrean
+        legs       = "Desultor Tassets",
         -- neck       = "Regal Necklace",   -- Replaces Loricate
         left_ring  = "Barataria Ring",
         right_ring = "Luzaf's Ring",
         back       = snapshot_roll_cape,
     })
+
+    sets.precast.JA["Quick Draw"] = {
+        body = "Mirke Wardecors",
+    }
 
     -- Use TH for targeted JA's
     sets.precast.JA["Box Step"]   = sets.TH

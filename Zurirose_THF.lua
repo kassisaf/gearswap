@@ -25,15 +25,18 @@ function get_sets()
         ammo       = "Focal Orb",
         head       = "Skulker's Bonnet +2",
         body       = "Adhemar Jacket",
-        hands      = "Adhemar Wristbands +1",
-        legs       = "Meghanada Chausses +2",
-        feet       = "Plunderer's Poulaines +1",
+        -- TODO: DT command for THF
+        -- hands      = "Adhemar Wristbands +1",
+        -- legs       = "Meghanada Chausses +2",
+        -- feet       = "Plunderer's Poulaines +1",
+        hands      = "Malignance Gloves",
+        legs       = "Malignance Tights",
+        feet       = "Malignance Boots",
         neck       = "Anu Torque",
         waist      = "Sailfi Belt +1",
         left_ear   = "Eabani Earring",
         right_ear  = "Skulker's Earring",
-        left_ring  = "Petrov Ring",
-        -- left_ring  = "Epona's Ring",
+        left_ring  = "Petrov Ring",  -- Get Epona's Ring
         right_ring = "Meghanada Ring",
         back       = "Toutatis's Cape",
     }
@@ -115,7 +118,7 @@ function get_sets()
     -- Use TH for targeted JA's
     sets.precast.JA["Despoil"] = set_combine(sets.th, {
         legs = "Raider's Culottes +1",
-        feet = "Skulker's Poulaines +1",
+        feet = "Skulker's Poulaines +2",
     })
     sets.precast.JA["Mug"] = set_combine(sets.th, {
         head = "Assassin's Bonnet +1",
