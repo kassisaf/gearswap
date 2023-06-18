@@ -2,6 +2,12 @@ function get_sets()
     include('Zuri-Common.lua')
     job_init(2, 2, 17)  -- Macro book, macro page, lockstyle set
 
+    -- Leave these empty
+    sets.precast    = {} 
+    sets.precast.WS = {}
+    sets.precast.JA = {}
+    sets.midcast    = {}
+
     -- Basic sets
     sets.idle = {
         head       = "Nyame Helm",
@@ -43,11 +49,11 @@ function get_sets()
     sets.FC = {}
 
     -- Precast sets
-    sets.precast = {}  -- Leave empty
     sets.precast.RA = {
         range      = "Jinx Discus",
         ammo       = empty,
-
+    }
+    sets.midcast.RA = {
         body       = "Meghanada Cuirie +2",
         hands      = "Meghanada Gloves +2",
         legs       = "Meghanada Chausses +2",
@@ -62,7 +68,6 @@ function get_sets()
     }
 
     -- Weaponskill sets
-    sets.precast.WS = {} -- Leave Empty
     sets.precast.WS.melee = {
         ammo       = "Yetshila",
         head       = "Skulker's Bonnet +2",
@@ -105,7 +110,6 @@ function get_sets()
     })
 
     -- Job ability sets
-    sets.precast.JA = {}  -- Leave empty
     sets.precast.JA["Conspirator"] = {
         body = "Skulker's Vest +2",
     }
@@ -133,7 +137,6 @@ function get_sets()
     sets.precast.JA["Quick Step"] = sets.TH
     
     -- Midcast sets
-    sets.midcast = {} -- Leave empty
 
     -- Other sets
     sets.TH = {

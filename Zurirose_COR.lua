@@ -2,17 +2,19 @@ function get_sets()
     include('Zuri-Common.lua')
     job_init(2, 9, 15)   -- Macro book, macro page, lockstyle set
 
-    snapshot_roll_cape = { name="Camulus's Mantle", augments={'INT+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Snapshot"+10','Mag. Evasion+15',}}
-
-    -- Artifact: Corsair's / Laksamana's
-    -- Relic:    Commodore / Lanun
-    -- Empyrean: Navarch's / Chasseur's
-
     -- Leave these empty
     sets.precast    = {} 
     sets.precast.WS = {}
     sets.precast.JA = {}
     sets.midcast    = {}
+
+    -- Gear Aliases
+    snapshot_roll_cape = { name="Camulus's Mantle", augments={'INT+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Snapshot"+10','Mag. Evasion+15',}}
+
+    -- JSE Notes:
+    -- Artifact: Corsair's / Laksamana's
+    -- Relic:    Commodore / Lanun
+    -- Empyrean: Navarch's / Chasseur's
 
     -- Basic sets
     sets.idle = {
@@ -42,17 +44,18 @@ function get_sets()
         feet       = "Malignance Boots",
         neck       = "Subtlety Spectacles",
         waist      = "Sailfi Belt +1",
-        left_ear   = "Telos Earring",
+        left_ear   = "Brutal Earring",        -- Get Sherida
         right_ear  = "Eabani Earring",
-        left_ring  = "Mummu Ring",
-        right_ring = "Meghanada Ring",
-        back       = "Sokolski Mantle", -- Replace with ambu TP cape
+        left_ring  = "Rajas Ring",
+        right_ring = "Petrov Ring",
+        back       = "Sokolski Mantle",       -- Replace with ambu TP cape
     }
     sets.FC = {}
 
     -- Preshot should contain: Snapshot, Rapid Shot
     sets.precast.RA = {
-        ammo       = "Bronze Bullet",
+        ammo = "Bronze Bullet",
+        back = snapshot_roll_cape,
     }
     -- Midshot should contain: R.acc, STP, crit, R.atk, Recycle, etc.
     sets.midcast.RA = {
@@ -68,7 +71,7 @@ function get_sets()
         right_ring = "Meghanada Ring",
         left_ear   = "Telos Earring",
         right_ear  = "Odr Earring",
-        back      = snapshot_roll_cape, -- Replace with shooting cape?
+        back       = snapshot_roll_cape,      -- Replace with shooting cape?
     }
 
     -- Precast sets

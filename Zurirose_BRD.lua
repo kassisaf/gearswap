@@ -1,12 +1,19 @@
+-- Usage notes:
+-- Create the following macro to toggle dummy modes: /console gs c dummy
+-- When enabled, your +songs instrument defined below in `instrument_dummy` will be equipped in midcast
+-- When disabled, normal instrument logic applies
+
 function get_sets()
     include('Zuri-Common.lua')
     job_init(1, 1, 16)  -- Macro book, macro page, lockstyle set
 
-    -- Usage notes:
-    -- Create the following macro to toggle dummy modes: /console gs c dummy
-    -- When enabled, your +songs instrument defined below in `instrument_dummy` will be equipped in midcast
-    -- When disabled, normal instrument logic applies
+    -- Leave these empty
+    sets.precast    = {} 
+    sets.precast.WS = {}
+    sets.precast.JA = {}
+    sets.midcast    = {}
 
+    -- State flags
     dual_wield_available = player.sub_job == "NIN" -- TODO check for DW trait
 
     -- Gear aliases
@@ -84,11 +91,9 @@ function get_sets()
     }
 
     -- Precast sets
-    sets.precast = {} -- Leave empty
     sets.precast.RA = {}
 
     -- Weaponskill sets
-    sets.precast.WS = {} -- Leave empty
     sets.precast.WS.melee = {
         -- ammo       = "Yetshila",
         body       = relic_body,
@@ -108,7 +113,6 @@ function get_sets()
     })
 
     -- Job ability sets
-    sets.precast.JA = {}  -- Leave empty
     sets.precast.JA["Soul Voice"] = {
         legs = relic_legs -- Soul Voice duration +30s
     }
@@ -129,7 +133,6 @@ function get_sets()
         left_ring  = "Stikini Ring",
         right_ring = "Stikini Ring",
     }
-    sets.midcast = {} -- Leave empty
     sets.midcast["Enhancing Magic"] = {
         -- sub        = "Ammurapi Shield",     -- Enhancing duration +10%
         hands      = "Inyanga Dastanas +2",

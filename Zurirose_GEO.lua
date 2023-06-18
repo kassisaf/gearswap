@@ -2,6 +2,13 @@ function get_sets()
     include('Zuri-Common.lua')
     job_init(1, 3, nil)  -- Macro book, macro page, lockstyle set
 
+    -- Leave these empty
+    sets.precast    = {} 
+    sets.precast.WS = {}
+    sets.precast.JA = {}
+    sets.midcast    = {}
+
+    -- Gear aliases
     idle_cape = {name="Nantosuelta's Cape", augments={'Pet: "Regen"+10','Pet: Damage taken -2%',}} -- Add DT
     nuke_cape = {name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}}
 
@@ -61,20 +68,34 @@ function get_sets()
         left_ring  = "Kishar Ring",        -- Fast Cast +4%
         right_ring = "Naji's Loop",        -- Fast Cast +1%
     }
+    sets.macc = {
+        main       = "Malignance Pole",
+        sub        = "Kaja Grip",
+        ammo       = "Hydrocera",
+        head       = "Azimuth Hood +2",
+        body       = "Azimuth Coat +2",
+        hands      = "Azimuth Gloves +2",
+        legs       = "Azimuth Tights +2",
+        feet       = "Azimuth Gaiters +2",
+        neck       = "Bagua Charm +1",
+        left_ear   = "Malignance Earring",
+        right_ear  = "Dignitary's Earring",
+        left_ring  = "Stikini Ring",
+        right_ring = "Stikini Ring",
+        back       = nuke_cape,
+        waist      = "Luminary Sash",
+    }
 
     -- Precast sets
-    sets.precast = {} -- Leave empty
     sets.precast.RA = {}
 
     -- Weaponskill sets
-    sets.precast.WS = {} -- Leave empty
     sets.precast.WS.melee = {
         neck  = "Fotia Gorget",
         waist = "Fotia Belt",
     }
 
     -- Job ability sets
-    sets.precast.JA = {}  -- Leave empty
     sets.precast.JA["Full Circle"] = {
         head = "Azimuth Hood +2",
     }
@@ -96,24 +117,6 @@ function get_sets()
     }
 
     -- Midcast sets
-    sets.macc = {
-        main       = "Malignance Pole",
-        sub        = "Kaja Grip",
-        ammo       = "Hydrocera",
-        head       = "Azimuth Hood +2",
-        body       = "Azimuth Coat +2",
-        hands      = "Azimuth Gloves +2",
-        legs       = "Azimuth Tights +2",
-        feet       = "Azimuth Gaiters +2",
-        neck       = "Bagua Charm +1",
-        left_ear   = "Malignance Earring",
-        right_ear  = "Dignitary's Earring",
-        left_ring  = "Stikini Ring",
-        right_ring = "Stikini Ring",
-        back       = nuke_cape,
-        waist      = "Luminary Sash",
-    }
-    sets.midcast = {} -- Leave empty
     sets.midcast["Geomancy"] = {
         main       = "Solstice",
         sub        = "Genbu's Shield",
