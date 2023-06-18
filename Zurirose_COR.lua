@@ -28,7 +28,7 @@ function get_sets()
     sets.TP = {
         main       = "Kaja Knife",
         sub        = "Gleti's Knife",
-        range      = "Compensator",
+        range      = "Molybdosis",
         ammo       = "Bronze Bullet",
 
         head       = "Adhemar Bonnet",
@@ -91,7 +91,6 @@ function get_sets()
         legs      = "Malignance Tights",
         feet      = "Malignance Boots",    -- Replace with Relic
         left_ear  = "Moonshade Earring",
-        right_ear = "Telos Earring",
         right_ear = "Telos Earring",
         left_ring = "Apate Ring",
     })
