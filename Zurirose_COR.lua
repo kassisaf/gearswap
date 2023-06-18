@@ -46,7 +46,7 @@ function get_sets()
         right_ear  = "Eabani Earring",
         left_ring  = "Mummu Ring",
         right_ring = "Meghanada Ring",
-        back       = "Sokolski Mantle",
+        back       = "Sokolski Mantle", -- Replace with ambu TP cape
     }
     sets.FC = {}
 
@@ -68,6 +68,7 @@ function get_sets()
         right_ring = "Meghanada Ring",
         left_ear   = "Telos Earring",
         right_ear  = "Odr Earring",
+        back      = snapshot_roll_cape, -- Replace with shooting cape?
     }
 
     -- Precast sets
@@ -97,6 +98,7 @@ function get_sets()
         left_ear  = "Moonshade Earring",
         right_ear = "Telos Earring",
         left_ring = "Apate Ring",
+        back      = snapshot_roll_cape,    -- Replace with WS capes
     })
 
     sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
