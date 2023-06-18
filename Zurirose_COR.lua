@@ -107,7 +107,7 @@ function get_sets()
     })
     sets.precast.WS["Last Stand"]    = set_combine(sets.precast.WS.ranged, {})
     sets.precast.WS["Leaden Salute"] = set_combine(sets.precast.WS.ranged, {
-        head      = "Pixie Hairpin +1",
+        -- head      = "Pixie Hairpin +1",
         -- body      = "Lanun Frac",
         -- legs      = "Herculean Trousers", -- AGI/MAB/WSD
         -- feet      = "Lanun Bottes",
