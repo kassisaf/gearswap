@@ -105,9 +105,7 @@ function get_sets()
         right_ear = "Ishvara Earring",
         left_ring = "Rufescent Ring",
     })
-    sets.precast.WS["Last Stand"]    = set_combine(sets.precast.WS.ranged, {
-
-    })
+    sets.precast.WS["Last Stand"]    = set_combine(sets.precast.WS.ranged, {})
     sets.precast.WS["Leaden Salute"] = set_combine(sets.precast.WS.ranged, {
         head      = "Pixie Hairpin +1",
         -- body      = "Lanun Frac",
