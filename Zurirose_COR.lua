@@ -4,6 +4,10 @@ function get_sets()
 
     snapshot_roll_cape = { name="Camulus's Mantle", augments={'INT+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Snapshot"+10','Mag. Evasion+15',}}
 
+    -- Artifact: Corsair's / Laksamana's
+    -- Relic:    Commodore / Lanun
+    -- Empyrean: Navarch's / Chasseur's
+
     -- Leave these empty
     sets.precast    = {} 
     sets.precast.WS = {}
@@ -99,9 +103,20 @@ function get_sets()
         right_ear = "Ishvara Earring",
         left_ring = "Rufescent Ring",
     })
-    -- sets.precast.WS["Last Stand"]    = set_combine(sets.precast.WS.ranged, {})
-    -- sets.precast.WS["Leaden Salute"] = set_combine(sets.precast.WS.ranged, {})
-    -- sets.precast.WS["Wildfire"]      = set_combine(sets.precast.WS.ranged, {})
+    sets.precast.WS["Last Stand"]    = set_combine(sets.precast.WS.ranged, {
+
+    })
+    sets.precast.WS["Leaden Salute"] = set_combine(sets.precast.WS.ranged, {
+        head      = "Pixie Hairpin +1",
+        -- body      = "Lanun Frac",
+        -- legs      = "Herculean Trousers", -- AGI/MAB/WSD
+        -- feet      = "Lanun Bottes",
+        -- neck      = "Comm. Charm +1",
+        left_ear  = "Friomisi Earring",
+        right_ear = "Moonshade Earring",
+        waist     = "Eschan Stone",
+    })
+    sets.precast.WS["Wildfire"] = set_combine(sets.precast.WS["Leaden Salute"], {})
 
     -- Job ability sets
     sets.precast.JA["Phantom Roll"] = set_combine(sets.idle, {
@@ -111,10 +126,11 @@ function get_sets()
         -- right_ear = "Odnowa Earring +1", -- Needs RP
 
         -- Actually helps with rolls
-        head       = "Lanun Tricorne",   -- Relic
+        range      = "Compensator",
+        -- head       = "Lanun Tricorne",   -- Relic
         hands      = "Chasseur's Gants", -- Empyrean
-        legs       = "Desultor Tassets",
-        neck       = "Regal Necklace",   -- Replaces Loricate
+        -- legs       = "Desultor Tassets",
+        -- neck       = "Regal Necklace",   -- Replaces Loricate
         left_ring  = "Barataria Ring",
         right_ring = "Luzaf's Ring",
         back       = snapshot_roll_cape,
