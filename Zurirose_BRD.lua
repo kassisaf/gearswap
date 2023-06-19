@@ -8,7 +8,7 @@ function get_sets()
     job_init(1, 1, 16)  -- Macro book, macro page, lockstyle set
 
     -- Leave these empty
-    sets.precast    = {} 
+    sets.precast    = {}
     sets.precast.WS = {}
     sets.precast.JA = {}
     sets.midcast    = {}
@@ -43,7 +43,7 @@ function get_sets()
     sets.idle = {
         main       = "Sangoma",
         sub        = "Genbu's Shield",
-        range      = "Gjallarhorn",
+        range      = instrument_general,
         head       = empy_head,
         body       = "Inyanga Jubbah +2",
         hands      = empy_hands,
@@ -194,6 +194,13 @@ function get_sets()
     sets.midcast["Sentinel's Scherzo"] = {
         feet = empy_feet,
     }
+    sets.midcast["Mage's Ballad"] = set_combine(sets.midcast["BuffSong"], {
+        range = instrument_general,
+        ammo  = empty,
+        legs  = empy_legs,
+    })
+    sets.midcast["Mage's Ballad II"] = sets.midcast["Mage's Ballad"]
+    sets.midcast["Mage's Ballad III"] = sets.midcast["Mage's Ballad"]
     -- sets.midcast["Etude"] = {
     --     head = "Mousai Turban +1",
     -- }

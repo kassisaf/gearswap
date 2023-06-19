@@ -3,13 +3,27 @@ function get_sets()
     job_init(2, 9, 15)   -- Macro book, macro page, lockstyle set
 
     -- Leave these empty
-    sets.precast    = {} 
+    sets.precast    = {}
     sets.precast.WS = {}
     sets.precast.JA = {}
     sets.midcast    = {}
 
     -- Gear Aliases
-    snapshot_roll_cape = { name="Camulus's Mantle", augments={'INT+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Snapshot"+10','Mag. Evasion+15',}}
+    bullets = "Eminent Bullet" -- TODO add commands to switch bullets
+    snapshot_roll_cape = {name="Camulus's Mantle", augments={
+        'INT+20',
+        'Eva.+20 /Mag. Eva.+20',
+        'Mag. Evasion+10',
+        '"Snapshot"+10',
+        'Mag. Evasion+15',
+    }}
+    leaden_salute_cape = {name="Camulus's Mantle", augments={
+        'AGI+20',
+        'Mag. Acc+20 /Mag. Dmg.+20',
+        'AGI+10',
+        'Weapon skill damage +10%',
+        'Damage taken-5%',
+    }}
 
     -- JSE Notes:
     -- Artifact: Corsair's / Laksamana's
@@ -29,13 +43,13 @@ function get_sets()
         right_ear  = "Meili Earring",
         left_ring  = "Defending Ring",
         right_ring = "Shneddick Ring",
-        back       = "Solemnity Cape",
+        back       = snapshot_roll_cape,
     }
     sets.TP = {
         main       = "Kaja Sword",
         sub        = "Kaja Knife",
         range      = "Molybdosis",
-        ammo       = "Bronze Bullet",
+        ammo       = bullets,
 
         head       = "Adhemar Bonnet",
         body       = "Adhemar Jacket",
@@ -48,14 +62,20 @@ function get_sets()
         right_ear  = "Eabani Earring",
         left_ring  = "Rajas Ring",
         right_ring = "Petrov Ring",
-        back       = "Sokolski Mantle",       -- Replace with ambu TP cape
+        back       = "Atheling Mantle",       -- Replace with ambu TP cape
     }
     sets.FC = {}
 
     -- Preshot should contain: Snapshot, Rapid Shot
     sets.precast.RA = {
-        ammo = "Bronze Bullet",
-        back = snapshot_roll_cape,
+        ammo  = bullets,
+
+        head  = "Ikenga's Hat",
+        body  = "Ikenga's Vest",
+        hands = "Ikenga's Gloves",
+        legs  = "Ikenga's Trousers",
+        feet  = "Ikenga's Clogs",
+        back  = snapshot_roll_cape,
     }
     -- Midshot should contain: R.acc, STP, crit, R.atk, Recycle, etc.
     sets.midcast.RA = {
@@ -108,18 +128,21 @@ function get_sets()
         right_ear = "Ishvara Earring",
         left_ring = "Rufescent Ring",
     })
-    sets.precast.WS["Last Stand"]    = set_combine(sets.precast.WS.ranged, {})
+    -- sets.precast.WS["Last Stand"] = set_combine(sets.precast.WS.ranged, {})
     sets.precast.WS["Leaden Salute"] = set_combine(sets.precast.WS.ranged, {
-        -- head      = "Pixie Hairpin +1",
-        -- body      = "Lanun Frac",
-        -- legs      = "Herculean Trousers", -- AGI/MAB/WSD
-        -- feet      = "Lanun Bottes",
-        -- neck      = "Comm. Charm +1",
+        head      = "Ikenga's Hat",        -- Replace with Pixie Hairpin +1
+        body      = "Ikenga's Vest",       -- Replace with relic
+        hands     = "Meghanada Gloves +2",
+        legs      = "Ikenga's Trousers",   -- Replace with RP nyame?
+        feet      = "Ikenga's Clogs",      -- Replace with relic
+        neck      = "Comm. Charm +1",
         left_ear  = "Friomisi Earring",
         right_ear = "Moonshade Earring",
         waist     = "Eschan Stone",
+        back      = leaden_salute_cape,
     })
-    sets.precast.WS["Wildfire"] = set_combine(sets.precast.WS["Leaden Salute"], {})
+    sets.precast.WS["Wildfire"] = sets.precast.WS["Leaden Salute"]
+    sets.precast.WS["Hot Shot"] = sets.precast.WS["Leaden Salute"]
 
     -- Job ability sets
     sets.precast.JA["Phantom Roll"] = set_combine(sets.idle, {
@@ -150,6 +173,7 @@ function get_sets()
     -- Other sets
     sets.TH = {
         ammo = "Perfect Lucky Egg",
+        head = "Herculean Helm",
     }
     sets.DI = set_combine(sets.TP, {
         -- Maximize crit rate and multi-attack for Domain Invasion

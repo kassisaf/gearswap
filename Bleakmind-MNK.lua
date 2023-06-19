@@ -3,7 +3,7 @@ function get_sets()
     -- job_init(2, 2, 17)  -- Macro book, macro page, lockstyle set
 
     -- Leave these empty
-    sets.precast    = {} 
+    sets.precast    = {}
     sets.precast.WS = {}
     sets.precast.JA = {}
     sets.midcast    = {}

@@ -3,7 +3,7 @@ function get_sets()
     job_init(2, 2, 17)  -- Macro book, macro page, lockstyle set
 
     -- Leave these empty
-    sets.precast    = {} 
+    sets.precast    = {}
     sets.precast.WS = {}
     sets.precast.JA = {}
     sets.midcast    = {}
@@ -54,6 +54,7 @@ function get_sets()
         ammo       = empty,
     }
     sets.midcast.RA = {
+        head       = "Meghanada Visor +2",
         body       = "Meghanada Cuirie +2",
         hands      = "Meghanada Gloves +2",
         legs       = "Meghanada Chausses +2",
@@ -63,7 +64,7 @@ function get_sets()
         waist      = "Eschan Stone",
         left_ring  = "Mummu Ring",
         right_ring = "Meghanada Ring",
-        left_ear   = "Ethereal Earring",
+        left_ear   = "Telos Earring",
         right_ear  = "Odr Earring",
     }
 

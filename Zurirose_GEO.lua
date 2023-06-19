@@ -3,14 +3,24 @@ function get_sets()
     job_init(1, 3, nil)  -- Macro book, macro page, lockstyle set
 
     -- Leave these empty
-    sets.precast    = {} 
+    sets.precast    = {}
     sets.precast.WS = {}
     sets.precast.JA = {}
     sets.midcast    = {}
 
     -- Gear aliases
-    idle_cape = {name="Nantosuelta's Cape", augments={'Pet: "Regen"+10','Pet: Damage taken -2%',}} -- Add DT
-    nuke_cape = {name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}}
+    idle_cape = {name="Nantosuelta's Cape", augments={
+        -- TODO: Add defensive stats
+        'Pet: "Regen"+10',
+        'Pet: Damage taken -2%',
+    }}
+    nuke_cape = {name="Nantosuelta's Cape", augments={
+        'INT+20',
+        'Mag. Acc+20 /Mag. Dmg.+20',
+        'INT+10',
+        '"Mag.Atk.Bns."+10',
+        'Damage taken-5%',
+    }}
 
     -- Basic sets
     sets.idle = {
