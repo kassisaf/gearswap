@@ -29,9 +29,29 @@ function get_sets()
     -- Artifact: Corsair's / Laksamana's
     -- Relic:    Commodore / Lanun
     -- Empyrean: Navarch's / Chasseur's
+    af_head     = "Corsair's Tricorne"
+    af_body     = "Laksamana's Frac"
+    af_hands    = "Laksamana's Gants"
+    af_legs     = "Corsair's Culottes"
+    af_feet     = "Laksamana's Bottes"
+    relic_head  = "Commodore Tricorne"
+    relic_body  = "Commodore Frac"
+    relic_hands = "Commodore Gants"
+    relic_legs  = "Commodore Trews"
+    relic_feet  = "Commodore Bottes"
+    empy_head   = "Navarch's Tricorne +1"
+    empy_body   = "Navarch's Frac +2"
+    empy_hands  = "Chasseur's Gants"
+    empy_legs   = "Navarch's Culottes +1"
+    -- empy_feet   = "Navarch's Bottes +1"
 
     -- Basic sets
     sets.idle = {
+        main       = "Kaja Sword",
+        sub        = "Kaja Knife",
+        range      = "Molybdosis",
+        ammo       = bullets,
+        
         head       = "Nyame Helm",
         body       = "Nyame Mail",
         hands      = "Nyame Gauntlets",
@@ -56,7 +76,7 @@ function get_sets()
         hands      = "Malignance Gloves",
         legs       = "Meghanada Chausses +2",
         feet       = "Malignance Boots",
-        neck       = "Subtlety Spectacles",
+        neck       = "Sanctity Necklace",
         waist      = "Sailfi Belt +1",
         left_ear   = "Brutal Earring",        -- Get Sherida
         right_ear  = "Eabani Earring",
@@ -85,7 +105,7 @@ function get_sets()
         legs       = "Meghanada Chausses +2",
         feet       = "Malignance Boots",
         back       = "Sokolski Mantle",
-        neck       = "Caro Necklace",
+        neck       = "Sanctity Necklace",
         waist      = "Eschan Stone",
         left_ring  = "Mummu Ring",
         right_ring = "Meghanada Ring",
@@ -112,6 +132,12 @@ function get_sets()
         waist     = "Sailfi Belt +1",
         back      = snapshot_roll_cape,
     }
+    sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
+        right_ear  = "Ishvara Earring",
+        left_ring  = "Rufescent Ring",
+        right_ring = "Apate Ring",
+    })
+
     sets.precast.WS.ranged = set_combine(sets.midcast.RA, {
         head      = "Meghanada Visor +2",
         body      = "Meghanada Cuirie +2",
@@ -122,11 +148,6 @@ function get_sets()
         right_ear = "Telos Earring",
         left_ring = "Apate Ring",
         back      = snapshot_roll_cape,    -- Replace with WS capes
-    })
-
-    sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
-        right_ear = "Ishvara Earring",
-        left_ring = "Rufescent Ring",
     })
     -- sets.precast.WS["Last Stand"] = set_combine(sets.precast.WS.ranged, {})
     sets.precast.WS["Leaden Salute"] = set_combine(sets.precast.WS.ranged, {
@@ -153,14 +174,26 @@ function get_sets()
 
         -- Actually helps with rolls
         range      = "Compensator",
-        -- head       = "Lanun Tricorne",   -- Relic
-        -- hands      = "Chasseur's Gants", -- Empyrean
+        -- head       = relic_head,
+        hands      = empy_hands,
         legs       = "Desultor Tassets",
         -- neck       = "Regal Necklace",   -- Replaces Loricate
         left_ring  = "Barataria Ring",
         right_ring = "Luzaf's Ring",
         back       = snapshot_roll_cape,
     })
+    -- sets.precast.JA["Blitzer's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {
+    --     head = empy_head,
+    -- })
+    -- sets.precast.JA["Tactician's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {
+    --     body = empy_body,
+    -- })
+    -- sets.precast.JA["Caster's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {
+    --     legs = empy_legs,
+    -- })
+    -- sets.precast.JA["Courser's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {
+    --     feet = empy_feet,
+    -- })
 
     sets.precast.JA["Quick Draw"] = {
         body = "Mirke Wardecors",

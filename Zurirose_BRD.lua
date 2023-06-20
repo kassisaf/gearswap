@@ -21,23 +21,29 @@ function get_sets()
     instrument_lullaby    = "Gjallarhorn"     -- All lullaby not Horde II. Replace with Marsyas
     instrument_lullaby_h2 = "Blurred Harp +1" -- Horde II only. Replace with Daurdabla
     instrument_dummy      = "Blurred Harp +1" -- Replace with Daurdabla
-    kali_a                = { name="Kali", augments={'DMG:+15','CHR+15','Mag. Acc.+15',}}
-    kali_c                = { name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1',}}
-    af_head               = "Brioso Roundlet +3"
-    af_body               = "Brioso Justaucorps +2"
-    af_hands              = "Brioso Cuffs +2"
-    af_legs               = "Brioso Cannions +2"
-    af_feet               = "Brioso Slippers +3"
-    relic_head            = "Bihu Roundlet"
-    relic_body            = "Bihu Justaucorps +3"
-    relic_hands           = "Bihu Cuffs"
-    relic_legs            = "Bihu Cannions"
-    relic_feet            = "Bihu Slippers +2"
-    empy_head             = "Fili Calot +2"
-    empy_body             = "Fili Hongreline +2"
-    empy_hands            = "Fili Manchettes +2"
-    empy_legs             = "Fili Rhingrave +2"
-    empy_feet             = "Fili Cothurnes +2"
+    kali_a = {name="Kali", augments={
+        'DMG:+15',
+        'CHR+15',
+        'Mag. Acc.+15',}}
+    kali_c = {name="Kali", augments={
+        'MP+60',
+        'Mag. Acc.+20',
+        '"Refresh"+1',}}
+    af_head     = "Brioso Roundlet +3"
+    af_body     = "Brioso Justaucorps +2"
+    af_hands    = "Brioso Cuffs +2"
+    af_legs     = "Brioso Cannions +2"
+    af_feet     = "Brioso Slippers +3"
+    relic_head  = "Bihu Roundlet"
+    relic_body  = "Bihu Justaucorps +3"
+    relic_hands = "Bihu Cuffs"
+    relic_legs  = "Bihu Cannions"
+    relic_feet  = "Bihu Slippers +2"
+    empy_head   = "Fili Calot +2"
+    empy_body   = "Fili Hongreline +2"
+    empy_hands  = "Fili Manchettes +2"
+    empy_legs   = "Fili Rhingrave +2"
+    empy_feet   = "Fili Cothurnes +2"
 
     -- Basic sets
     sets.idle = {

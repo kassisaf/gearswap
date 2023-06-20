@@ -37,7 +37,6 @@ local modes = {
     weapon_lock = false,
     has_pet = false,
     dummy_songs = false,
-    -- skillup = false,  -- TODO: Implement skillup mode
 }
 
 -- Function for toggling boolean modes via macro or console commands
