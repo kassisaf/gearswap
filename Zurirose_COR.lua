@@ -24,24 +24,26 @@ function get_sets()
         'Weapon skill damage +10%',
         'Damage taken-5%',
     }}
+    roll_knife = {name="Lanun Knife", augments={'Path: C',}}
+    tp_knife = {name="Lanun Knife", augments={'Path: A',}}
 
     -- JSE Notes:
     -- Artifact: Corsair's / Laksamana's
     -- Relic:    Commodore / Lanun
     -- Empyrean: Navarch's / Chasseur's
     af_head     = "Laksamana's Tricorne"
-    af_body     = "Laksamana's Frac"
+    af_body     = "Laksamana's Frac +1"  -- Upgrade
     af_hands    = "Laksamana's Gants"
-    af_legs     = "Laksamana's Culottes"
+    af_legs     = "Laksamana's Trews"
     af_feet     = "Laksamana's Bottes"
-    relic_head  = "Commodore Tricorne"
-    relic_body  = "Commodore Frac"
-    relic_hands = "Commodore Gants"
-    relic_legs  = "Commodore Trews"
-    relic_feet  = "Commodore Bottes"
+    relic_head  = "Lanun Tricorne"
+    relic_body  = "Lanun Frac"           -- Upgrade
+    relic_hands = "Lanun Gants"
+    relic_legs  = "Lanun Trews"
+    relic_feet  = "Lanun Bottes"         -- Upgrade
     empy_head   = "Chasseur's Tricorne"
     empy_body   = "Chasseur's Frac"
-    empy_hands  = "Chasseur's Gants"
+    empy_hands  = "Chasseur's Gants"     -- Upgrade
     empy_legs   = "Chasseur's Culottes"
     -- empy_feet   = "Navarch's Bottes"
 
@@ -166,15 +168,18 @@ function get_sets()
     sets.precast.WS["Hot Shot"] = sets.precast.WS["Leaden Salute"]
 
     -- Job ability sets
+
+    -- Rolls
     sets.precast.JA["Phantom Roll"] = set_combine(sets.idle, {
         -- Purely defensive
         feet      = "Malignance Boots",
         neck      = "Loricate Torque +1",
-        -- right_ear = "Odnowa Earring +1", -- Needs RP
+        -- right_ear = "Odnowa Earring +1", -- Needs more RP
 
         -- Actually helps with rolls
+        main       = roll_knife,
         range      = "Compensator",
-        -- head       = relic_head,
+        head       = relic_head,
         hands      = empy_hands,
         legs       = "Desultor Tassets",
         -- neck       = "Regal Necklace",   -- Replaces Loricate
@@ -182,25 +187,35 @@ function get_sets()
         right_ring = "Luzaf's Ring",
         back       = snapshot_roll_cape,
     })
-    -- sets.precast.JA["Blitzer's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {
-    --     head = empy_head,
-    -- })
-    -- sets.precast.JA["Tactician's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {
-    --     body = empy_body,
-    -- })
-    -- sets.precast.JA["Caster's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {
-    --     legs = empy_legs,
-    -- })
-    -- sets.precast.JA["Courser's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {
-    --     feet = empy_feet,
-    -- })
+    sets.precast.JA["Blitzer's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {
+        head = empy_head,
+    })
+    sets.precast.JA["Tactician's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {
+        body = empy_body,
+    })
+    sets.precast.JA["Caster's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {
+        legs = empy_legs,
+    })
+    sets.precast.JA["Courser's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {
+        feet = empy_feet,
+    })
 
+    -- Other JA's
+    sets.precast.JA["Random Deal"] = {
+        body = relic_body,
+    }
+    sets.precast.JA["Fold"] = {
+        hands = relic_hands,
+    }
+    sets.precast.JA["Snake Eye"] = {
+        legs = relic_legs,
+    }
     sets.precast.JA["Quick Draw"] = {
         body = "Mirke Wardecors",
     }
 
     -- Use TH for targeted JA's
-    sets.precast.JA["Box Step"]   = sets.TH
+    sets.precast.JA["Box Step"] = sets.TH
     sets.precast.JA["Quick Step"] = sets.TH
 
     -- Other sets
