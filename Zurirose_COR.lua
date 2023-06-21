@@ -29,21 +29,21 @@ function get_sets()
     -- Artifact: Corsair's / Laksamana's
     -- Relic:    Commodore / Lanun
     -- Empyrean: Navarch's / Chasseur's
-    af_head     = "Corsair's Tricorne"
+    af_head     = "Laksamana's Tricorne"
     af_body     = "Laksamana's Frac"
     af_hands    = "Laksamana's Gants"
-    af_legs     = "Corsair's Culottes"
+    af_legs     = "Laksamana's Culottes"
     af_feet     = "Laksamana's Bottes"
     relic_head  = "Commodore Tricorne"
     relic_body  = "Commodore Frac"
     relic_hands = "Commodore Gants"
     relic_legs  = "Commodore Trews"
     relic_feet  = "Commodore Bottes"
-    empy_head   = "Navarch's Tricorne +1"
-    empy_body   = "Navarch's Frac +2"
+    empy_head   = "Chasseur's Tricorne"
+    empy_body   = "Chasseur's Frac"
     empy_hands  = "Chasseur's Gants"
-    empy_legs   = "Navarch's Culottes +1"
-    -- empy_feet   = "Navarch's Bottes +1"
+    empy_legs   = "Chasseur's Culottes"
+    -- empy_feet   = "Navarch's Bottes"
 
     -- Basic sets
     sets.idle = {
