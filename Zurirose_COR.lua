@@ -1,6 +1,6 @@
 function get_sets()
     include('Zuri-Common.lua')
-    job_init(2, 9, 15)   -- Macro book, macro page, lockstyle set
+    job_init(2, 9, 14)   -- Macro book, macro page, lockstyle set
 
     -- Leave these empty
     sets.precast    = {}
@@ -51,6 +51,8 @@ function get_sets()
     sets.idle = {
         main       = "Kaja Sword",
         sub        = "Kaja Knife",
+        -- main       = roll_knife,
+        -- sub        = tp_knife,
         range      = "Molybdosis",
         ammo       = bullets,
         
@@ -153,16 +155,18 @@ function get_sets()
     })
     -- sets.precast.WS["Last Stand"] = set_combine(sets.precast.WS.ranged, {})
     sets.precast.WS["Leaden Salute"] = set_combine(sets.precast.WS.ranged, {
-        head      = "Ikenga's Hat",        -- Replace with Pixie Hairpin +1
-        body      = "Ikenga's Vest",       -- Replace with relic
-        hands     = "Meghanada Gloves +2",
-        legs      = "Ikenga's Trousers",   -- Replace with RP nyame?
-        feet      = "Ikenga's Clogs",      -- Replace with relic
-        neck      = "Comm. Charm +1",
-        left_ear  = "Friomisi Earring",
-        right_ear = "Moonshade Earring",
-        waist     = "Eschan Stone",
-        back      = leaden_salute_cape,
+        head       = "Pixie Hairpin +1",
+        body       = "Nyame Mail",
+        hands      = "Meghanada Gloves +2",
+        legs       = "Nyame Flanchard",
+        feet       = "Nyame Sollerets",
+        neck       = "Sanctity Necklace",
+        left_ear   = "Friomisi Earring",
+        right_ear  = "Moonshade Earring",
+        left_ring  = "Archon Ring",
+        -- right_ring = "Dingir Ring",
+        waist      = "Hachirin-no-Obi",
+        back       = leaden_salute_cape,
     })
     sets.precast.WS["Wildfire"] = sets.precast.WS["Leaden Salute"]
     sets.precast.WS["Hot Shot"] = sets.precast.WS["Leaden Salute"]
