@@ -165,11 +165,14 @@ function get_sets()
         right_ear  = "Moonshade Earring",
         left_ring  = "Archon Ring",
         -- right_ring = "Dingir Ring",
+        right_ring = "Shiva Ring +1", -- Loaner from Chiz
         waist      = "Hachirin-no-Obi",
         back       = leaden_salute_cape,
     })
-    sets.precast.WS["Wildfire"] = sets.precast.WS["Leaden Salute"]
-    sets.precast.WS["Hot Shot"] = sets.precast.WS["Leaden Salute"]
+    sets.precast.WS["Wildfire"] = set_combine(sets.precast.WS["Leaden Salute"], {
+        waist = "Eschan Stone",
+    })
+    sets.precast.WS["Hot Shot"] = sets.precast.WS["Wildfire"]
 
     -- Job ability sets
 

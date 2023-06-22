@@ -157,7 +157,8 @@ function get_sets()
         left_ear   = "Malignance Earring",
         right_ear  = "Azimuth Earring",
         left_ring  = "Jhakri Ring",
-        right_ring = "Stikini Ring",
+        -- right_ring = "Stikini Ring",
+        right_ring = "Shiva Ring +1", -- Loaner from Chiz
         waist      = "Refoccilation Stone",
         back       = nuke_cape,
     })
