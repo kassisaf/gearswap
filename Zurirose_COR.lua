@@ -9,7 +9,10 @@ function get_sets()
     sets.midcast    = {}
 
     -- Gear Aliases
-    bullets = "Eminent Bullet" -- TODO add commands to switch bullets
+    bullets = {
+        physical = "Eminent Bullet",
+        magic = "Orichalcum Bullet",
+    }
     snapshot_roll_cape = {name="Camulus's Mantle", augments={
         'INT+20',
         'Eva.+20 /Mag. Eva.+20',
@@ -46,6 +49,7 @@ function get_sets()
     empy_hands  = "Chasseur's Gants"     -- Upgrade
     empy_legs   = "Chasseur's Culottes"
     -- empy_feet   = "Navarch's Bottes"
+    jse_neck    = "Commodore Charm +1"
 
     -- Basic sets
     sets.idle = {
@@ -54,7 +58,7 @@ function get_sets()
         -- main       = roll_knife,
         -- sub        = tp_knife,
         range      = "Molybdosis",
-        ammo       = bullets,
+        ammo       = bullets["physical"],
         
         head       = "Nyame Helm",
         body       = "Nyame Mail",
@@ -73,7 +77,7 @@ function get_sets()
         main       = "Kaja Sword",
         sub        = "Kaja Knife",
         range      = "Molybdosis",
-        ammo       = bullets,
+        ammo       = bullets["physical"],
 
         head       = "Adhemar Bonnet",
         body       = "Adhemar Jacket",
@@ -92,7 +96,7 @@ function get_sets()
 
     -- Preshot should contain: Snapshot, Rapid Shot
     sets.precast.RA = {
-        ammo  = bullets,
+        ammo  = bullets["physical"],
 
         head  = "Ikenga's Hat",
         body  = "Ikenga's Vest",
@@ -100,6 +104,7 @@ function get_sets()
         legs  = "Ikenga's Trousers",
         feet  = "Ikenga's Clogs",
         back  = snapshot_roll_cape,
+        neck  = jse_neck,
     }
     -- Midshot should contain: R.acc, STP, crit, R.atk, Recycle, etc.
     sets.midcast.RA = {
@@ -152,15 +157,17 @@ function get_sets()
         right_ear = "Telos Earring",
         left_ring = "Apate Ring",
         back      = snapshot_roll_cape,    -- Replace with WS capes
+        neck      = "Sanctity Necklace",
     })
     -- sets.precast.WS["Last Stand"] = set_combine(sets.precast.WS.ranged, {})
     sets.precast.WS["Leaden Salute"] = set_combine(sets.precast.WS.ranged, {
+        ammo       = bullets["magic"], -- Orichalcum
         head       = "Pixie Hairpin +1",
         body       = "Nyame Mail",
         hands      = "Meghanada Gloves +2",
         legs       = "Nyame Flanchard",
         feet       = "Nyame Sollerets",
-        neck       = "Sanctity Necklace",
+        neck       = jse_neck,
         left_ear   = "Friomisi Earring",
         right_ear  = "Moonshade Earring",
         left_ring  = "Archon Ring",
@@ -236,6 +243,11 @@ function get_sets()
     sets.doomed = {
         left_ring  = "Blenmot's Ring +1",
         right_ring = "Blenmot's Ring +1",
+    }
+    sets.dynamis_rp = {
+        main = tp_knife,
+        sub  = roll_knife,
+        neck = jse_neck,
     }
 
 end -- get_sets()

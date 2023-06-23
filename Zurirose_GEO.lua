@@ -30,7 +30,7 @@ function get_sets()
         head       = "Azimuth Hood +2",
         hands      = "Geomancy Mitaines +3",
         body       = "Azimuth Coat +2",
-        legs       = "azimuth tights +2",
+        legs       = "Azimuth Tights +2",
         feet       = "Azimuth Gaiters +2",
         neck       = "Loricate Torque +1",
         left_ear   = "Handler's Earring +1",
