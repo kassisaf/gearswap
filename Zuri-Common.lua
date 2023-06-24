@@ -27,6 +27,14 @@ ENABLED_OR_DISABLED = { ["true"] = "enabled", ["false"] = "disabled" }
 
 lockables_set = to_set(lockables) -- from Zuri-Settings.lua
 
+full_nyame = {
+    head  = "Nyame Helm",
+    body  = "Nyame Mail",
+    hands = "Nyame Gauntlets",
+    legs  = "Nyame Flanchard",
+    feet  = "Nyame Sollerets",
+}
+
 ------------------------
 -- Modes and commands --
 ------------------------

@@ -141,10 +141,10 @@ function get_sets()
 
     -- Other sets
     sets.TH = {
-        sub   = "Sandung",                -- TH+1
+        -- sub   = "Sandung",                -- TH+1
         ammo  = "Perfect Lucky Egg",      -- TH+1
-        head  = "Herculean Helm",         -- TH+1
-        hands = "Assassin's Armlets +2",  -- TH+2
+        -- head  = "Herculean Helm",         -- TH+1
+        -- hands = "Assassin's Armlets +2",  -- TH+2
         feet  = "Skulker's Poulaines +2", -- TH+4
     }
     -- Maximize crit rate for Domain Invasion

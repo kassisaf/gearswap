@@ -126,12 +126,8 @@ function get_sets()
     -- Precast sets
 
     -- Weaponskill sets
-    sets.precast.WS.melee = {
-        head      = "Meghanada Visor +2",
-        body      = "Meghanada Cuirie +2",   -- Replace with AF
+    sets.precast.WS.melee = set_combine(full_nyame, {
         hands     = "Meghanada Gloves +2",
-        legs      = "Meghanada Chausses +2",
-        feet      = "Meghanada Jambeaux +2", -- Replace with Relic
         back      = "Sokolski Mantle",
         neck      = "Caro Necklace",
         left_ear  = "Moonshade Earring",
@@ -139,15 +135,17 @@ function get_sets()
         left_ring = "Meghanada Ring",
         left_ring = "Rufescent Ring",
         waist     = "Sailfi Belt +1",
-        back      = snapshot_roll_cape,
-    }
+        back      = leaden_salute_cape,
+    })
     sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
         right_ear  = "Ishvara Earring",
         left_ring  = "Rufescent Ring",
         right_ring = "Apate Ring",
     })
 
-    sets.precast.WS.ranged = set_combine(sets.midcast.RA, {
+    -- Default ranged WS assumes physical
+    sets.precast.WS.ranged = set_combine(sets.precast.WS.melee, {
+        ammo      = bullets["physical"],
         head      = "Meghanada Visor +2",
         body      = "Meghanada Cuirie +2",
         hands     = "Meghanada Gloves +2",
@@ -156,10 +154,9 @@ function get_sets()
         left_ear  = "Moonshade Earring",
         right_ear = "Telos Earring",
         left_ring = "Apate Ring",
-        back      = snapshot_roll_cape,    -- Replace with WS capes
+        back      = leaden_salute_cape,    -- Replace with WS capes
         neck      = "Sanctity Necklace",
     })
-    -- sets.precast.WS["Last Stand"] = set_combine(sets.precast.WS.ranged, {})
     sets.precast.WS["Leaden Salute"] = set_combine(sets.precast.WS.ranged, {
         ammo       = bullets["magic"], -- Orichalcum
         head       = "Pixie Hairpin +1",
@@ -180,6 +177,7 @@ function get_sets()
         waist = "Eschan Stone",
     })
     sets.precast.WS["Hot Shot"] = sets.precast.WS["Wildfire"]
+    sets.precast.WS["Aeolian Edge"] = sets.precast.WS["Wildfire"]
 
     -- Job ability sets
 

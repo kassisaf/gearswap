@@ -11,16 +11,16 @@ function get_sets()
     -- Basic sets
     sets.idle = {
         main       = "Homestead Cesti",
-        head       = "Hizamaru Somen",
-        body       = "Hizamaru Haramaki",
-        hands      = "Hizamaru Kote",
-        legs       = "Hizamaru Hizayoroi",
-        feet       = "Hizamaru Sune-Ate +1",
-        neck       = "Peacock Charm",
+        head       = "Hizamaru Somen +2",
+        body       = "Mummu Jacket +1",
+        hands      = "Mummu Wrists +1",
+        legs       = "Mummu Kecks +1",
+        feet       = "Mummu Gamashes +1",
+        neck       = "Subtlety Spectacles",
         waist      = "White Belt",
-        left_ear   = "Raising Earring",
+        left_ear   = "Odr Earring",
         right_ear  = "Bloodbead Earring",
-        left_ring  = "Rufescent Ring",
+        left_ring  = "Mummu Ring",
         right_ring = "Hizamaru Ring",
     }
     sets.TP = sets.idle
