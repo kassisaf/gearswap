@@ -200,13 +200,6 @@ function get_sets()
     sets.midcast["Sentinel's Scherzo"] = {
         feet = empy_feet,
     }
-    sets.midcast["Mage's Ballad"] = set_combine(sets.midcast["BuffSong"], {
-        range = instrument_general,
-        ammo  = empty,
-        legs  = empy_legs,
-    })
-    sets.midcast["Mage's Ballad II"] = sets.midcast["Mage's Ballad"]
-    sets.midcast["Mage's Ballad III"] = sets.midcast["Mage's Ballad"]
     -- sets.midcast["Etude"] = {
     --     head = "Mousai Turban +1",
     -- }

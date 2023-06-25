@@ -19,7 +19,7 @@ function get_sets()
         neck       = "Loricate Torque +1",
         waist      = "Sailfi Belt +1",
         left_ear   = "Eabani Earring",
-        right_ear  = "Handler's Earring +1",
+        right_ear  = "Meili Earring",
         left_ring  = "Defending Ring",
         right_ring = "Shneddick Ring",
         back       = "Toutatis's Cape",
@@ -143,7 +143,7 @@ function get_sets()
     sets.TH = {
         -- sub   = "Sandung",                -- TH+1
         ammo  = "Perfect Lucky Egg",      -- TH+1
-        -- head  = "Herculean Helm",         -- TH+1
+        head  = "Herculean Helm",         -- TH+1
         -- hands = "Assassin's Armlets +2",  -- TH+2
         feet  = "Skulker's Poulaines +2", -- TH+4
     }

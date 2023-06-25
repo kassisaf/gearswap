@@ -147,7 +147,7 @@ function get_sets()
     sets.midcast["Elemental Magic"] = set_combine(sets.macc,{
         main       = "Daybreak",
         sub        = "Genbu's Shield",
-        ammo       = "Hydrocera", -- Get Pemphredo Tathlum
+        ammo       = "Ghastly Tathlum +1", -- Get Pemphredo Tathlum
         head       = "Azimuth Hood +2",
         body       = "Azimuth Coat +2",
         hands      = "Azimuth Gloves +2",
@@ -163,11 +163,11 @@ function get_sets()
         back       = nuke_cape,
     })
     sets.midcast["Enhancing Magic"] = {
-        -- sub        = "Ammurapi Shield",     -- Enhancing duration +10%
+        -- sub        = "Ammurapi Shield", -- Enhancing duration +10%
         neck       = "Incanter's Torque",
         left_ring  = "Stikini Ring",
         right_ring = "Stikini Ring",
-        waist      = "Siegel Sash",         -- Enhancing cast time -8%
+        waist      = "Siegel Sash", -- Enhancing cast time -8%
     }
     sets.midcast["Enfeebling Magic"] = set_combine(sets.macc, {
         neck       = "Incanter's Torque",
@@ -179,10 +179,10 @@ function get_sets()
         right_ring = "Evanescence Ring",
     })
     sets.midcast["Stoneskin"] = {
-        -- legs     = "Shedir Seraweels", -- Stoneskin +35
-        neck     = "Nodens Gorget",    -- Stoneskin +30
+        -- legs = "Shedir Seraweels", -- Stoneskin +35
+        neck  = "Nodens Gorget", -- Stoneskin +30
+        waist = "Siegel Sash",   -- Stoneskin +20
         -- left_ear = "Earthcry Earring", -- Stoneskin +10
-        waist    = "Siegel Sash",      -- Stoneskin +20
     }
     sets.midcast["Aquaveil"] = {
         head = "Chironic Hat", -- Aquaveil +1

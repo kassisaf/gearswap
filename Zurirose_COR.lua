@@ -53,12 +53,15 @@ function get_sets()
 
     -- Basic sets
     sets.idle = {
-        main       = "Kaja Sword",
-        sub        = "Kaja Knife",
-        -- main       = roll_knife,
-        -- sub        = tp_knife,
-        range      = "Molybdosis",
-        ammo       = bullets["physical"],
+        -- main       = "Kaja Sword",
+        -- sub        = "Kaja Knife",
+        -- range      = "Molybdosis",
+        -- ammo       = bullets["physical"],
+
+        main       = "Bronze Knife",
+        sub        = "Bronze Knife",
+        range      = "Anarchy",
+        ammo       = "Bronze Bullet",
         
         head       = "Nyame Helm",
         body       = "Nyame Mail",
@@ -74,10 +77,14 @@ function get_sets()
         back       = snapshot_roll_cape,
     }
     sets.TP = {
-        main       = "Kaja Sword",
-        sub        = "Kaja Knife",
-        range      = "Molybdosis",
-        ammo       = bullets["physical"],
+        -- main       = "Kaja Sword",
+        -- sub        = "Kaja Knife",
+        -- range      = "Molybdosis",
+        -- ammo       = bullets["physical"],
+        main       = "Bronze Knife",
+        sub        = "Bronze Knife",
+        range      = "Anarchy",
+        ammo       = "Bronze Bullet",
 
         head       = "Adhemar Bonnet",
         body       = "Adhemar Jacket",
