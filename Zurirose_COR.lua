@@ -35,38 +35,38 @@ function get_sets()
     -- Relic:    Commodore / Lanun
     -- Empyrean: Navarch's / Chasseur's
     af_head     = "Laksamana's Tricorne"
-    af_body     = "Laksamana's Frac +1"  -- Upgrade
+    af_body     = "Laksamana's Frac +1"
     af_hands    = "Laksamana's Gants"
     af_legs     = "Laksamana's Trews"
     af_feet     = "Laksamana's Bottes"
     relic_head  = "Lanun Tricorne"
-    relic_body  = "Lanun Frac"           -- Upgrade
+    relic_body  = "Lanun Frac"
     relic_hands = "Lanun Gants"
     relic_legs  = "Lanun Trews"
-    relic_feet  = "Lanun Bottes"         -- Upgrade
-    empy_head   = "Chasseur's Tricorne"
-    empy_body   = "Chasseur's Frac"
-    empy_hands  = "Chasseur's Gants"     -- Upgrade
-    empy_legs   = "Chasseur's Culottes"
+    relic_feet  = "Lanun Bottes"
+    empy_head   = "Chasseur's Tricorne +2"
+    empy_body   = "Chasseur's Frac +2"
+    empy_hands  = "Chasseur's Gants +2"
+    empy_legs   = "Chasseur's Culottes +2"
     -- empy_feet   = "Navarch's Bottes"
     jse_neck    = "Commodore Charm +1"
 
     -- Basic sets
     sets.idle = {
-        -- main       = "Kaja Sword",
-        -- sub        = "Kaja Knife",
-        -- range      = "Molybdosis",
-        -- ammo       = bullets["physical"],
+        main       = "Kaja Sword",
+        sub        = "Kaja Knife",
+        range      = "Molybdosis",
+        ammo       = bullets["physical"],
 
-        main       = "Bronze Knife",
-        sub        = "Bronze Knife",
-        range      = "Anarchy",
-        ammo       = "Bronze Bullet",
+        -- main       = "Bronze Knife",
+        -- sub        = "Bronze Knife",
+        -- range      = "Anarchy",
+        -- ammo       = "Bronze Bullet",
         
         head       = "Nyame Helm",
-        body       = "Nyame Mail",
+        body       = empy_body,
         hands      = "Nyame Gauntlets",
-        legs       = "Nyame Flanchard",
+        legs       = empy_legs,
         feet       = "Nyame Sollerets",
         neck       = "Loricate Torque +1",
         waist      = "Eschan Stone",
@@ -77,14 +77,15 @@ function get_sets()
         back       = snapshot_roll_cape,
     }
     sets.TP = {
-        -- main       = "Kaja Sword",
-        -- sub        = "Kaja Knife",
-        -- range      = "Molybdosis",
-        -- ammo       = bullets["physical"],
-        main       = "Bronze Knife",
-        sub        = "Bronze Knife",
-        range      = "Anarchy",
-        ammo       = "Bronze Bullet",
+        main       = "Kaja Sword",
+        sub        = "Kaja Knife",
+        range      = "Molybdosis",
+        ammo       = bullets["physical"],
+
+        -- main       = "Bronze Knife",
+        -- sub        = "Bronze Knife",
+        -- range      = "Anarchy",
+        -- ammo       = "Bronze Bullet",
 
         head       = "Adhemar Bonnet",
         body       = "Adhemar Jacket",
@@ -116,9 +117,9 @@ function get_sets()
     -- Midshot should contain: R.acc, STP, crit, R.atk, Recycle, etc.
     sets.midcast.RA = {
         head       = "Meghanada Visor +2",
-        body       = "Meghanada Cuirie +2",
-        hands      = "Meghanada Gloves +2",
-        legs       = "Meghanada Chausses +2",
+        body       = empy_body,
+        hands      = empy_hands,
+        legs       = empy_legs,
         feet       = "Malignance Boots",
         back       = "Sokolski Mantle",
         neck       = "Sanctity Necklace",
@@ -154,8 +155,8 @@ function get_sets()
     sets.precast.WS.ranged = set_combine(sets.precast.WS.melee, {
         ammo      = bullets["physical"],
         head      = "Meghanada Visor +2",
-        body      = "Meghanada Cuirie +2",
-        hands     = "Meghanada Gloves +2",
+        body      = empy_body,
+        hands     = empy_hands,
         legs      = "Malignance Tights",
         feet      = "Malignance Boots",    -- Replace with Relic
         left_ear  = "Moonshade Earring",
@@ -168,7 +169,6 @@ function get_sets()
         ammo       = bullets["magic"], -- Orichalcum
         head       = "Pixie Hairpin +1",
         body       = "Nyame Mail",
-        hands      = "Meghanada Gloves +2",
         legs       = "Nyame Flanchard",
         feet       = "Nyame Sollerets",
         neck       = jse_neck,
