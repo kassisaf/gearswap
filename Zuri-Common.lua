@@ -129,12 +129,12 @@ function equip_idle_set()
 end -- equip_idle_set()
 
 function equip_tp_set()
+    safe_equip(sets.TP)
+
     if buffactive["Elvorseal"] and sets.DI then
         safe_equip(sets.DI)
-    elseif modes["TH"] and sets.TH then
-        equip(gearset, sets.TH)
-    else
-        safe_equip(sets.TP)
+    -- elseif modes["TH"] and sets.TH then
+    --     equip(gearset, sets.TH)
     end
 end -- equip_tp()
 
@@ -232,9 +232,9 @@ function midcast(spell)
     end
 
     -- Equip TH gear on top if TH mode has been set
-    if modes["TH"] and sets.TH then
-        equip(sets.TH)
-    end
+    -- if modes["TH"] and sets.TH then
+    --     equip(sets.TH)
+    -- end
 
     -- For songs, equip the appropriate instrument last
     if spell.type == "BardSong" then
