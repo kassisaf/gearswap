@@ -1,7 +1,6 @@
 include('Mote-Mappings.lua')
 include('Zuri-Settings.lua')
 
-
 ----------------------
 -- Helper functions --
 ----------------------
@@ -41,6 +40,7 @@ full_nyame = {
 
 -- State flags for various modes and settings
 local modes = {
+    doomed = false,
     TH = false,
     weapon_lock = false,
     has_pet = false,
@@ -96,12 +96,10 @@ function safe_equip(gearset, skip_recheck)
             end
         end
     end
-
-    -- Equip the gearset, combining TH gear if TH mode is enabled
-    if modes["TH"] and sets.TH then
-        equip(gearset, sets.TH)
-    else
-        equip(gearset)
+    
+    -- Doom set takes final priority
+    if modes["doomed"] then
+        equip(sets.doomed)
     end
 end
 
@@ -133,6 +131,8 @@ end -- equip_idle_set()
 function equip_tp_set()
     if buffactive["Elvorseal"] and sets.DI then
         safe_equip(sets.DI)
+    elseif modes["TH"] and sets.TH then
+        equip(gearset, sets.TH)
     else
         safe_equip(sets.TP)
     end
@@ -147,16 +147,19 @@ function equip_base_song_set(spell)
 end
 
 function equip_instrument(spell)
-    if string.find(spell.english, "Horde Lullaby II") then
-        instrument_to_equip = instrument_lullaby_h2
-    elseif string.find(spell.english, "Lullaby") then
-        instrument_to_equip = instrument_lullaby
-    elseif modes["dummy_songs"] then
-        instrument_to_equip = instrument_dummy
-    else
-        instrument_to_equip = instrument_general
+    -- Equip the appropriate instrument for bard main only
+    if player.main_job == "BRD" then
+        if string.find(spell.english, "Horde Lullaby II") then
+            instrument_to_equip = instrument_lullaby_h2
+        elseif string.find(spell.english, "Lullaby") then
+            instrument_to_equip = instrument_lullaby
+        elseif modes["dummy_songs"] then
+            instrument_to_equip = instrument_dummy
+        else
+            instrument_to_equip = instrument_general
+        end
+        equip({range = instrument_to_equip, ammo = empty})
     end
-    equip({range = instrument_to_equip, ammo = empty})
 end
 
 function equip_roll_set(spell)
@@ -212,30 +215,35 @@ function midcast(spell)
         equip_idle_or_tp_set()
     end
 
-    -- Then equip base set for spell type
+    -- Equip base set if defined, based on the spell's skill or type
     if spell.type == "BardSong" then
-        equip_base_song_set(spell)
+        equip_base_song_set(spell)            -- Equips a base song set based on whether spell is buff or debuff
     elseif sets.midcast[spell.skill] then
-        safe_equip(sets.midcast[spell.skill])
+        safe_equip(sets.midcast[spell.skill]) -- Equips a base set by spell SKILL if one is defined (e.g. EnfeeblingMagic)
     elseif sets.midcast[spell.type] then
-        safe_equip(sets.midcast[spell.type])
+        safe_equip(sets.midcast[spell.type])  -- Equips a base set by spell TYPE if one is defined (e.g. WhiteMagic)
     end
-    -- Then, if we have spell-specific gear, equip that last
-    -- Look for exact matches first, then try the tiered spell map (i.e. sets.midcast["Fire IV"] and then sets.midcast.Fire)
-    if sets.midcast[spell.english] then
+
+    -- Then look for spell-specific gear
+    if sets.midcast[spell.english] then       -- First we look for exact matches (e.g. sets.midcast["Fire IV"])
         safe_equip(sets.midcast[spell.english])
-    elseif spell_maps[spell.english] and sets.midcast[spell_maps[spell.english]] then
+    elseif spell_maps[spell.english] and sets.midcast[spell_maps[spell.english]] then -- If exact match was not found, check the tiered spell map (e.g. sets.midcast.Fire)
         safe_equip(sets.midcast[spell_maps[spell.english]])
     end
 
-    -- Equip the appropriate instrument last
+    -- Equip TH gear on top if TH mode has been set
+    if modes["TH"] and sets.TH then
+        equip(sets.TH)
+    end
+
+    -- For songs, equip the appropriate instrument last
     if spell.type == "BardSong" then
         equip_instrument(spell)
     end
 end -- midcast()
 
 function aftercast(spell)
-    if string.find(spell.english, "Lullaby") or (player.main_job == "BRD" and player.equipment['range'] == empty) then
+    if player.main_job == "BRD" and (string.find(spell.english, "Lullaby") or player.equipment['range'] == empty)then
         equip({range = instrument_general, ammo = empty})
     end
     equip_idle_or_tp_set()
@@ -252,12 +260,9 @@ end -- pet_change()
 
 function buff_change(name, gain, buff_details)
     if name == "Doom" then
+        modes["doomed"] = gain
         if gain then
-            equip(sets.doomed)
             send_command("input /p Doomed.")
-        else 
-            equip_idle_or_tp_set()
-            send_command("input /p Doom removed.")
         end
     end
 end -- buff_change()
