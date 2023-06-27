@@ -19,7 +19,7 @@ function get_sets()
     -- Gear aliases
     instrument_general    = "Gjallarhorn"
     instrument_lullaby    = "Gjallarhorn" -- All lullaby except Horde II. Replace with Marsyas
-    instrument_lullaby_h2 = "Daurdabla"
+    instrument_lullaby_h2 = "Daurdabla"   -- Use Blurred +1 if/when 567 string skill can be obtained without the +20 from Daurdabla
     instrument_dummy      = "Daurdabla"
     kali_a = {name="Kali", augments={
         'DMG:+15',
@@ -134,6 +134,7 @@ function get_sets()
         main       = "Kaja Knife",
         sub        = "Ammurapi Shield",
         range      = "Gjallarhorn",
+        neck       = "Incanter's Torque",
         right_ear  = "Dignitary's Earring",
         left_ring  = "Stikini Ring",
         right_ring = "Stikini Ring",
@@ -149,16 +150,16 @@ function get_sets()
     sets.midcast["Enfeebling Magic"] = set_combine(sets.macc, {
         right_ring = "Kishar Ring", -- Enfeebling duration +10%
     })
-    sets.midcast["Stoneskin"] = {
+    sets.midcast["Stoneskin"] = set_combine(sets.midcast["Enhancing Magic"], {
         -- legs     = "Shedir Seraweels", -- Stoneskin +35
         neck     = "Nodens Gorget",    -- Stoneskin +30
         -- left_ear = "Earthcry Earring", -- Stoneskin +10
         waist    = "Siegel Sash",      -- Stoneskin +20
-    }
-    sets.midcast["Aquaveil"] = {
+    })
+    sets.midcast["Aquaveil"] = set_combine(sets.midcast["Enhancing Magic"], {
         head = "Chironic Hat", -- Aquaveil +1
         -- legs = "Shedir Seraweels" -- Aquaveil +1
-    }
+    })
 
     sets.midcast["BuffSong"] = {
         main       = kali_a,
@@ -218,8 +219,6 @@ function get_sets()
     -- }
     sets.midcast["Lullaby"] = set_combine(sets.midcast["DebuffSong"], {
         -- Carnwenhan (Level 119 III)
-        -- Ammurapi Shield
-        -- Marsyas
         head  = af_head,
         body  = empy_body,
         hands = af_hands,
@@ -230,7 +229,7 @@ function get_sets()
 
     sets.midcast["Horde Lullaby II"] = set_combine(sets.midcast["Lullaby"], {
         -- 486 string skill required for 6 yalm radius
-        -- 648 string skill required for 7 yalm radius
+        -- 567 string skill required for 7 yalm radius
         -- sub        = "Ammurapi Shield",
         -- head       = "Brioso Roundlet +3",  -- String +13
         -- body       = "Brioso Justau. +3",   -- String +14

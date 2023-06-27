@@ -173,7 +173,6 @@ function get_sets()
     sets.midcast["Enfeebling Magic"] = set_combine(sets.macc, {
         neck       = "Incanter's Torque",
         left_ring  = "Stikini Ring",
-        right_ring = "Stikini Ring",
         right_ring = "Kishar Ring", -- Enfeebling duration +10%
     })
     sets.midcast["Dark Magic"] = set_combine(sets.macc, {
