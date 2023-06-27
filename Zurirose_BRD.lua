@@ -191,7 +191,6 @@ function get_sets()
     -- No swaps needed for minuet, march
     sets.midcast["Madrigal"] = {
         feet = empy_feet, -- Normalizes duration, extra DEX from set bonus
-
     }
     sets.midcast["Paeon"] = {
         head = af_head,
