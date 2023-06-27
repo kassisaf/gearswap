@@ -183,15 +183,18 @@ function get_sets()
     end
 
     sets.midcast["DebuffSong"] = set_combine(sets.midcast["BuffSong"], {
+        main  = kali_a,
+        sub   = "Amurappi Shield",
         feet  = empy_feet,
         waist = "Luminary Sash",
     })
     -- No swaps needed for minuet, march
     sets.midcast["Madrigal"] = {
         feet = empy_feet, -- Normalizes duration, extra DEX from set bonus
+
     }
     sets.midcast["Paeon"] = {
-        head = "Brioso Roundlet +2",
+        head = af_head,
     }
     sets.midcast["Prelude"] = {
         feet = empy_feet, -- Normalizes duration

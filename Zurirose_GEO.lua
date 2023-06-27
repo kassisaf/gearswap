@@ -179,16 +179,16 @@ function get_sets()
     sets.midcast["Dark Magic"] = set_combine(sets.macc, {
         right_ring = "Evanescence Ring",
     })
-    sets.midcast["Stoneskin"] = {
+    sets.midcast["Stoneskin"] = set_combine(sets.midcast["Enhancing Magic"], {
         -- legs = "Shedir Seraweels", -- Stoneskin +35
         neck  = "Nodens Gorget", -- Stoneskin +30
         waist = "Siegel Sash",   -- Stoneskin +20
         -- left_ear = "Earthcry Earring", -- Stoneskin +10
-    }
-    sets.midcast["Aquaveil"] = {
+    })
+    sets.midcast["Aquaveil"] = set_combine(sets.midcast["Enhancing Magic"], {
         head = "Chironic Hat", -- Aquaveil +1
         -- legs = "Shedir Seraweels" -- Aquaveil +1
-    }
+    })
 
     sets.midcast["Cure"] = {
         main       = "Daybreak",
