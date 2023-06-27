@@ -41,7 +41,7 @@ function get_sets()
     af_feet     = "Laksamana's Bottes +1"
     relic_head  = "Lanun Tricorne"
     relic_body  = "Lanun Frac"
-    relic_hands = "Lanun Gants"
+    relic_hands = "Lanun Gants +1"
     relic_legs  = "Lanun Trews"
     relic_feet  = "Lanun Bottes"
     empy_head   = "Chasseur's Tricorne +2"

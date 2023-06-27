@@ -18,9 +18,9 @@ function get_sets()
 
     -- Gear aliases
     instrument_general    = "Gjallarhorn"
-    instrument_lullaby    = "Gjallarhorn"     -- All lullaby not Horde II. Replace with Marsyas
-    instrument_lullaby_h2 = "Blurred Harp +1" -- Horde II only. Replace with Daurdabla
-    instrument_dummy      = "Blurred Harp +1" -- Replace with Daurdabla
+    instrument_lullaby    = "Gjallarhorn" -- All lullaby except Horde II. Replace with Marsyas
+    instrument_lullaby_h2 = "Daurdabla"
+    instrument_dummy      = "Daurdabla"
     kali_a = {name="Kali", augments={
         'DMG:+15',
         'CHR+15',
