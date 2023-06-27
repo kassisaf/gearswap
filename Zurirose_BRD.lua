@@ -132,15 +132,14 @@ function get_sets()
     -- Midcast sets
     sets.macc = {
         main       = "Kaja Knife",
-        sub        = "Genbu's Shield",
+        sub        = "Ammurapi Shield",
         range      = "Gjallarhorn",
-        -- left_ear   = "Malignance Earring",
         right_ear  = "Dignitary's Earring",
         left_ring  = "Stikini Ring",
         right_ring = "Stikini Ring",
     }
     sets.midcast["Enhancing Magic"] = {
-        -- sub        = "Ammurapi Shield",     -- Enhancing duration +10%
+        sub        = "Ammurapi Shield",     -- Enhancing duration +10%
         hands      = "Inyanga Dastanas +2",
         neck       = "Incanter's Torque",
         left_ring  = "Stikini Ring",

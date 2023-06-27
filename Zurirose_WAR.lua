@@ -10,6 +10,8 @@ function get_sets()
 
     -- Basic sets
     sets.idle = {
+        main       = "Hepatizon Axe",
+        sub        = "Kaja Grip",
         head       = "Nyame Helm",
         body       = "Nyame Mail",
         hands      = "Nyame Gauntlets",
@@ -24,6 +26,9 @@ function get_sets()
         back       = "Agema Cape",
     }
     sets.TP = {
+        main       = "Hepatizon Axe",
+        sub        = "Kaja Grip",
+        ammo       = "Focal Orb",
         head       = "Sakpata's Helm",
         body       = "Sakpata's Breastplate",
         hands      = "Sakpata's Gauntlets",
@@ -35,21 +40,16 @@ function get_sets()
         right_ear  = "Boii Earring +1",
         left_ring  = "Petrov Ring",
         right_ring = "Apate Ring",
-        back       = "Phalangite Mantle",
+        back       = "Atheling Mantle",
     }
     sets.FC = {}
 
     -- Precast sets
 
     -- Weaponskill sets
-    sets.precast.WS.melee = {
-        -- ammo       = "Yetshila",
-        -- head       = "Skulker's Bonnet +2",
-        -- body       = "Meghanada Cuirie +2",
-        -- body       = "Skulker's Vest +2",
+    sets.precast.WS.melee = set_combine(full_nyame, {
+        ammo       = "Knobkierre",
         hands      = "Meghanada Gloves +2",
-        -- legs       = "Meghanada Chausses +2",
-        -- feet       = "Skulker's Poulaines +2",
         neck       = "Caro Necklace",
         waist      = "Sailfi Belt +1",
         left_ear   = "Moonshade Earring",
@@ -57,7 +57,7 @@ function get_sets()
         left_ring  = "Apate Ring",        -- Get Ilabrat
         right_ring = "Rufescent Ring",    -- Get Regal
         back       = "Phalangite Mantle",
-    }
+    })
 
     -- Job ability sets
     

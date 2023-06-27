@@ -146,8 +146,8 @@ function get_sets()
     }
     sets.midcast["Elemental Magic"] = set_combine(sets.macc,{
         main       = "Daybreak",
-        sub        = "Genbu's Shield",
-        ammo       = "Ghastly Tathlum +1", -- Get Pemphredo Tathlum
+        sub        = "Ammurapi Shield",
+        ammo       = "Ghastly Tathlum +1",  -- Get Pemphredo Tathlum
         head       = "Azimuth Hood +2",
         body       = "Azimuth Coat +2",
         hands      = "Azimuth Gloves +2",
@@ -158,16 +158,17 @@ function get_sets()
         right_ear  = "Azimuth Earring",
         left_ring  = "Jhakri Ring",
         -- right_ring = "Stikini Ring",
-        right_ring = "Shiva Ring +1", -- Loaner from Chiz
+        right_ring = "Shiva Ring +1",       -- Loaner from Chiz
         waist      = "Refoccilation Stone",
         back       = nuke_cape,
     })
     sets.midcast["Enhancing Magic"] = {
-        -- sub        = "Ammurapi Shield", -- Enhancing duration +10%
+        main       = "Daybreak",
+        sub        = "Ammurapi Shield",   -- Enhancing duration +10%
         neck       = "Incanter's Torque",
         left_ring  = "Stikini Ring",
         right_ring = "Stikini Ring",
-        waist      = "Siegel Sash", -- Enhancing cast time -8%
+        waist      = "Siegel Sash",       -- Enhancing cast time -8%
     }
     sets.midcast["Enfeebling Magic"] = set_combine(sets.macc, {
         neck       = "Incanter's Torque",

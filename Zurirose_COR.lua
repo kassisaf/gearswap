@@ -36,9 +36,9 @@ function get_sets()
     -- Empyrean: Navarch's / Chasseur's
     af_head     = "Laksamana's Tricorne"
     af_body     = "Laksamana's Frac +1"
-    af_hands    = "Laksamana's Gants"
-    af_legs     = "Laksamana's Trews"
-    af_feet     = "Laksamana's Bottes"
+    af_hands    = "Laksamana's Gants +1"
+    af_legs     = "Laksamana's Trews +1"
+    af_feet     = "Laksamana's Bottes +1"
     relic_head  = "Lanun Tricorne"
     relic_body  = "Lanun Frac"
     relic_hands = "Lanun Gants"
@@ -48,7 +48,7 @@ function get_sets()
     empy_body   = "Chasseur's Frac +2"
     empy_hands  = "Chasseur's Gants +2"
     empy_legs   = "Chasseur's Culottes +2"
-    -- empy_feet   = "Navarch's Bottes"
+    empy_feet   = "Chasseur's Bottes +2"
     jse_neck    = "Commodore Charm +1"
 
     -- Basic sets
