@@ -249,7 +249,7 @@ function get_sets()
 
     sets.midcast["Cure"] = {
         main       = "Daybreak",
-        sub        = "Genbu's Shield",
+        sub        = "Ammurapi Shield",
         ammo       = "Hydrocera",
         head       = "Vanya Hood",
         body       = "Vanya Robe",

@@ -135,20 +135,19 @@ function get_sets()
 
     -- Weaponskill sets
     sets.precast.WS.melee = set_combine(full_nyame, {
-        hands     = "Meghanada Gloves +2",
-        back      = "Sokolski Mantle",
-        neck      = "Caro Necklace",
-        left_ear  = "Moonshade Earring",
-        right_ear = "Odr Earring",
-        left_ring = "Meghanada Ring",
-        left_ring = "Rufescent Ring",
-        waist     = "Sailfi Belt +1",
-        back      = leaden_salute_cape,
-    })
-    sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
+        hands      = "Meghanada Gloves +2",
+        back       = "Sokolski Mantle",
+        neck       = "Fotia Gorget",
+        waist      = "Fotia Belt",
+        left_ear   = "Moonshade Earring",
         right_ear  = "Ishvara Earring",
         left_ring  = "Rufescent Ring",
         right_ring = "Apate Ring",
+        back       = leaden_salute_cape,
+    })
+    sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
+        -- neck  = "Republican Platinum Medal",
+        waist = "Sailfi Belt +1",
     })
 
     -- Default ranged WS assumes physical
@@ -158,12 +157,9 @@ function get_sets()
         body      = empy_body,
         hands     = empy_hands,
         legs      = "Malignance Tights",
-        feet      = "Malignance Boots",    -- Replace with Relic
-        left_ear  = "Moonshade Earring",
+        feet      = "Malignance Boots",   -- Replace with Relic
         right_ear = "Telos Earring",
-        left_ring = "Apate Ring",
-        back      = leaden_salute_cape,    -- Replace with WS capes
-        neck      = "Sanctity Necklace",
+        back      = leaden_salute_cape,   -- Replace with WS capes
     })
     sets.precast.WS["Leaden Salute"] = set_combine(sets.precast.WS.ranged, {
         ammo       = bullets["magic"], -- Orichalcum
@@ -171,7 +167,8 @@ function get_sets()
         body       = "Nyame Mail",
         legs       = "Nyame Flanchard",
         feet       = "Nyame Sollerets",
-        neck       = jse_neck,
+        neck       = "Sanctity Necklace", -- JSE neck after RP
+        -- neck       = jse_neck,
         left_ear   = "Friomisi Earring",
         right_ear  = "Moonshade Earring",
         left_ring  = "Archon Ring",
@@ -220,17 +217,24 @@ function get_sets()
     })
 
     -- Other JA's
-    sets.precast.JA["Random Deal"] = {
-        body = relic_body,
-    }
     sets.precast.JA["Fold"] = {
         hands = relic_hands,
+    }
+    sets.precast.JA["Random Deal"] = {
+        body = relic_body,
     }
     sets.precast.JA["Snake Eye"] = {
         legs = relic_legs,
     }
+    sets.precast.JA["Triple Shot"] = {
+        body = empy_body,
+    }
+    sets.precast.JA["Wild Card"] = {
+        feet = relic_feet,
+    }
     sets.precast.JA["Quick Draw"] = {
         body = "Mirke Wardecors",
+        feet = af_feet,
     }
 
     -- Use TH for targeted JA's

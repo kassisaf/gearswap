@@ -22,16 +22,33 @@ function get_sets()
         'Damage taken-5%',
     }}
 
+    af_head     = "Geomancy Galero +1"
+    af_body     = "Geomancy Tunic +1"
+    af_hands    = "Geomancy Mitaines +3"
+    af_legs     = "Geomanic Pants +1"
+    af_feet     = "Geomancy Sandals +1"
+    -- relic_head  = ""
+    relic_body  = "Bagua Tunic +3"
+    -- relic_hands = ""
+    relic_legs  = "Bagua Pants +2"
+    relic_feet  = "Bagua Sandals +2"
+    empy_head   = "Azimuth Hood +2"
+    empy_body   = "Azimuth Coat +2"
+    empy_hands  = "Azimuth Gloves +2"
+    empy_legs   = "Azimuth Tights +2"
+    empy_feet   = "Azimuth Gaiters +2"
+    jse_neck    = "Bagua Charm +1"
+
     -- Basic sets
     sets.idle = {
         main       = "Malignance Pole",
         sub        = "Kaja Grip",
         range      = "Dunna",
-        head       = "Azimuth Hood +2",
-        hands      = "Geomancy Mitaines +3",
-        body       = "Azimuth Coat +2",
-        legs       = "Azimuth Tights +2",
-        feet       = "Azimuth Gaiters +2",
+        head       = empy_head,
+        body       = empy_body,
+        hands      = af_hands,
+        legs       = nyame_legs,
+        feet       = empy_feet,
         neck       = "Loricate Torque +1",
         left_ear   = "Handler's Earring +1",
         right_ear  = "Lugalbanda Earring",
@@ -44,7 +61,7 @@ function get_sets()
         main      = "Solstice",
         sub       = "Genbu's Shield",
         right_ear = "Handler's Earring",
-        feet      = "Bagua Sandals +2",
+        feet      = relic_feet,
         back      = idle_cape,
 
         -- Telchine augs: pet DT -4%, pet regen +3
@@ -53,25 +70,22 @@ function get_sets()
         -- feet  = "Bagua Sandals +3",
         -- waist = "Isa Belt"
     })
-    sets.TP = {
-        head       = "Nyame Helm",
-        body       = "Nyame Mail",
-        hands      = "Nyame Gauntlets",
-        legs       = "Nyame Flanchard",
-        feet       = "Nyame Sollerets",
+    sets.TP = set_combine(full_nyame, {
         neck       = "Loricate Torque +1",
+        left_ear   = "Telos Earring",
+        right_ear  = "Brutal Earring",
         left_ring  = "Petrov Ring",
         right_ring = "Apate Ring",
         waist      = "Eschan Stone",
-    }
+    })
     sets.FC = {
         main       = "Solstice",           -- Fast Cast + 5%
         sub        = "Genbu's Shield",
         range      = "Dunna",              -- Fast Cast + 3%
         head       = "Welkin Crown",       -- Fast Cast +7%
         body       = "Merlinic Jubbah",    -- Fast Cast +10%
-        hands      = "Azimuth Gloves +2",  -- Fast Cast +5%
-        legs       = "Geomancy Pants +1",  -- Fast Cast +11%
+        hands      = empy_hands,           -- Fast Cast +5%
+        legs       = af_legs,              -- Fast Cast +11%
         waist      = "Channeler's Stone",  -- Fast Cast +2%
         left_ear   = "Malignance Earring", -- Fast Cast +4%
         right_ear  = "Loquacious Earring", -- Fast Cast +2%
@@ -82,18 +96,18 @@ function get_sets()
         main       = "Malignance Pole",
         sub        = "Kaja Grip",
         ammo       = "Hydrocera",
-        head       = "Azimuth Hood +2",
-        body       = "Azimuth Coat +2",
-        hands      = "Azimuth Gloves +2",
-        legs       = "Azimuth Tights +2",
-        feet       = "Azimuth Gaiters +2",
-        neck       = "Bagua Charm +1",
+        head       = empy_head,
+        body       = empy_body,
+        hands      = empy_hands,
+        legs       = empy_legs,
+        feet       = empy_feet,
+        neck       = jse_neck,
         left_ear   = "Malignance Earring",
         right_ear  = "Dignitary's Earring",
         left_ring  = "Stikini Ring",
         right_ring = "Stikini Ring",
         back       = nuke_cape,
-        waist      = "Luminary Sash",
+        waist      = "Acuity Belt +1",
     }
 
     -- Precast sets
@@ -107,23 +121,23 @@ function get_sets()
 
     -- Job ability sets
     sets.precast.JA["Full Circle"] = {
-        head = "Azimuth Hood +2",
+        head = empy_head,
     }
     sets.precast.JA["Radial Arcana"] = {
-        feet = "Bagua Sandals +2",
+        feet = relic_feet,
     }
     sets.precast.JA["Bolster"] = {
-        body = "Bagua Tunic +3",
+        body = relic_body,
     }
     sets.precast.JA["Life Cycle"] = {
         body = "Geomancy Tunic +1",
         back = nuke_cape,
     }
     sets.precast.JA["Mending Halation"] = {
-        legs = "Bagua Pants +2",
+        legs = relic_legs,
     }
     sets.precast.JA["Cardinal Chant"] = {
-        head = "Geomancy Galero +1",
+        head = af_head,
     }
 
     -- Midcast sets
@@ -131,12 +145,12 @@ function get_sets()
         main       = "Solstice",
         sub        = "Genbu's Shield",
         range      = "Dunna",
-        head       = "Azimuth Hood +2",
-        body       = "Bagua Tunic +3",
-        hands      = "Geomancy Mitaines +3",
-        legs       = "Bagua Pants +2",
-        feet       = "Azimuth Gaiters +2",
-        neck       = "Bagua Charm +1",
+        head       = empy_head,
+        body       = relic_body,
+        hands      = af_hands,
+        legs       = relic_body,
+        feet       = empy_feet,
+        neck       = jse_neck,
         left_ring  = "Stikini Ring",
         right_ring = "Stikini Ring",
         left_ear   = "Handler's Earring +1",
@@ -148,11 +162,11 @@ function get_sets()
         main       = "Daybreak",
         sub        = "Ammurapi Shield",
         ammo       = "Ghastly Tathlum +1",  -- Get Pemphredo Tathlum
-        head       = "Azimuth Hood +2",
-        body       = "Azimuth Coat +2",
-        hands      = "Azimuth Gloves +2",
-        legs       = "Azimuth Tights +2",
-        feet       = "Azimuth Gaiters +2",
+        head       = empy_head,
+        body       = empy_body,
+        hands      = empy_hands,
+        legs       = empy_legs,
+        feet       = empy_feet,
         neck       = "Sanctity Necklace",
         left_ear   = "Malignance Earring",
         right_ear  = "Azimuth Earring",
@@ -191,7 +205,7 @@ function get_sets()
 
     sets.midcast["Cure"] = {
         main       = "Daybreak",
-        sub        = "Genbu's Shield",
+        sub        = "Ammurapi Shield",
         ammo       = "Hydrocera",
         head       = "Vanya Hood",
         body       = "Vanya Robe",
