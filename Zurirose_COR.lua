@@ -40,10 +40,10 @@ function get_sets()
     af_legs     = "Laksamana's Trews +1"
     af_feet     = "Laksamana's Bottes +1"
     relic_head  = "Lanun Tricorne"
-    relic_body  = "Lanun Frac"
+    relic_body  = "Lanun Frac +1"
     relic_hands = "Lanun Gants +1"
     relic_legs  = "Lanun Trews"
-    relic_feet  = "Lanun Bottes"
+    relic_feet  = "Lanun Bottes +1"
     empy_head   = "Chasseur's Tricorne +2"
     empy_body   = "Chasseur's Frac +2"
     empy_hands  = "Chasseur's Gants +2"
@@ -57,11 +57,6 @@ function get_sets()
         sub        = "Kaja Knife",
         range      = "Molybdosis",
         ammo       = bullets["physical"],
-
-        -- main       = "Bronze Knife",
-        -- sub        = "Bronze Knife",
-        -- range      = "Anarchy",
-        -- ammo       = "Bronze Bullet",
         
         head       = "Nyame Helm",
         body       = empy_body,
@@ -76,17 +71,7 @@ function get_sets()
         right_ring = "Shneddick Ring",
         back       = snapshot_roll_cape,
     }
-    sets.TP = {
-        main       = "Kaja Sword",
-        sub        = "Kaja Knife",
-        range      = "Molybdosis",
-        ammo       = bullets["physical"],
-
-        -- main       = "Bronze Knife",
-        -- sub        = "Bronze Knife",
-        -- range      = "Anarchy",
-        -- ammo       = "Bronze Bullet",
-
+    sets.TP = set_combine(sets.idle, {
         head       = "Adhemar Bonnet",
         body       = "Adhemar Jacket",
         hands      = "Malignance Gloves",
@@ -99,36 +84,48 @@ function get_sets()
         left_ring  = "Rajas Ring",
         right_ring = "Petrov Ring",
         back       = "Atheling Mantle",       -- Replace with ambu TP cape
+    })
+    sets.FC = {
+        neck       = "Magoraga Beads",
+        left_ear   = "Loquacious Earring",
+        right_ring = "Kishar Ring",
+        waist      = "Sailfi Belt +1",
     }
-    sets.FC = {}
 
-    -- Preshot should contain: Snapshot, Rapid Shot
+    -- Preshot should contain: Snapshot, Rapid Shot, Store TP
+    -- Snapshot caps at 70 (-10% from gifts)
+    -- Rapid shot reduces delay up to 50%, proc rate caps at 99%
     sets.precast.RA = {
         ammo  = bullets["physical"],
-
-        head  = "Ikenga's Hat",
-        body  = "Ikenga's Vest",
-        hands = "Ikenga's Gloves",
-        legs  = "Ikenga's Trousers",
-        feet  = "Ikenga's Clogs",
-        back  = snapshot_roll_cape,
-        neck  = jse_neck,
+        -- 43 Snapshot, 16 Rapid Shot
+        head       = empy_head,             -- 16 Rapid Shot
+        body       = "Ikenga's Vest",       -- 9 Snapshot
+        hands      = "Ikenga's Gloves",     -- 7 Snapshot
+        legs       = "Ikenga's Trousers",   -- 8 Snapshot, replace with Adhemar +1
+        feet       = "Ikenga's Clogs",      -- 5 Snapshot
+        neck       = jse_neck,              -- 3 Snapshot
+        back       = snapshot_roll_cape,    -- 10 Snapshot
+        left_ear   = "Telos Earring",       -- 5 STP
+        right_ear  = "Dignitary's Earring", -- 3 STP
+        left_ring  = "Petrov Ring",         -- 5 STP
+        right_ring = "Rajas Ring",          -- 5 STP
+        -- waist      = "Yemaya Belt",
     }
     -- Midshot should contain: R.acc, STP, crit, R.atk, Recycle, etc.
     sets.midcast.RA = {
-        head       = "Meghanada Visor +2",
+        head       = "Meghanada Visor +2", -- Ikenga after RP
         body       = empy_body,
         hands      = empy_hands,
         legs       = empy_legs,
         feet       = "Malignance Boots",
         back       = "Sokolski Mantle",
-        neck       = "Sanctity Necklace",
+        neck       = "Sanctity Necklace",  -- Iskur Gorget
         waist      = "Eschan Stone",
-        left_ring  = "Mummu Ring",
+        left_ring  = "Mummu Ring",         -- Dingir, Ilabrat
         right_ring = "Meghanada Ring",
         left_ear   = "Telos Earring",
         right_ear  = "Odr Earring",
-        back       = snapshot_roll_cape,      -- Replace with shooting cape?
+        back       = snapshot_roll_cape,   -- Replace with shooting cape?
     }
 
     -- Precast sets
@@ -172,8 +169,7 @@ function get_sets()
         left_ear   = "Friomisi Earring",
         right_ear  = "Moonshade Earring",
         left_ring  = "Archon Ring",
-        -- right_ring = "Dingir Ring",
-        right_ring = "Shiva Ring +1", -- Loaner from Chiz
+        right_ring = "Apate Ring", -- Get Dingir
         waist      = "Hachirin-no-Obi",
         back       = leaden_salute_cape,
     })
@@ -199,7 +195,7 @@ function get_sets()
         hands      = empy_hands,
         legs       = "Desultor Tassets",
         -- neck       = "Regal Necklace",   -- Replaces Loricate
-        left_ring  = "Barataria Ring",
+        left_ring  = "Barataria Ring", -- Swap for defensive option after finishing RP on lanun knife
         right_ring = "Luzaf's Ring",
         back       = snapshot_roll_cape,
     })

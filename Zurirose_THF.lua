@@ -69,10 +69,9 @@ function get_sets()
     }
 
     -- Weaponskill sets
-    sets.precast.WS.melee = {
+    sets.precast.WS.melee = set_combine(full_nyame, {
         ammo       = "Yetshila",
         head       = "Skulker's Bonnet +2",
-        -- body       = "Meghanada Cuirie +2",
         body       = "Skulker's Vest +2",
         hands      = "Meghanada Gloves +2",
         legs       = "Meghanada Chausses +2",
@@ -86,8 +85,11 @@ function get_sets()
         left_ring  = "Apate Ring",
         right_ring = "Rufescent Ring",
         back       = "Toutatis's Cape",
-    }
-    sets.precast.WS["Rudra's Storm"] = sets.precast.WS.melee
+    })
+    sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS.melee, full_nyame, {
+        hands      = "Meghanada Gloves +2",
+    })
+    sets.precast.WS["Shark Bite"] = sets.precast.WS["Rudra's Storm"]
     sets.precast.WS["Evisceration"] = set_combine(sets.precast.WS.melee,{
         ammo      = "Yetshila",
         hands     = "Adhemar Wristbands +1",
@@ -143,7 +145,7 @@ function get_sets()
     sets.TH = {
         -- sub   = "Sandung",                -- TH+1
         ammo  = "Perfect Lucky Egg",      -- TH+1
-        head  = "Herculean Helm",         -- TH+1
+        -- head  = "Herculean Helm",         -- TH+1
         -- hands = "Assassin's Armlets +2",  -- TH+2
         feet  = "Skulker's Poulaines +2", -- TH+4
     }

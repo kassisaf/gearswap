@@ -100,6 +100,8 @@ function safe_equip(gearset, skip_recheck)
     -- Equip the gearset, combining TH gear if TH mode is enabled
     if modes["TH"] and sets.TH then
         equip(gearset, sets.TH)
+    elseif sets.dynamis_rp and string.find(world.zone, "Dynamis") then
+        equip(gearset, sets.dynamis_rp)
     else
         equip(gearset)
     end

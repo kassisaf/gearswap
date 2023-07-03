@@ -47,7 +47,7 @@ function get_sets()
         head       = empy_head,
         body       = empy_body,
         hands      = af_hands,
-        legs       = nyame_legs,
+        legs       = "Nyame Flanchard",
         feet       = empy_feet,
         neck       = "Loricate Torque +1",
         left_ear   = "Handler's Earring +1",
@@ -171,8 +171,7 @@ function get_sets()
         left_ear   = "Malignance Earring",
         right_ear  = "Azimuth Earring",
         left_ring  = "Jhakri Ring",
-        -- right_ring = "Stikini Ring",
-        right_ring = "Shiva Ring +1",       -- Loaner from Chiz
+        right_ring = "Stikini Ring",
         waist      = "Refoccilation Stone",
         back       = nuke_cape,
     })
