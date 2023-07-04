@@ -16,7 +16,7 @@ function get_sets()
         legs       = "Nyame Flanchard",
         feet       = "Nyame Sollerets",
         neck       = "Loricate Torque +1",
-        waist      = "Eschan Stone",
+        waist      = "Carrier's Sash",
         left_ear   = "Eabani Earring",
         right_ear  = "Meili Earring",
         left_ring  = "Defending Ring",

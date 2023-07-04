@@ -17,7 +17,7 @@ function get_sets()
         -- feet       = "Nyame Sollerets",
         feet       = "Skulker's Poulaines +2",
         neck       = "Loricate Torque +1",
-        waist      = "Sailfi Belt +1",
+        waist      = "Carrier's Sash",
         left_ear   = "Eabani Earring",
         right_ear  = "Meili Earring",
         left_ring  = "Defending Ring",
@@ -86,11 +86,16 @@ function get_sets()
         right_ring = "Rufescent Ring",
         back       = "Toutatis's Cape",
     })
-    sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS.melee, full_nyame, {
-        hands      = "Meghanada Gloves +2",
+    sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS.melee, {
+        -- ammo      = "Seething Bomblet +1",
+        legs      = "Nyame Flanchard",
+        feet      = "Nyame Sollerets",
+        -- neck      = jse_neck,
+        -- waist     = "Kentarch Belt +1",
+        right_ear = "Sherida Earring",
     })
     sets.precast.WS["Shark Bite"] = sets.precast.WS["Rudra's Storm"]
-    sets.precast.WS["Evisceration"] = set_combine(sets.precast.WS.melee,{
+    sets.precast.WS["Evisceration"] = set_combine(sets.precast.WS.melee, {
         ammo      = "Yetshila",
         hands     = "Adhemar Wristbands +1",
         feet      = "Adhemar Gamashes +1",
@@ -98,8 +103,15 @@ function get_sets()
         waist     = "Fotia Belt",
         left_ring = "Mummu Ring",
     })
+    sets.precast.WS["Extenterator"] = set_combine(sets.precast.WS.melee, {
+        -- ammo      = "Seething Bomblet +1",
+        neck      = "Fotia Gorget",
+        waist     = "Fotia Belt",
+        left_ear  = "Brutal Earring",
+        right_ear = "Sherida Earring",
+    })
     sets.precast.WS["Dancing Edge"] = sets.precast.WS["Evisceration"]
-    sets.precast.WS["Aeolian Edge"] = set_combine(sets.precast.WS.melee,{
+    sets.precast.WS["Aeolian Edge"] = set_combine(sets.precast.WS.melee, {
         ammo       = "Hydrocera",
         legs       = "Limbo Trousers",
         neck       = "Deviant Necklace",
@@ -108,7 +120,7 @@ function get_sets()
         left_ring  = "Stikini Ring",
         right_ring = "Stikini Ring",
     })
-    sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee,{
+    sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
         right_ear = "Ishvara Earring",
     })
 
@@ -138,6 +150,9 @@ function get_sets()
     })
     sets.precast.JA["Box Step"]   = sets.TH
     sets.precast.JA["Quick Step"] = sets.TH
+    sets.precast.JA["Curing Waltz"] = {ammo = "Yamarang"}
+    sets.precast.JA["Curing Waltz II"]  = sets.precast.JA["Curing Waltz"]
+    sets.precast.JA["Curing Waltz III"] = sets.precast.JA["Curing Waltz"]
     
     -- Midcast sets
 

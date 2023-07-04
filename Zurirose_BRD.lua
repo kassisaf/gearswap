@@ -56,7 +56,7 @@ function get_sets()
         legs       = empy_legs,
         feet       = "Inyanga Crackows +2",
         neck       = "Loricate Torque +1",
-        waist      = "Luminary Sash",
+        waist      = "Carrier's Sash",
         left_ear   = "Eabani Earring",
         right_ear  = "Meili Earring",
         left_ring  = "Shneddick Ring",

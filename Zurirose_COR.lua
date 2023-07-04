@@ -35,7 +35,7 @@ function get_sets()
     -- Relic:    Commodore / Lanun
     -- Empyrean: Navarch's / Chasseur's
     af_head     = "Laksamana's Tricorne"
-    af_body     = "Laksamana's Frac +1"
+    af_body     = "Laksamana's Frac +2"
     af_hands    = "Laksamana's Gants +1"
     af_legs     = "Laksamana's Trews +1"
     af_feet     = "Laksamana's Bottes +1"
@@ -55,7 +55,8 @@ function get_sets()
     sets.idle = {
         main       = "Kaja Sword",
         sub        = "Kaja Knife",
-        range      = "Molybdosis",
+        range      = "Ataktos",
+        -- range      = "Molybdosis",
         ammo       = bullets["physical"],
         
         head       = "Nyame Helm",
@@ -64,7 +65,7 @@ function get_sets()
         legs       = empy_legs,
         feet       = "Nyame Sollerets",
         neck       = "Loricate Torque +1",
-        waist      = "Eschan Stone",
+        waist      = "Carrier's Sash",
         left_ear   = "Eabani Earring",
         right_ear  = "Meili Earring",
         left_ring  = "Defending Ring",
@@ -92,24 +93,20 @@ function get_sets()
         waist      = "Sailfi Belt +1",
     }
 
-    -- Preshot should contain: Snapshot, Rapid Shot, Store TP
+    -- Preshot should contain: Snapshot, Rapid Shot
     -- Snapshot caps at 70 (-10% from gifts)
     -- Rapid shot reduces delay up to 50%, proc rate caps at 99%
     sets.precast.RA = {
         ammo  = bullets["physical"],
-        -- 43 Snapshot, 16 Rapid Shot
-        head       = empy_head,             -- 16 Rapid Shot
-        body       = "Ikenga's Vest",       -- 9 Snapshot
-        hands      = "Ikenga's Gloves",     -- 7 Snapshot
-        legs       = "Ikenga's Trousers",   -- 8 Snapshot, replace with Adhemar +1
-        feet       = "Ikenga's Clogs",      -- 5 Snapshot
-        neck       = jse_neck,              -- 3 Snapshot
-        back       = snapshot_roll_cape,    -- 10 Snapshot
-        left_ear   = "Telos Earring",       -- 5 STP
-        right_ear  = "Dignitary's Earring", -- 3 STP
-        left_ring  = "Petrov Ring",         -- 5 STP
-        right_ring = "Rajas Ring",          -- 5 STP
-        -- waist      = "Yemaya Belt",
+        -- 44 Snapshot, 29 Rapid Shot
+        head  = empy_head,          -- 16 Rapid Shot
+        body  = "Ikenga's Vest",    -- 9 Snapshot
+        hands = "Ikenga's Gloves",  -- 7 Snapshot
+        legs  = "Adhemar Kecks +1", -- 10 Snapshot, 13 Rapid Shot
+        feet  = "Ikenga's Clogs",   -- 5 Snapshot
+        neck  = jse_neck,           -- 3 Snapshot
+        back  = snapshot_roll_cape, -- 10 Snapshot
+        -- waist = "Yemaya Belt",
     }
     -- Midshot should contain: R.acc, STP, crit, R.atk, Recycle, etc.
     sets.midcast.RA = {

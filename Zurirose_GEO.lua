@@ -54,7 +54,7 @@ function get_sets()
         right_ear  = "Lugalbanda Earring",
         left_ring  = "Defending Ring",
         right_ring = "Shneddick Ring",
-        waist      = "Luminary Sash",
+        waist      = "Carrier's Sash",
         back       = nuke_cape, -- Until I add DT to the other one
     }
     sets.idle_with_pet = set_combine(sets.idle, {
