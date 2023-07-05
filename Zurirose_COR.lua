@@ -27,8 +27,8 @@ function get_sets()
         'Weapon skill damage +10%',
         'Damage taken-5%',
     }}
-    roll_knife = {name="Lanun Knife", augments={'Path: C',}}
-    tp_knife = {name="Lanun Knife", augments={'Path: A',}}
+    roll_knife = {name="Lanun Knife", augments={'Path: C'}}
+    stp_knife = {name="Lanun Knife", augments={'Path: A'}}
 
     -- JSE Notes:
     -- Artifact: Corsair's / Laksamana's
@@ -80,7 +80,7 @@ function get_sets()
         feet       = "Malignance Boots",
         neck       = "Sanctity Necklace",
         waist      = "Sailfi Belt +1",
-        left_ear   = "Brutal Earring",        -- Get Sherida
+        left_ear   = "Sherida Earring",
         right_ear  = "Eabani Earring",
         left_ring  = "Rajas Ring",
         right_ring = "Petrov Ring",
@@ -247,7 +247,7 @@ function get_sets()
         right_ring = "Blenmot's Ring +1",
     }
     sets.dynamis_rp = {
-        main = tp_knife,
+        main = stp_knife,
         sub  = roll_knife,
         neck = jse_neck,
     }
