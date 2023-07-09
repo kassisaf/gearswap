@@ -40,7 +40,7 @@ function get_sets()
     af_legs     = "Laksamana's Trews +1"
     af_feet     = "Laksamana's Bottes +1"
     relic_head  = "Lanun Tricorne"
-    relic_body  = "Lanun Frac +1"
+    relic_body  = "Lanun Frac +3"
     relic_hands = "Lanun Gants +1"
     relic_legs  = "Lanun Trews"
     relic_feet  = "Lanun Bottes +1"
@@ -53,8 +53,8 @@ function get_sets()
 
     -- Basic sets
     sets.idle = {
-        main       = "Kaja Sword",
-        sub        = "Kaja Knife",
+        main       = "Naegling",
+        sub        = "Gleti's Knife",
         range      = "Ataktos",
         -- range      = "Molybdosis",
         ammo       = bullets["physical"],
@@ -148,7 +148,7 @@ function get_sets()
     sets.precast.WS.ranged = set_combine(sets.precast.WS.melee, {
         ammo      = bullets["physical"],
         head      = "Meghanada Visor +2",
-        body      = empy_body,
+        body      = relic_body,
         hands     = empy_hands,
         legs      = "Malignance Tights",
         feet      = "Malignance Boots",   -- Replace with Relic
@@ -156,17 +156,17 @@ function get_sets()
         back      = leaden_salute_cape,   -- Replace with WS capes
     })
     sets.precast.WS["Leaden Salute"] = set_combine(sets.precast.WS.ranged, {
-        ammo       = bullets["magic"], -- Orichalcum
+        ammo       = bullets["magic"],    -- Orichalcum
         head       = "Pixie Hairpin +1",
-        body       = "Nyame Mail",
+        body       = relic_body,
+        hands      = empy_hands,          -- Nyame @ ~5% wsd
         legs       = "Nyame Flanchard",
-        feet       = "Nyame Sollerets",
-        neck       = "Sanctity Necklace", -- JSE neck after RP
-        -- neck       = jse_neck,
+        feet       = "Nyame Sollerets",   -- Get relic +3
+        neck       = jse_neck,
         left_ear   = "Friomisi Earring",
         right_ear  = "Moonshade Earring",
         left_ring  = "Archon Ring",
-        right_ring = "Apate Ring", -- Get Dingir
+        right_ring = "Apate Ring",        -- Get Dingir
         waist      = "Hachirin-no-Obi",
         back       = leaden_salute_cape,
     })
@@ -229,6 +229,13 @@ function get_sets()
         body = "Mirke Wardecors",
         feet = af_feet,
     }
+
+    sets.precast.JA["Curing Waltz"] = {
+        left_ring  = "Defending Ring",
+        right_ring = "Asklepian Ring",
+    }
+    sets.precast.JA["Curing Waltz II"]  = sets.precast.JA["Curing Waltz"]
+    sets.precast.JA["Curing Waltz III"] = sets.precast.JA["Curing Waltz"]
 
     -- Use TH for targeted JA's
     sets.precast.JA["Box Step"] = sets.TH

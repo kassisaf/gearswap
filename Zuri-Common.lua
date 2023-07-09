@@ -1,5 +1,5 @@
 include('Mote-Mappings.lua')
-include('Zuri-Settings.lua')
+include('Zuri-Globals.lua')
 
 
 ----------------------
@@ -27,13 +27,6 @@ ENABLED_OR_DISABLED = { ["true"] = "enabled", ["false"] = "disabled" }
 
 lockables_set = to_set(lockables) -- from Zuri-Settings.lua
 
-full_nyame = {
-    head  = "Nyame Helm",
-    body  = "Nyame Mail",
-    hands = "Nyame Gauntlets",
-    legs  = "Nyame Flanchard",
-    feet  = "Nyame Sollerets",
-}
 
 ------------------------
 -- Modes and commands --
@@ -233,6 +226,8 @@ function midcast(spell)
     -- Equip the appropriate instrument last
     if spell.type == "BardSong" then
         equip_instrument(spell)
+    elseif spell.english == "Holy Water" then
+        equip(holy_water_set)
     end
 end -- midcast()
 
@@ -253,15 +248,15 @@ function pet_change(pet, gain)
 end -- pet_change()
 
 function buff_change(name, gain, buff_details)
-    if name == "Doom" then
-        if gain then
-            equip(sets.doomed)
-            send_command("input /p Doomed.")
-        else 
-            equip_idle_or_tp_set()
-            send_command("input /p Doom removed.")
-        end
-    end
+    -- if name == "Doom" then
+    --     if gain then
+    --         equip(sets.doomed)
+    --         send_command("input /p Doomed.")
+    --     else 
+    --         equip_idle_or_tp_set()
+    --         send_command("input /p Doom removed.")
+    --     end
+    -- end
 end -- buff_change()
 
 -- Command usage:

@@ -64,7 +64,7 @@ function get_sets()
         back       = "Intarabus's Cape",
     }
     sets.TP = set_combine(sets.idle,{
-        main       = "Kaja Sword",
+        main       = "Naegling",
         sub        = "Genbu's Shield",
         head       = "Nyame Helm",
         body       = "Nyame Mail",

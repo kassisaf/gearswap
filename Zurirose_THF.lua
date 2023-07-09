@@ -150,7 +150,11 @@ function get_sets()
     })
     sets.precast.JA["Box Step"]   = sets.TH
     sets.precast.JA["Quick Step"] = sets.TH
-    sets.precast.JA["Curing Waltz"] = {ammo = "Yamarang"}
+    sets.precast.JA["Curing Waltz"] = {
+        ammo       = "Yamarang",
+        left_ring  = "Defending Ring",
+        right_ring = "Asklepian Ring",
+    }
     sets.precast.JA["Curing Waltz II"]  = sets.precast.JA["Curing Waltz"]
     sets.precast.JA["Curing Waltz III"] = sets.precast.JA["Curing Waltz"]
     

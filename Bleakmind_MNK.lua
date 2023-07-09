@@ -12,8 +12,8 @@ function get_sets()
     sets.idle = {
         main       = "Homestead Cesti",
         head       = "Hizamaru Somen +2",
-        body       = "Mummu Jacket +1",
-        hands      = "Mummu Wrists +1",
+        body       = "Mummu Jacket +2",
+        hands      = "Mummu Wrists +2",
         legs       = "Mummu Kecks +2",
         feet       = "Mummu Gamashes +1",
         back       = "Segomo's Mantle",
