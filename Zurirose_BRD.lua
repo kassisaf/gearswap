@@ -131,7 +131,7 @@ function get_sets()
 
     -- Midcast sets
     sets.macc = {
-        main       = "Kaja Knife",
+        main       = "Tauret",
         sub        = "Ammurapi Shield",
         range      = "Gjallarhorn",
         neck       = "Incanter's Torque",

@@ -24,8 +24,8 @@ function get_sets()
         back       = "Solemnity Cape",
     }
     sets.TP = {
-        -- main       = "Kaja Sword",
-        -- sub        = "Kaja Knife",
+        -- main       = "Naegling",
+        -- sub        = "Tauret",
         range      = empty,
         ammo       = "Expeditious Pinion",
 

@@ -10,12 +10,12 @@ function get_sets()
 
     -- Basic sets
     sets.idle = {
-        main       = "Homestead Cesti",
+        main       = "Kaja Knuckles",
         head       = "Hizamaru Somen +2",
-        body       = "Mummu Jacket +1",
-        hands      = "Mummu Wrists +1",
+        body       = "Mummu Jacket +2",
+        hands      = "Mummu Wrists +2",
         legs       = "Mummu Kecks +2",
-        feet       = "Mummu Gamashes +1",
+        feet       = "Mummu Gamashes +2",
         back       = "Segomo's Mantle",
         neck       = "Subtlety Spectacles",
         waist      = "White Belt",

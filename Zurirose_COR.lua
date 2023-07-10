@@ -54,8 +54,9 @@ function get_sets()
     -- Basic sets
     sets.idle = {
         main       = "Naegling",
-        sub        = "Gleti's Knife",
+        -- sub        = "Gleti's Knife",
         range      = "Ataktos",
+        sub        = "Tauret",
         -- range      = "Molybdosis",
         ammo       = bullets["physical"],
         
@@ -159,7 +160,7 @@ function get_sets()
         ammo       = bullets["magic"],    -- Orichalcum
         head       = "Pixie Hairpin +1",
         body       = relic_body,
-        hands      = empy_hands,          -- Nyame @ ~5% wsd
+        hands      = "Nyame Gauntlets",
         legs       = "Nyame Flanchard",
         feet       = "Nyame Sollerets",   -- Get relic +3
         neck       = jse_neck,
@@ -192,7 +193,8 @@ function get_sets()
         hands      = empy_hands,
         legs       = "Desultor Tassets",
         -- neck       = "Regal Necklace",   -- Replaces Loricate
-        left_ring  = "Barataria Ring", -- Swap for defensive option after finishing RP on lanun knife
+        -- left_ring  = "Barataria Ring", -- Swap for defensive option after finishing RP on lanun knife
+        left_ring  = "Defending Ring",
         right_ring = "Luzaf's Ring",
         back       = snapshot_roll_cape,
     })
