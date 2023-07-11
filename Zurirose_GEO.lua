@@ -1,6 +1,6 @@
 function get_sets()
     include('Zuri-Common.lua')
-    job_init(1, 3, nil)  -- Macro book, macro page, lockstyle set
+    job_init(1, 3, 18)  -- Macro book, macro page, lockstyle set
 
     -- Leave these empty
     sets.precast    = {}
@@ -27,7 +27,7 @@ function get_sets()
     af_hands    = "Geomancy Mitaines +3"
     af_legs     = "Geomanic Pants +1"
     af_feet     = "Geomancy Sandals +1"
-    -- relic_head  = ""
+    relic_head  = "Bagua Galero"
     relic_body  = "Bagua Tunic +3"
     -- relic_hands = ""
     relic_legs  = "Bagua Pants +2"

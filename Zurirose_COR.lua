@@ -27,6 +27,13 @@ function get_sets()
         'Weapon skill damage +10%',
         'Damage taken-5%',
     }}
+    melee_tp_cape = {name="Camulus's Mantle", augments={
+        'DEX+20',
+        'Accuracy+20 Attack+20',
+        'Accuracy+10',
+        '"Dbl.Atk."+10',
+        'Phys. dmg. taken-4%', -- Need 3 more resin
+    }}
     roll_knife = {name="Lanun Knife", augments={'Path: C'}}
     stp_knife = {name="Lanun Knife", augments={'Path: A'}}
 
@@ -68,7 +75,7 @@ function get_sets()
         neck       = "Loricate Torque +1",
         waist      = "Carrier's Sash",
         left_ear   = "Eabani Earring",
-        right_ear  = "Meili Earring",
+        right_ear  = "Meili Earring",      -- Odnowa Earring +1 once it has more RP
         left_ring  = "Defending Ring",
         right_ring = "Shneddick Ring",
         back       = snapshot_roll_cape,
@@ -77,15 +84,15 @@ function get_sets()
         head       = "Adhemar Bonnet",
         body       = "Adhemar Jacket",
         hands      = "Malignance Gloves",
-        legs       = "Meghanada Chausses +2",
+        legs       = empy_legs,
         feet       = "Malignance Boots",
-        neck       = "Sanctity Necklace",
+        neck       = "Loricate Torque +1", -- Sacrificing neck for DT, consider using ring slot instead after Iskur Gorget
         waist      = "Sailfi Belt +1",
-        left_ear   = "Sherida Earring",
-        right_ear  = "Eabani Earring",
-        left_ring  = "Rajas Ring",
+        left_ear   = "Eabani Earring",
+        right_ear  = "Telos Earring",
+        left_ring  = "Rajas Ring",         -- Buy Chirich +1
         right_ring = "Petrov Ring",
-        back       = "Atheling Mantle",       -- Replace with ambu TP cape
+        back       = melee_tp_cape,
     })
     sets.FC = {
         neck       = "Magoraga Beads",
@@ -93,6 +100,7 @@ function get_sets()
         right_ring = "Kishar Ring",
         waist      = "Sailfi Belt +1",
     }
+    sets.midcast["Utsusemi"] = sets.idle
 
     -- Preshot should contain: Snapshot, Rapid Shot
     -- Snapshot caps at 70 (-10% from gifts)
@@ -182,9 +190,8 @@ function get_sets()
     -- Rolls
     sets.precast.JA["Phantom Roll"] = set_combine(sets.idle, {
         -- Purely defensive
-        feet      = "Malignance Boots",
-        neck      = "Loricate Torque +1",
-        -- right_ear = "Odnowa Earring +1", -- Needs more RP
+        feet       = "Malignance Boots",
+        left_ring  = "Defending Ring",
 
         -- Actually helps with rolls
         main       = roll_knife,
@@ -192,9 +199,7 @@ function get_sets()
         head       = relic_head,
         hands      = empy_hands,
         legs       = "Desultor Tassets",
-        -- neck       = "Regal Necklace",   -- Replaces Loricate
-        -- left_ring  = "Barataria Ring", -- Swap for defensive option after finishing RP on lanun knife
-        left_ring  = "Defending Ring",
+        -- neck       = "Regal Necklace",
         right_ring = "Luzaf's Ring",
         back       = snapshot_roll_cape,
     })
