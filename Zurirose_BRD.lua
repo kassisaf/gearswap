@@ -100,22 +100,19 @@ function get_sets()
     sets.precast.RA = {}
 
     -- Weaponskill sets
-    sets.precast.WS.melee = {
-        -- ammo       = "Yetshila",
+    sets.precast.WS.melee = set_combine(full_nyame, {
         body       = relic_body,
         neck       = "Fotia Gorget",
-        left_ear   = "Ishvara Earring",
-        right_ear  = "Moonshade Earring",
+        waist      = "Fotia Belt",
+        left_ear   = "Moonshade Earring",
+        right_ear  = "Ishvara Earring",
         left_ring  = "Rufescent Ring",
         right_ring = "Apate Ring",
         back       = "Phalangite Mantle",
-        waist      = "Fotia Belt",
-    }
+    })
     sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
-        neck       = "Caro Necklace",
-        left_ring  = "Rufescent Ring",
-        right_ring = "Apate Ring",
-        waist      = "Grunfeld Rope",
+        neck  = "Caro Necklace", -- Republican Platinum Medal
+        waist = "Sailfi Belt +1",
     })
 
     -- Job ability sets

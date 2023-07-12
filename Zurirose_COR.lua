@@ -1,6 +1,6 @@
 function get_sets()
     include('Zuri-Common.lua')
-    job_init(2, 9, 14)   -- Macro book, macro page, lockstyle set
+    job_init(2, 9, 15)   -- Macro book, macro page, lockstyle set
 
     -- Leave these empty
     sets.precast    = {}
@@ -139,17 +139,16 @@ function get_sets()
     -- Weaponskill sets
     sets.precast.WS.melee = set_combine(full_nyame, {
         hands      = "Meghanada Gloves +2",
-        back       = "Sokolski Mantle",
         neck       = "Fotia Gorget",
         waist      = "Fotia Belt",
         left_ear   = "Moonshade Earring",
         right_ear  = "Ishvara Earring",
         left_ring  = "Rufescent Ring",
         right_ring = "Apate Ring",
-        back       = leaden_salute_cape,
+        back       = leaden_salute_cape, -- 10% WSD
     })
     sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
-        -- neck  = "Republican Platinum Medal",
+        neck  = "Caro Necklace", -- Republican Platinum Medal
         waist = "Sailfi Belt +1",
     })
 
