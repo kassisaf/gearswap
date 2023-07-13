@@ -42,8 +42,8 @@ function get_sets()
         waist      = "Sailfi Belt +1",
         left_ear   = "Eabani Earring",
         right_ear  = "Skulker's Earring",
-        left_ring  = "Petrov Ring",  -- Get Epona's Ring
-        right_ring = "Meghanada Ring",
+        left_ring  = "Chirich Ring +1",
+        right_ring = "Petrov Ring",       -- Get Epona's Ring
         back       = "Toutatis's Cape",
     }
     sets.FC = {}

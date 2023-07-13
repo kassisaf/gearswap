@@ -75,8 +75,8 @@ function get_sets()
         waist      = "Sailfi Belt +1",
         left_ear   = "Digni. Earring",
         right_ear  = "Fili Earring",
-        left_ring  = "Petrov Ring",
-        right_ring = "Apate Ring",
+        left_ring  = "Chirich Ring +1",
+        right_ring = "Petrov Ring",
         back       = "Agema Cape",
     })
     if dual_wield_available then

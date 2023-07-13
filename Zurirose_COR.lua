@@ -90,7 +90,7 @@ function get_sets()
         waist      = "Sailfi Belt +1",
         left_ear   = "Eabani Earring",
         right_ear  = "Telos Earring",
-        left_ring  = "Rajas Ring",         -- Buy Chirich +1
+        left_ring  = "Chirich Ring +1",
         right_ring = "Petrov Ring",
         back       = melee_tp_cape,
     })

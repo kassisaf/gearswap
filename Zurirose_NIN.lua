@@ -38,7 +38,7 @@ function get_sets()
         waist      = "Sailfi Belt +1",
         left_ear   = "Brutal Earring",        -- Get Sherida
         right_ear  = "Telos Earring",
-        left_ring  = "Rajas Ring",
+        left_ring  = "Chirich Ring +1",
         right_ring = "Petrov Ring",
         back       = "Atheling Mantle",       -- Replace with ambu TP cape
     }

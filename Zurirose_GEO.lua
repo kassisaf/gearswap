@@ -74,8 +74,8 @@ function get_sets()
         neck       = "Loricate Torque +1",
         left_ear   = "Telos Earring",
         right_ear  = "Brutal Earring",
-        left_ring  = "Petrov Ring",
-        right_ring = "Apate Ring",
+        left_ring  = "Chirich Ring +1",
+        right_ring = "Petrov Ring",
         waist      = "Eschan Stone",
     })
     sets.FC = {

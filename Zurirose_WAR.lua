@@ -38,8 +38,8 @@ function get_sets()
         waist      = "Sailfi Belt +1",
         left_ear   = "Dignitary's Earring",
         right_ear  = "Boii Earring +1",
-        left_ring  = "Petrov Ring",
-        right_ring = "Apate Ring",
+        left_ring  = "Chirich Ring +1",
+        right_ring = "Petrov Ring",
         back       = "Atheling Mantle",
     }
     sets.FC = {}
