@@ -35,7 +35,7 @@ function get_sets()
     empy_head   = "Azimuth Hood +2"
     empy_body   = "Azimuth Coat +2"
     empy_hands  = "Azimuth Gloves +2"
-    empy_legs   = "Azimuth Tights +2"
+    empy_legs   = "Azimuth Tights +3"
     empy_feet   = "Azimuth Gaiters +2"
     jse_neck    = "Bagua Charm +1"
 
@@ -148,7 +148,7 @@ function get_sets()
         head       = empy_head,
         body       = relic_body,
         hands      = af_hands,
-        legs       = relic_body,
+        legs       = relic_legs,
         feet       = empy_feet,
         neck       = jse_neck,
         left_ring  = "Stikini Ring",
@@ -156,23 +156,24 @@ function get_sets()
         left_ear   = "Handler's Earring +1",
         right_ear  = "Handler's Earring",
         back       = "Lifestream Cape",
-        waist      = "Luminary Sash",        -- Get Isa Belt
+        waist      = "Isa Belt",
     }
     sets.midcast["Elemental Magic"] = set_combine(sets.macc,{
         main       = "Daybreak",
         sub        = "Ammurapi Shield",
-        ammo       = "Ghastly Tathlum +1",  -- Get Pemphredo Tathlum
+        ammo       = "Ghastly Tathlum +1",
         head       = empy_head,
         body       = empy_body,
         hands      = empy_hands,
         legs       = empy_legs,
         feet       = empy_feet,
-        neck       = "Sanctity Necklace",
+        neck       = "Sanctity Necklace",   -- Mizukage-no-Kubikazari > Baetyl Pendant
         left_ear   = "Malignance Earring",
-        right_ear  = "Azimuth Earring",
-        left_ring  = "Jhakri Ring",
-        right_ring = "Stikini Ring",
-        waist      = "Refoccilation Stone",
+        right_ear  = "Azimuth Earring",     -- Regal earring > Barkarole earring
+        left_ring  = "Shiva Ring +1",
+        right_ring = "Jhakri Ring",         -- Freke Ring
+        -- waist      = "Refoccilation Stone", -- Sacro Cord
+        waist      = "Acuity Belt +1",      -- Better than refoc. for now?
         back       = nuke_cape,
     })
     sets.midcast["Enhancing Magic"] = {

@@ -111,7 +111,7 @@ function get_sets()
         back       = "Phalangite Mantle",
     })
     sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
-        neck  = "Caro Necklace", -- Republican Platinum Medal
+        neck  = "Republican Platinum Medal",
         waist = "Sailfi Belt +1",
     })
 

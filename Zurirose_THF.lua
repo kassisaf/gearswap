@@ -111,16 +111,18 @@ function get_sets()
         right_ear = "Sherida Earring",
     })
     sets.precast.WS["Dancing Edge"] = sets.precast.WS["Evisceration"]
-    sets.precast.WS["Aeolian Edge"] = set_combine(sets.precast.WS.melee, {
-        ammo       = "Hydrocera",
-        legs       = "Limbo Trousers",
-        neck       = "Deviant Necklace",
+    sets.precast.WS["Aeolian Edge"] = set_combine(full_nyame, {
+        ammo       = "Ghastly Tathlum +1",
+        neck       = "Sanctity Necklace",
         waist      = "Eschan Stone",
+        left_ear   = "Moonshade Earring",
         right_ear  = "Friomisi Earring",
         left_ring  = "Stikini Ring",
         right_ring = "Stikini Ring",
     })
     sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
+        neck  = "Republican Platinum Medal",
+        waist = "Sailfi Belt +1",
         right_ear = "Ishvara Earring",
     })
 

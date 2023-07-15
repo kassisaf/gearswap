@@ -75,18 +75,20 @@ function get_sets()
         legs      = "Meghanada Chausses +2",
         feet      = "Meghanada Jambeaux +2",
         back      = "Sokolski Mantle",
-        neck      = "Caro Necklace",
+        neck      = "Fotia Gorget",
         left_ear  = "Moonshade Earring",
         right_ear = "Odr Earring",
         left_ring = "Meghanada Ring",
         left_ring = "Rufescent Ring",
-        waist     = "Sailfi Belt +1",
+        waist     = "Fotia Belt",
         -- back      = snapshot_roll_cape,
     }
     sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
+        neck       = "Republican Platinum Medal",
+        waist      = "Sailfi Belt +1",
         right_ear  = "Ishvara Earring",
         left_ring  = "Rufescent Ring",
-        right_ring = "Sapphire Ring",
+        right_ring = "Apate Ring",
     })
 
     -- Job ability sets

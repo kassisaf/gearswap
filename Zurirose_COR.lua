@@ -32,7 +32,14 @@ function get_sets()
         'Accuracy+20 Attack+20',
         'Accuracy+10',
         '"Dbl.Atk."+10',
-        'Phys. dmg. taken-4%', -- Need 3 more resin
+        'Damage taken-5%',
+    }}
+    savage_cape = {name="Camulus's Mantle", augments={
+        'STR+20',
+        'Accuracy+20 Attack+20',
+        'STR+10',
+        'Weapon skill damage +10%',
+        'Damage taken-5%',
     }}
     roll_knife = {name="Lanun Knife", augments={'Path: C'}}
     stp_knife = {name="Lanun Knife", augments={'Path: A'}}
@@ -61,9 +68,9 @@ function get_sets()
     -- Basic sets
     sets.idle = {
         main       = "Naegling",
-        -- sub        = "Gleti's Knife",
+        sub        = "Gleti's Knife",
+        -- sub        = "Tauret",
         range      = "Ataktos",
-        sub        = "Tauret",
         -- range      = "Molybdosis",
         ammo       = bullets["physical"],
         
@@ -148,7 +155,7 @@ function get_sets()
         back       = leaden_salute_cape, -- 10% WSD
     })
     sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
-        neck  = "Caro Necklace", -- Republican Platinum Medal
+        neck  = "Republican Platinum Medal",
         waist = "Sailfi Belt +1",
     })
 
@@ -176,7 +183,7 @@ function get_sets()
         left_ring  = "Archon Ring",
         right_ring = "Apate Ring",        -- Get Dingir
         waist      = "Hachirin-no-Obi",
-        back       = leaden_salute_cape,
+        back       = savage_cape,
     })
     sets.precast.WS["Wildfire"] = set_combine(sets.precast.WS["Leaden Salute"], {
         waist = "Eschan Stone",
