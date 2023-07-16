@@ -232,9 +232,6 @@ function get_sets()
     sets.precast.JA["Snake Eye"] = {
         legs = relic_legs,
     }
-    sets.precast.JA["Triple Shot"] = {
-        body = empy_body,
-    }
     sets.precast.JA["Wild Card"] = {
         feet = relic_feet,
     }
@@ -267,9 +264,9 @@ function get_sets()
         right_ring = "Blenmot's Ring +1",
     }
     sets.dynamis_rp = {
-        main = stp_knife,
+        -- sub  = stp_knife,
         sub  = roll_knife,
-        neck = jse_neck,
+        -- neck = jse_neck,
     }
 
 end -- get_sets()

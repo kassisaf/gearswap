@@ -167,13 +167,12 @@ function get_sets()
         hands      = empy_hands,
         legs       = empy_legs,
         feet       = empy_feet,
-        neck       = "Sanctity Necklace",   -- Mizukage-no-Kubikazari > Baetyl Pendant
+        neck       = "Mizukage-no-Kubikazari",
         left_ear   = "Malignance Earring",
-        right_ear  = "Azimuth Earring",     -- Regal earring > Barkarole earring
+        right_ear  = "Azimuth Earring",        -- Regal earring > Barkarole earring
         left_ring  = "Shiva Ring +1",
-        right_ring = "Jhakri Ring",         -- Freke Ring
-        -- waist      = "Refoccilation Stone", -- Sacro Cord
-        waist      = "Acuity Belt +1",      -- Better than refoc. for now?
+        right_ring = "Jhakri Ring",            -- Freke Ring
+        waist      = "Acuity Belt +1",         -- Better than refoc. for now? Get Sacro Cord
         back       = nuke_cape,
     })
     sets.midcast["Enhancing Magic"] = {

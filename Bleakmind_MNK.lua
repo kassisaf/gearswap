@@ -8,6 +8,22 @@ function get_sets()
     sets.precast.JA = {}
     sets.midcast    = {}
 
+    -- Gear aliases
+    tp_cape = {name="Segomo's Mantle", augments={
+        'DEX+20',
+        'Accuracy+20 Attack+20',
+        'DEX+10',
+        '"Dbl.Atk."+10',
+        'Damage taken-5%',
+    }}
+    -- ws_cape = {name="Segomo's Mantle", augments={
+    --     'STR+20',
+    --     'Accuracy+20 Attack+20',
+    --     'STR+10',
+    --     '"Dbl.Atk."+10',
+    --     'Damage taken-5%',
+    -- }}
+
     -- Basic sets
     sets.idle = {
         main       = "Kaja Knuckles",
@@ -16,21 +32,19 @@ function get_sets()
         hands      = "Mummu Wrists +2",
         legs       = "Mummu Kecks +2",
         feet       = "Mummu Gamashes +2",
-        back       = "Segomo's Mantle",
         neck       = "Subtlety Spectacles",
         waist      = "White Belt",
         left_ear   = "Odr Earring",
         right_ear  = "Raising Earring",
         left_ring  = "Mummu Ring",
         right_ring = "Hizamaru Ring",
+        back       = tp_cape,
     }
     sets.TP = sets.idle
     sets.FC = {}
 
     -- Precast sets
-    sets.precast.RA = {
-
-    }
+    sets.precast.RA = {}
 
     -- Weaponskill sets
     sets.precast.WS.melee = {
