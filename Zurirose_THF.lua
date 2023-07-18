@@ -28,7 +28,7 @@ function get_sets()
         main       = "Aeneas",
         sub        = "Gleti's Knife",
         range      = empty,
-        ammo       = "Focal Orb",
+        ammo       = "Coiste Bodhar",
         head       = "Skulker's Bonnet +2",
         body       = "Adhemar Jacket",
         -- TODO: DT command for THF

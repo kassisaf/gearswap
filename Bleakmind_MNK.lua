@@ -35,7 +35,7 @@ function get_sets()
         neck       = "Subtlety Spectacles",
         waist      = "White Belt",
         left_ear   = "Odr Earring",
-        right_ear  = "Raising Earring",
+        right_ear  = "Bloodbead Earring",
         left_ring  = "Mummu Ring",
         right_ring = "Hizamaru Ring",
         back       = tp_cape,

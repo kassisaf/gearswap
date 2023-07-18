@@ -9,14 +9,10 @@ function get_sets()
     sets.midcast    = {}
 
     -- Basic sets
-    sets.idle = {
+    sets.idle = set_combine(full_nyame, {
         main       = "Hepatizon Axe",
         sub        = "Kaja Grip",
-        head       = "Nyame Helm",
-        body       = "Nyame Mail",
-        hands      = "Nyame Gauntlets",
-        legs       = "Nyame Flanchard",
-        feet       = "Nyame Sollerets",
+        -- ammo = "",
         neck       = "Loricate Torque +1",
         waist      = "Carrier's Sash",
         left_ear   = "Eabani Earring",
@@ -24,11 +20,9 @@ function get_sets()
         left_ring  = "Defending Ring",
         right_ring = "Shneddick Ring",
         back       = "Agema Cape",
-    }
+    })
     sets.TP = {
-        main       = "Hepatizon Axe",
-        sub        = "Kaja Grip",
-        ammo       = "Focal Orb",
+        ammo       = "Coiste Bodhar",
         head       = "Sakpata's Helm",
         body       = "Sakpata's Breastplate",
         hands      = "Sakpata's Gauntlets",
@@ -49,8 +43,7 @@ function get_sets()
     -- Weaponskill sets
     sets.precast.WS.melee = set_combine(full_nyame, {
         ammo       = "Knobkierre",
-        hands      = "Meghanada Gloves +2",
-        neck       = "Caro Necklace",
+        neck       = "Republican Platinum Medal",
         waist      = "Sailfi Belt +1",
         left_ear   = "Moonshade Earring",
         right_ear  = "Thrud Earring",

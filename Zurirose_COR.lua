@@ -49,7 +49,7 @@ function get_sets()
     -- Relic:    Commodore / Lanun
     -- Empyrean: Navarch's / Chasseur's
     af_head     = "Laksamana's Tricorne"
-    af_body     = "Laksamana's Frac +2"
+    af_body     = "Laksamana's Frac +3"
     af_hands    = "Laksamana's Gants +1"
     af_legs     = "Laksamana's Trews +1"
     af_feet     = "Laksamana's Bottes +1"
@@ -73,7 +73,6 @@ function get_sets()
         range      = "Ataktos",
         -- range      = "Molybdosis",
         ammo       = bullets["physical"],
-        
         head       = "Nyame Helm",
         body       = empy_body,
         hands      = "Nyame Gauntlets",
@@ -93,6 +92,7 @@ function get_sets()
         hands      = "Malignance Gloves",
         legs       = empy_legs,
         feet       = "Malignance Boots",
+
         neck       = "Loricate Torque +1", -- Sacrificing neck for DT, consider using ring slot instead after Iskur Gorget
         waist      = "Sailfi Belt +1",
         left_ear   = "Eabani Earring",
