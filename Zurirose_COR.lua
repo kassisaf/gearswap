@@ -52,12 +52,12 @@ function get_sets()
     af_body     = "Laksamana's Frac +3"
     af_hands    = "Laksamana's Gants +1"
     af_legs     = "Laksamana's Trews +1"
-    af_feet     = "Laksamana's Bottes +1"
+    af_feet     = "Laksamana's Bottes +1" -- Upgrade these for quick draw
     relic_head  = "Lanun Tricorne"
     relic_body  = "Lanun Frac +3"
     relic_hands = "Lanun Gants +1"
     relic_legs  = "Lanun Trews"
-    relic_feet  = "Lanun Bottes +1"
+    relic_feet  = "Lanun Bottes +3"
     empy_head   = "Chasseur's Tricorne +2"
     empy_body   = "Chasseur's Frac +2"
     empy_hands  = "Chasseur's Gants +2"
@@ -68,8 +68,8 @@ function get_sets()
     -- Basic sets
     sets.idle = {
         main       = "Naegling",
-        sub        = "Gleti's Knife",
-        -- sub        = "Tauret",
+        -- sub        = "Gleti's Knife",
+        sub        = "Tauret",
         range      = "Ataktos",
         -- range      = "Molybdosis",
         ammo       = bullets["physical"],
@@ -87,7 +87,7 @@ function get_sets()
         back       = snapshot_roll_cape,
     }
     sets.TP = set_combine(sets.idle, {
-        head       = "Adhemar Bonnet",
+        head       = "Malignance Chapeau",
         body       = "Adhemar Jacket",
         hands      = "Malignance Gloves",
         legs       = empy_legs,
@@ -107,6 +107,11 @@ function get_sets()
         right_ring = "Kishar Ring",
         waist      = "Sailfi Belt +1",
     }
+
+    sets.macc = {
+        ammo = bullets["magic"], -- Orichalcum
+    }
+
     sets.midcast["Utsusemi"] = sets.idle
 
     -- Preshot should contain: Snapshot, Rapid Shot
@@ -176,12 +181,12 @@ function get_sets()
         body       = relic_body,
         hands      = "Nyame Gauntlets",
         legs       = "Nyame Flanchard",
-        feet       = "Nyame Sollerets",   -- Get relic +3
+        feet       = relic_feet,
         neck       = jse_neck,
         left_ear   = "Friomisi Earring",
         right_ear  = "Moonshade Earring",
         left_ring  = "Archon Ring",
-        right_ring = "Apate Ring",        -- Get Dingir
+        right_ring = "Apate Ring",        -- Get Dingir Ring
         waist      = "Hachirin-no-Obi",
         back       = savage_cape,
     })
@@ -235,17 +240,55 @@ function get_sets()
     sets.precast.JA["Wild Card"] = {
         feet = relic_feet,
     }
-    sets.precast.JA["Quick Draw"] = {
+
+    -- TODO: Add M.acc for light/dark shot, stp/damage for the rest
+    sets.precast.JA["Quick Draw"] = set_combine(sets.precast.WS["Leaden Salute"], {
         body = "Mirke Wardecors",
         feet = af_feet,
-    }
+        back = leaden_salute_cape, -- Replace with quickdraw_cape: AGI/MDmg/STP/MAB
+    })
+    sets.quickdraw["acc"] = set_combine(sets.precast.JA["Quick Draw"], {
+        head       = af_head,
+        -- body      = "Malignance Tabard",
+        hands      = af_hands,
+        legs       = "Malignance Tights",
+        feet       = af_feet,
 
-    sets.precast.JA["Curing Waltz"] = {
+        neck       = jse_neck,
+        left_ear   = "Dignitary's Earring",
+        -- right_ear = "Gwati Earring",
+        left_ring  = "Stikini Ring",
+        right_ring = "Stikini Ring",
+        -- waist      = "",
+    })
+    sets.quickdraw["stp"] = set_combine(sets.precast.JA["Quick Draw"], {
+        head       = "Malignance Chapeau",
+        -- body       = "Malignance Tabard",
+        hands      = "Malignance Gloves",
+        legs       = "Malignance Tights",
+        feet       = "Malignance Boots",
+        -- neck       = "Iskur Gorget",
+        -- left_ear   = "Dedition Earring",
+        right_ear  = "Telos Earring",
+        left_ring  = "Chirich Ring +1",
+        right_ring = "Chirich Ring +1",
+        -- waist      = "",
+    })
+    sets.precast.JA["Light Shot"]   = sets.quickdraw["acc"]
+    sets.precast.JA["Dark Shot"]    = set_combine(sets.quickdraw["acc"], {waist = "Hachirin-no-Obi"})
+    sets.precast.JA["Fire Shot"]    = sets.quickdraw["stp"]
+    sets.precast.JA["Water Shot"]   = sets.quickdraw["stp"]
+    sets.precast.JA["Thunder Shot"] = sets.quickdraw["stp"]
+    sets.precast.JA["Earth Shot"]   = sets.quickdraw["stp"]
+    sets.precast.JA["Wind Shot"]    = sets.quickdraw["stp"]
+    sets.precast.JA["Ice Shot"]     = sets.quickdraw["stp"]
+
+
+    -- All Curing and Divine waltzes fall back to Waltz when spell mappings are checked
+    sets.precast.JA["Waltz"] = {
         left_ring  = "Defending Ring",
         right_ring = "Asklepian Ring",
     }
-    sets.precast.JA["Curing Waltz II"]  = sets.precast.JA["Curing Waltz"]
-    sets.precast.JA["Curing Waltz III"] = sets.precast.JA["Curing Waltz"]
 
     -- Use TH for targeted JA's
     sets.precast.JA["Box Step"] = sets.TH
@@ -264,8 +307,7 @@ function get_sets()
         right_ring = "Blenmot's Ring +1",
     }
     sets.dynamis_rp = {
-        -- sub  = stp_knife,
-        sub  = roll_knife,
+        sub  = stp_knife,
         -- neck = jse_neck,
     }
 
