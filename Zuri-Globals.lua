@@ -1,3 +1,5 @@
+default_auto_assist_target = "Zurirose"
+
 -- Any items defined here will be locked when equipped manually
 lockables = {
     "Warp Ring",
@@ -23,6 +25,14 @@ full_nyame = {
     hands = "Nyame Gauntlets",
     legs  = "Nyame Flanchard",
     feet  = "Nyame Sollerets",
+}
+
+full_malignance = {
+    head  = "Malignance Chapeau",
+    body  = "Malignance Tabard",
+    hands = "Malignance Gloves",
+    legs  = "Malignance Tights",
+    feet  = "Malignance Boots",
 }
 
 holy_water_set = {

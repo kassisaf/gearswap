@@ -66,7 +66,6 @@ function job_init(macro_book, macro_page, lockstyleset)
     send_command("wait 3; input /echo ** Job is " .. player.main_job .. "/" .. player.sub_job .. ". Macros set to Book " .. macro_book .. " Page " .. macro_page .. ". **")
 end
 
-
 --------------------------------------------------------
 -- Locking logic for specific manually-equipped items --
 --------------------------------------------------------

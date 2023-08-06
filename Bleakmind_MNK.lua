@@ -26,6 +26,7 @@ function get_sets()
 
     -- Basic sets
     sets.idle = {
+        ammo       = "Ghastly Tathlum",
         main       = "Kaja Knuckles",
         head       = "Hizamaru Somen +2",
         body       = "Mummu Jacket +2",
@@ -33,14 +34,16 @@ function get_sets()
         legs       = "Mummu Kecks +2",
         feet       = "Mummu Gamashes +2",
         neck       = "Subtlety Spectacles",
-        waist      = "White Belt",
+        waist      = "Eschan Stone",
         left_ear   = "Odr Earring",
         right_ear  = "Bloodbead Earring",
-        left_ring  = "Mummu Ring",
+        left_ring  = "Gelatinous Ring +1",
         right_ring = "Hizamaru Ring",
         back       = tp_cape,
     }
-    sets.TP = sets.idle
+    sets.TP = set_combine(sets.idle, {
+        left_ring  = "Mummu Ring",
+    })
     sets.FC = {}
 
     -- Precast sets

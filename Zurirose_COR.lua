@@ -1,6 +1,6 @@
 function get_sets()
     include('Zuri-Common.lua')
-    job_init(2, 9, 15)   -- Macro book, macro page, lockstyle set
+    job_init(2, 9, 14)   -- Macro book, macro page, lockstyle set
 
     -- Leave these empty
     sets.precast    = {}
@@ -90,8 +90,9 @@ function get_sets()
         head       = "Malignance Chapeau",
         body       = "Adhemar Jacket",
         hands      = "Malignance Gloves",
-        legs       = empy_legs,
         feet       = "Malignance Boots",
+        
+        legs       = empy_legs,
 
         neck       = "Loricate Torque +1", -- Sacrificing neck for DT, consider using ring slot instead after Iskur Gorget
         waist      = "Sailfi Belt +1",
@@ -139,11 +140,11 @@ function get_sets()
         back       = "Sokolski Mantle",
         neck       = "Sanctity Necklace",  -- Iskur Gorget
         waist      = "Eschan Stone",
-        left_ring  = "Mummu Ring",         -- Dingir, Ilabrat
-        right_ring = "Meghanada Ring",
+        left_ring  = "Cacoethic Ring +1",
+        right_ring = "Cacoethic Ring",
         left_ear   = "Telos Earring",
-        right_ear  = "Odr Earring",
-        back       = snapshot_roll_cape,   -- Replace with shooting cape?
+        right_ear  = "Beyla Earring",
+        back       = leaden_salute_cape,   -- Replace with shooting cape?
     }
 
     -- Precast sets
@@ -172,6 +173,7 @@ function get_sets()
         hands     = empy_hands,
         legs      = "Malignance Tights",
         feet      = "Malignance Boots",   -- Replace with Relic
+        left_ear  = "Ishvara Earring",
         right_ear = "Telos Earring",
         back      = leaden_salute_cape,   -- Replace with WS capes
     })
@@ -193,9 +195,27 @@ function get_sets()
     sets.precast.WS["Wildfire"] = set_combine(sets.precast.WS["Leaden Salute"], {
         waist = "Eschan Stone",
     })
-    sets.precast.WS["Hot Shot"] = sets.precast.WS["Wildfire"]
-    sets.precast.WS["Aeolian Edge"] = sets.precast.WS["Wildfire"]
+    sets.precast.WS["Hot Shot"] = set_combine(sets.precast.WS["Leaden Salute"], {
+        ammo       = bullets["magic"],     -- Orichalcum
+        head       = "Malignance Chapeau",
+        body       = af_body,
+        hands      = "Malignance Gloves",
+        legs       = empy_legs,
+        feet       = empy_feet,
+        left_ring  = "Cacoethic Ring +1",
+        right_ring = "Cacoethic Ring",
+        left_ear   = "Telos Earring",
+        right_ear  = "Beyla Earring",
+        waist      = "Hachirin-no-Obi",
+        back       = leaden_salute_cape,
+    })
+    sets.precast.WS["Last Stand"] = set_combine(sets.precast.WS.ranged, {
+        neck  = "Fotia Gorget",
+        waist = "Fotia Belt",
+    })
 
+    sets.precast.WS["Aeolian Edge"] = sets.precast.WS["Wildfire"]
+    
     -- Job ability sets
 
     -- Rolls
@@ -247,6 +267,7 @@ function get_sets()
         feet = af_feet,
         back = leaden_salute_cape, -- Replace with quickdraw_cape: AGI/MDmg/STP/MAB
     })
+    sets.quickdraw = {}
     sets.quickdraw["acc"] = set_combine(sets.precast.JA["Quick Draw"], {
         head       = af_head,
         -- body      = "Malignance Tabard",
@@ -282,7 +303,6 @@ function get_sets()
     sets.precast.JA["Earth Shot"]   = sets.quickdraw["stp"]
     sets.precast.JA["Wind Shot"]    = sets.quickdraw["stp"]
     sets.precast.JA["Ice Shot"]     = sets.quickdraw["stp"]
-
 
     -- All Curing and Divine waltzes fall back to Waltz when spell mappings are checked
     sets.precast.JA["Waltz"] = {

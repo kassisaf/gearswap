@@ -112,6 +112,9 @@ function get_sets()
 
     -- Precast sets
     sets.precast.RA = {}
+    sets.precast["Cure"] = {
+        right_ear = "Mendicant's Earring",
+    }
 
     -- Weaponskill sets
     sets.precast.WS.melee = {
@@ -201,6 +204,9 @@ function get_sets()
         head = "Chironic Hat", -- Aquaveil +1
         -- legs = "Shedir Seraweels" -- Aquaveil +1
     })
+    sets.midcast["Aspir"] = {
+        
+    }
 
     sets.midcast["Cure"] = {
         main       = "Daybreak",
@@ -213,7 +219,7 @@ function get_sets()
         feet       = "Vanya Clogs",
         neck       = "Incanter's Torque",
         left_ear   = "Meili Earring",
-        right_ear  = "Fili Earring",
+        right_ear  = "Mendicant's Earring",
         left_ring  = "Stikini Ring",
         right_ring = "Stikini Ring",
         back       = "Solemnity Cape",
