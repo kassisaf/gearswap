@@ -39,6 +39,6 @@ cure_cheat_set = {
     left_ear   = "Odnowa Earring +1",
     right_ear  = "Cryptic Earring",
     left_ring  = "Defending Ring",
-    right_ring = "Shneddick Ring",
+    right_ring = "Meridian Ring",
     back       = "Repulse Mantle",
 }

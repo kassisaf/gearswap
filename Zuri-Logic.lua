@@ -321,5 +321,9 @@ function self_command(command)
         send_command("gs showswaps")
         send_command("gs debugmode")
         toggle_mode("debug")
+    elseif command == "equip_cure_cheat_set" then
+        equip(cure_cheat_set)
+    elseif command == "cc" then
+        send_command("gs equip naked; wait 1; gs c equip_cure_cheat_set")
     end
 end -- self_command()
