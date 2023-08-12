@@ -1,19 +1,10 @@
-include('Mote-Mappings.lua')
+include('Zuri-Mappings.lua')
 include('Zuri-Globals.lua')
 
 
 ----------------------
 -- Helper functions --
 ----------------------
-
--- Generic table to set converter (equivalent to S{} in other Gearswap libs)
-function to_set(t)
-    set = {}
-    for _, v in pairs(t) do
-        set[v] = true
-    end
-    return set
-end
 
 function ends_with(str, ending)
     return ending == "" or str:sub(-#ending) == ending
@@ -25,8 +16,7 @@ end
 
 ENABLED_OR_DISABLED = { ["true"] = "enabled", ["false"] = "disabled" }
 
-lockables_set = to_set(lockables) -- from Zuri-Settings.lua
-
+lockables_set = S(lockables) -- from Zuri-Settings.lua
 
 ------------------------
 -- Modes and commands --
@@ -116,7 +106,10 @@ function safe_equip(gearset, skip_recheck)
 end
 
 function handle_elemental_obi(spell)
-    use_obi = spell.action_type == "Magic" or spell.type == "WeaponSkill" or spell.type ~= "CorsairShot"
+    use_obi = spell.action_type == "Magic"
+        or (spell.type == "WeaponSkill" and elemental_obi_weaponskills[spell.english])  -- Obi WS list from Zuri-Mappings.lua
+        or spell.type ~= "CorsairShot"
+
     -- world.weather_element reports SCH weather over zone weather, if present
     if use_obi and (spell.element == world.weather_element or spell.element == world.day_element) then
         equip({waist = "Hachirin-no-Obi"})
@@ -178,10 +171,10 @@ end
 
 function equip_roll_set(spell)
     -- Equip generic roll set first
-    safe_equip(sets.precast.JA["Phantom Roll"])
+    safe_equip(sets.precast["Phantom Roll"])
     -- Add in set for specific roll if it exists
-    if sets.precast.JA[spell.english] then
-        safe_equip(sets.precast.JA[spell.english])
+    if sets.precast[spell.english] then
+        safe_equip(sets.precast[spell.english])
     end
 end
 
@@ -221,8 +214,8 @@ function precast(spell, position)
     -- Then spell type
     elseif sets.precast[spell.type] then
         safe_equip(sets.precast[spell.type])
-    elseif spell_maps[spell.english] and sets.precast[spell_maps[spell.english]] then
-        safe_equip(sets.precast[spell_maps[spell.english]])
+    elseif spell_tier_map[spell.english] and sets.precast[spell_tier_map[spell.english]] then
+        safe_equip(sets.precast[spell_tier_map[spell.english]])
     end
 
     -- Only handle obi in precast for offensive abilities (WS, cor shots, etc.)
@@ -257,8 +250,8 @@ function midcast(spell)
     -- Look for exact matches first, then try the tiered spell map (i.e. sets.midcast["Fire IV"] and then sets.midcast.Fire)
     if sets.midcast[spell.english] then
         safe_equip(sets.midcast[spell.english])
-    elseif spell_maps[spell.english] and sets.midcast[spell_maps[spell.english]] then
-        safe_equip(sets.midcast[spell_maps[spell.english]])
+    elseif spell_tier_map[spell.english] and sets.midcast[spell_tier_map[spell.english]] then
+        safe_equip(sets.midcast[spell_tier_map[spell.english]])
     end
 
     -- Equip the appropriate instrument last

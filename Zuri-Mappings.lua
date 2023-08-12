@@ -1,7 +1,6 @@
--- Modified version of Mote's map file
--- For now, all we care about is the map for tiered spells and ranged weaponskill set
+-- Modified version of Mote's map files, with some additions and changes.
 
-spell_maps = {
+spell_tier_map = {
     ['Cure']       = 'Cure',
     ['Cure II']    = 'Cure',
     ['Cure III']   = 'Cure',
@@ -306,14 +305,6 @@ spell_maps = {
     ['Curing Waltz V']        = 'Waltz',
     ['Divine Waltz']          = 'Waltz',
     ['Divine Waltz II']       = 'Waltz',
-    -- ['Light Shot']            = 'Quick Draw',
-    -- ['Dark Shot']             = 'Quick Draw',
-    -- ['Fire Shot']             = 'Quick Draw',
-    -- ['Earth Shot']            = 'Quick Draw',
-    -- ['Water Shot']            = 'Quick Draw',
-    -- ['Thunder Shot']          = 'Quick Draw',
-    -- ['Wind Shot']             = 'Quick Draw',
-    -- ['Ice Shot']              = 'Quick Draw',
 }
 
 ranged_weaponskills = S{
@@ -339,4 +330,9 @@ ranged_weaponskills = S{
     "Leaden Salute",
     "Wildfire",
     "Myrkr",
+}
+
+elemental_obi_weaponskills = S{
+    "Aeolian Edge",
+    "Leaden Salute",
 }
