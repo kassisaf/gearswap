@@ -52,20 +52,16 @@ function get_sets()
         range      = "Jinx Discus",
         ammo       = empty,
     }
-    sets.midcast.RA = {
-        head       = "Meghanada Visor +2",
+    sets.midcast.RA = set_combine(full_malignance, {
         body       = "Meghanada Cuirie +2",
-        hands      = "Meghanada Gloves +2",
-        legs       = "Meghanada Chausses +2",
-        feet       = "Malignance Boots",
-        back       = "Sokolski Mantle",
         neck       = "Caro Necklace",
         waist      = "Eschan Stone",
-        left_ring  = "Mummu Ring",
-        right_ring = "Meghanada Ring",
+        left_ring  = "Cacoethic Ring +1",
+        right_ring = "Cacoethic Ring",
         left_ear   = "Telos Earring",
-        right_ear  = "Odr Earring",
-    }
+        right_ear  = "Dignitary's Earring",
+        back       = "Sokolski Mantle",
+    })
 
     -- Weaponskill sets
     sets.precast.WS.melee = set_combine(full_nyame, {
