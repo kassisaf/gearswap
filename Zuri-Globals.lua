@@ -350,11 +350,6 @@ full_malignance = {
     feet  = "Malignance Boots",
 }
 
-holy_water_set = {
-    left_ring  = "Blenmot's Ring +1",
-    right_ring = "Blenmot's Ring +1",
-}
-
 vanya_head_d = {name="Vanya Hood", augments={
     'MP+50',
     '"Fast Cast"+10',

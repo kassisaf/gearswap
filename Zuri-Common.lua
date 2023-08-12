@@ -14,6 +14,10 @@ function to_set(t)
     return set
 end
 
+function starts_with(str, start)
+    return str:sub(1, #start) == start
+end
+
 function ends_with(str, ending)
     return ending == "" or str:sub(-#ending) == ending
 end
@@ -49,7 +53,7 @@ end
 
 function print_spell_info_if_debug_enabled(spell)
     if modes["debug"] then
-        send_command('input /echo precast spell.english:' .. spell.english .. ', type: ' .. spell.type .. ', action_type:' .. spell.action_type .. ', element: ' .. spell.element)
+        send_command('input /echo precast spell.english:' .. spell.english .. ', type: ' .. spell.type .. ', action_type:' .. spell.action_type)
     end
 end
 
@@ -109,7 +113,7 @@ function safe_equip(gearset, skip_lockables)
 end
 
 function handle_elemental_obi(spell)
-    use_obi = spell.action_type == "Magic"
+    use_obi = (spell.action_type == "Magic" and spell.type ~= "Trust")
         or (spell.type == "WeaponSkill" and elemental_obi_weaponskills[spell.english])  -- Obi WS list from Zuri-Globals.lua
         or spell.type ~= "CorsairShot"
 
@@ -260,7 +264,9 @@ function midcast(spell)
     -- Equip the appropriate instrument last
     if spell.type == "BardSong" then
         equip_instrument(spell)
-    elseif spell.english == "Holy Water" then
+    end
+
+    if spell.english == "Holy Water" and not sets.midcast["Holy Water"] then
         equip(holy_water_set)
     end
 
@@ -271,6 +277,9 @@ end -- midcast()
 function aftercast(spell)
     if string.find(spell.english, "Lullaby") or (player.main_job == "BRD" and player.equipment['range'] == empty) then
         equip({range = instrument_general, ammo = empty})
+    -- TODO: Unequip lockables (warp ring, dim ring, etc.) after using them
+    -- elseif spell.type == "Item" and lockables_set[spell.english] then
+    --     equip_idle_or_tp_set(true)
     end
     equip_idle_or_tp_set()
 end -- aftercast()

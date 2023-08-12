@@ -21,3 +21,8 @@ elemental_obi_weaponskills = S{
     "Aeolian Edge",
     "Leaden Salute",
 }
+
+holy_water_set = {
+    left_ring  = "Blenmot's Ring +1",
+    right_ring = "Blenmot's Ring +1",
+}
