@@ -4,7 +4,7 @@
 -- When disabled, normal instrument logic applies
 
 function get_sets()
-    include('Zuri-Common.lua')
+    include('Zuri-Logic.lua')
     job_init(1, 1, 16)  -- Macro book, macro page, lockstyle set
 
     -- Leave these empty

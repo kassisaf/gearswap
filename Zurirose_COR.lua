@@ -1,6 +1,6 @@
 function get_sets()
-    include('Zuri-Common.lua')
-    job_init(2, 9, 14)   -- Macro book, macro page, lockstyle set
+    include('Zuri-Logic.lua')
+    job_init(2, 9, 15)   -- Macro book, macro page, lockstyle set
 
     -- Leave these empty
     sets.precast    = {}
@@ -10,7 +10,7 @@ function get_sets()
     -- Gear Aliases
     bullets = {
         physical = "Eminent Bullet",
-        magic = "Orichalcum Bullet",
+        magic    = "Orichalcum Bullet",
     }
     snapshot_roll_cape = {name="Camulus's Mantle", augments={
         'INT+20',
