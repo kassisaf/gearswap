@@ -56,6 +56,14 @@ end
 -- Utility functions for use in job scripts --
 ----------------------------------------------
 
+function load_job_specific_addons()
+    if player.main_job == "BLU" then
+        send_command("lua l blualert")
+    else
+        send_command("lua u blualert")
+    end
+end
+
 -- Sets macro page and lockstyle set, to be called on job load
 function job_init(macro_book, macro_page, lockstyleset)
     send_command("wait 1; input /macro book " .. macro_book)
@@ -64,6 +72,8 @@ function job_init(macro_book, macro_page, lockstyleset)
         send_command("wait 3; input /lockstyleset " .. lockstyleset)
     end
     send_command("wait 3; input /echo ** Job is " .. player.main_job .. "/" .. player.sub_job .. ". Macros set to Book " .. macro_book .. " Page " .. macro_page .. ". **")
+
+    load_job_specific_addons()
 end
 
 --------------------------------------------------------

@@ -26,7 +26,7 @@ function get_sets()
 
     -- Basic sets
     sets.idle = {
-        ammo       = "Ghastly Tathlum",
+        ammo       = "Thew Bomblet",
         main       = "Kaja Knuckles",
         head       = "Hizamaru Somen +2",
         body       = "Mummu Jacket +2",
@@ -38,7 +38,7 @@ function get_sets()
         left_ear   = "Odr Earring",
         right_ear  = "Bloodbead Earring",
         left_ring  = "Gelatinous Ring +1",
-        right_ring = "Hizamaru Ring",
+        right_ring = "Warden's Ring",
         back       = tp_cape,
     }
     sets.TP = set_combine(sets.idle, {

@@ -26,7 +26,7 @@ function get_sets()
 
     -- Basic sets
     sets.idle = {
-        ammo       = "Ghastly Tathlum",
+        ammo       = "Thew Bomblet",
         main       = "Kaja Knuckles",
         head       = "Hizamaru Somen +2",
         body       = "Mummu Jacket +2",

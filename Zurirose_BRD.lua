@@ -64,7 +64,7 @@ function get_sets()
         back       = "Intarabus's Cape",
     }
     sets.TP = set_combine(sets.idle,{
-        main       = "Naegling",
+        -- main       = "Naegling",
         sub        = "Genbu's Shield",
         head       = "Nyame Helm",
         body       = "Nyame Mail",
@@ -83,17 +83,20 @@ function get_sets()
         sets.TP["sub"] = "Centovente"
     end
     sets.FC = {
-        head       = "Welkin Crown",        -- Fast Cast +7%
-        body       = "Inyanga Jubbah +2",   -- Fast Cast +14%
+        -- TODO optimize with haste
+        -- Don't use ammo FC, messes with instrument swaps... Linos?
+        head       = vanya_head_d,          -- Fast Cast +10%
+        body       = "Inyanga Jubbah +2",   -- FC +14%
         hands      = "Inyan. Dastanas +2",
-        legs       = "Ayanmo Cosciales +2", -- Fast Cast +6%
-        feet       = empy_feet,             -- Fast Cast +10%
-        waist      = "Channeler's Stone",   -- Fast Cast +2%
-        left_ear   = "Malignance Earring",  -- Fast Cast +4%
-        right_ear  = "Loquacious Earring",  -- Fast Cast +2%
-        left_ring  = "Kishar Ring",         -- Fast Cast +4%
-        right_ring = "Naji's Loop",         -- Fast Cast +1%
-        back       = "Intarabus's Cape",    -- Fast Cast +10%
+        legs       = "Ayanmo Cosciales +2", -- FC +6%
+        feet       = empy_feet,             -- FC +10%
+        -- waist      = "Channeler's Stone",   -- Fast Cast +2%
+        waist      = "Cornelia's Ring",     -- Haste +10%
+        left_ear   = "Malignance Earring",  -- FC +4%
+        right_ear  = "Loquacious Earring",  -- FC +2%
+        left_ring  = "Kishar Ring",         -- FC +4%
+        right_ring = "Naji's Loop",         -- FC +1%
+        back       = "Intarabus's Cape",    -- FC +10%
     }
 
     -- Precast sets
@@ -248,11 +251,11 @@ function get_sets()
         main       = "Daybreak",
         sub        = "Ammurapi Shield",
         ammo       = "Hydrocera",
-        head       = "Vanya Hood",
-        body       = "Vanya Robe",
-        hands      = "Vanya Cuffs",
-        legs       = "Vanya Slops",
-        feet       = "Vanya Clogs",
+        head       = vanya_head_b,
+        body       = vanya_body_b,
+        hands      = vanya_hands_b,
+        legs       = vanya_legs_b,
+        feet       = vanya_feet_b,
         neck       = "Incanter's Torque",
         waist      = "Luminary Sash",
         left_ear   = "Meili Earring",
@@ -262,6 +265,13 @@ function get_sets()
         back       = "Solemnity Cape",
     }
     sets.midcast["Curaga"] = sets.midcast["Cure"]
+
+    sets.precast.JA["Curing Waltz"] = set_combine(sets.idle,{
+        left_ring  = "Defending Ring",
+        right_ring = "Asklepian Ring",
+    })
+    sets.precast.JA["Curing Waltz II"]  = sets.precast.JA["Curing Waltz"]
+    sets.precast.JA["Curing Waltz III"] = sets.precast.JA["Curing Waltz"]
 
     -- Other sets
     sets.TH = {

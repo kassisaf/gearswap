@@ -113,7 +113,7 @@ function get_sets()
     sets.precast.WS["Dancing Edge"] = sets.precast.WS["Evisceration"]
     sets.precast.WS["Aeolian Edge"] = set_combine(full_nyame, {
         ammo       = "Ghastly Tathlum +1",
-        neck       = "Sanctity Necklace",
+        neck       = "Sibyl Scarf",
         waist      = "Eschan Stone",
         left_ear   = "Moonshade Earring",
         right_ear  = "Friomisi Earring",
@@ -152,15 +152,20 @@ function get_sets()
     })
     sets.precast.JA["Box Step"]   = sets.TH
     sets.precast.JA["Quick Step"] = sets.TH
-    sets.precast.JA["Curing Waltz"] = {
+    sets.precast.JA["Curing Waltz"] = set_combine(sets.idle, {
         ammo       = "Yamarang",
+        body       = "Passion Jacket",
         left_ring  = "Defending Ring",
         right_ring = "Asklepian Ring",
-    }
+    })
     sets.precast.JA["Curing Waltz II"]  = sets.precast.JA["Curing Waltz"]
     sets.precast.JA["Curing Waltz III"] = sets.precast.JA["Curing Waltz"]
     
     -- Midcast sets
+    sets.midcast["Utsusemi"] = set_combine(sets.idle, {
+        neck = "Magoraga Beads",
+        body = "Passion Jacket",
+    })
 
     -- Other sets
     sets.TH = {

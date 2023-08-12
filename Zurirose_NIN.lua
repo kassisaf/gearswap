@@ -51,6 +51,7 @@ function get_sets()
     }
     -- Midshot should contain: R.acc, STP, crit, R.atk, Recycle, etc.
     sets.midcast.RA = {
+        -- TODO update with malignance, cacoethic, beyla, etc.
         head       = "Meghanada Visor +2",
         body       = "Meghanada Cuirie +2",
         hands      = "Meghanada Gloves +2",
@@ -89,6 +90,12 @@ function get_sets()
         right_ear  = "Ishvara Earring",
         left_ring  = "Rufescent Ring",
         right_ring = "Apate Ring",
+    })
+
+    -- Midcast sets
+    sets.midcast["Utsusemi"] = set_combine(sets.idle, {
+        neck = "Magoraga Beads",
+        body = "Passion Jacket",
     })
 
     -- Job ability sets

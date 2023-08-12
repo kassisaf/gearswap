@@ -79,10 +79,11 @@ function get_sets()
         waist      = "Eschan Stone",
     })
     sets.FC = {
-        main       = "Solstice",           -- Fast Cast + 5%
+        -- TODO optimize with haste
+        main       = "Solstice",           -- Fast Cast +5%
         sub        = "Genbu's Shield",
-        range      = "Dunna",              -- Fast Cast + 3%
-        head       = "Welkin Crown",       -- Fast Cast +7%
+        range      = "Dunna",              -- Fast Cast +3%
+        head       = vanya_head_d,         -- Fast Cast +10%
         body       = "Merlinic Jubbah",    -- Fast Cast +10%
         hands      = empy_hands,           -- Fast Cast +5%
         legs       = af_legs,              -- Fast Cast +11%
@@ -212,11 +213,11 @@ function get_sets()
         main       = "Daybreak",
         sub        = "Ammurapi Shield",
         ammo       = "Hydrocera",
-        head       = "Vanya Hood",
-        body       = "Vanya Robe",
-        hands      = "Vanya Cuffs",
-        legs       = "Vanya Slops",
-        feet       = "Vanya Clogs",
+        head       = vanya_head_b,
+        body       = vanya_body_b,
+        hands      = vanya_hands_b,
+        legs       = vanya_legs_b,
+        feet       = vanya_feet_b,
         neck       = "Incanter's Torque",
         left_ear   = "Meili Earring",
         right_ear  = "Mendicant's Earring",

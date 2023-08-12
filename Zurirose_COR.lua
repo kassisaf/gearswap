@@ -7,6 +7,7 @@ function get_sets()
     sets.precast.WS = {}
     sets.precast.JA = {}
     sets.midcast    = {}
+    sets.midcast.JA = {}
 
     -- Gear Aliases
     bullets = {
@@ -62,7 +63,7 @@ function get_sets()
     empy_body   = "Chasseur's Frac +2"
     empy_hands  = "Chasseur's Gants +2"
     empy_legs   = "Chasseur's Culottes +2"
-    empy_feet   = "Chasseur's Bottes +2"
+    empy_feet   = "Chasseur's Bottes +3"
     jse_neck    = "Commodore Charm +1"
 
     -- Basic sets
@@ -87,10 +88,10 @@ function get_sets()
         back       = snapshot_roll_cape,
     }
     sets.TP = set_combine(sets.idle, {
-        head       = "Malignance Chapeau",
-        body       = "Adhemar Jacket",
-        hands      = "Malignance Gloves",
-        feet       = "Malignance Boots",
+        -- head       = "Malignance Chapeau",
+        -- body       = "Adhemar Jacket",
+        -- hands      = "Malignance Gloves",
+        -- feet       = "Malignance Boots",
         
         legs       = empy_legs,
 
@@ -113,8 +114,19 @@ function get_sets()
         ammo = bullets["magic"], -- Orichalcum
     }
 
-    sets.midcast["Utsusemi"] = sets.idle
+    sets.midcast["Utsusemi"] = set_combine(sets.idle, {
+        neck = "Magoraga Beads",
+        body = "Passion Jacket",
+    })
+    sets.precast.JA["Curing Waltz"] = set_combine(sets.idle,{
+        body       = "Passion Jacket",
+        left_ring  = "Defending Ring",
+        right_ring = "Asklepian Ring",
+    })
+    sets.precast.JA["Curing Waltz II"]  = sets.precast.JA["Curing Waltz"]
+    sets.precast.JA["Curing Waltz III"] = sets.precast.JA["Curing Waltz"]
 
+    -- Shooting sets
     -- Preshot should contain: Snapshot, Rapid Shot
     -- Snapshot caps at 70 (-10% from gifts)
     -- Rapid shot reduces delay up to 50%, proc rate caps at 99%
@@ -123,7 +135,7 @@ function get_sets()
         -- 44 Snapshot, 29 Rapid Shot
         head  = empy_head,          -- 16 Rapid Shot
         body  = "Ikenga's Vest",    -- 9 Snapshot
-        hands = "Ikenga's Gloves",  -- 7 Snapshot
+        hands = relic_hands,        -- 9 Snapshot
         legs  = "Adhemar Kecks +1", -- 10 Snapshot, 13 Rapid Shot
         feet  = "Ikenga's Clogs",   -- 5 Snapshot
         neck  = jse_neck,           -- 3 Snapshot
@@ -138,7 +150,7 @@ function get_sets()
         legs       = empy_legs,
         feet       = "Malignance Boots",
         back       = "Sokolski Mantle",
-        neck       = "Sanctity Necklace",  -- Iskur Gorget
+        neck       = "Marked Gorget",  -- Iskur Gorget
         waist      = "Eschan Stone",
         left_ring  = "Cacoethic Ring +1",
         right_ring = "Cacoethic Ring",
@@ -264,7 +276,7 @@ function get_sets()
     -- TODO: Add M.acc for light/dark shot, stp/damage for the rest
     sets.precast.JA["Quick Draw"] = set_combine(sets.precast.WS["Leaden Salute"], {
         body = "Mirke Wardecors",
-        feet = af_feet,
+        feet = empy_feet,
         back = leaden_salute_cape, -- Replace with quickdraw_cape: AGI/MDmg/STP/MAB
     })
     sets.quickdraw = {}
@@ -299,10 +311,16 @@ function get_sets()
     sets.precast.JA["Dark Shot"]    = set_combine(sets.quickdraw["acc"], {waist = "Hachirin-no-Obi"})
     sets.precast.JA["Fire Shot"]    = sets.quickdraw["stp"]
     sets.precast.JA["Water Shot"]   = sets.quickdraw["stp"]
-    sets.precast.JA["Thunder Shot"] = sets.quickdraw["stp"]
+    sets.precast.JA["Thunder Shot"] = set_combine(sets.quickdraw["acc"], {
+        feet = empy_feet,
+    })
     sets.precast.JA["Earth Shot"]   = sets.quickdraw["stp"]
     sets.precast.JA["Wind Shot"]    = sets.quickdraw["stp"]
     sets.precast.JA["Ice Shot"]     = sets.quickdraw["stp"]
+
+    sets.midcast.JA["Thunder Shot"] = {
+        feet = empy_feet,
+    }
 
     -- All Curing and Divine waltzes fall back to Waltz when spell mappings are checked
     sets.precast.JA["Waltz"] = {

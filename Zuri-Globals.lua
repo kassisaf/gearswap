@@ -39,3 +39,35 @@ holy_water_set = {
     left_ring  = "Blenmot's Ring +1",
     right_ring = "Blenmot's Ring +1",
 }
+
+vanya_head_d = {name="Vanya Hood", augments={
+    'MP+50',
+    '"Fast Cast"+10',
+    'Haste+2%',
+}}
+
+vanya_head_b  = {name="Vanya Hood", augments={
+    'Healing magic skill +20',
+    '"Cure" spellcasting time -7%',
+    'Magic dmg. taken -3',
+}}
+vanya_body_b  = {name="Vanya Robe", augments={
+    'Healing magic skill +20',
+    '"Cure" spellcasting time -7%',
+    'Magic dmg. taken -3',
+}}
+vanya_hands_b = {name="Vanya Cuffs", augments={
+    'Healing magic skill +20',
+    '"Cure" spellcasting time -7%',
+    'Magic dmg. taken -3',
+}}
+vanya_legs_b  = {name="Vanya Slops", augments={
+    'Healing magic skill +20',
+    '"Cure" spellcasting time -7%',
+    'Magic dmg. taken -3',
+}}
+vanya_feet_b  = {name="Vanya Clogs", augments={
+    'Healing magic skill +20',
+    '"Cure" spellcasting time -7%',
+    'Magic dmg. taken -3',
+}}

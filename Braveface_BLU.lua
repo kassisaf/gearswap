@@ -21,7 +21,7 @@ function get_sets()
         neck       = "Subtlety Spec.",
         waist      = "Eschan Stone",
         left_ear   = "Odr Earring",
-        right_ear  = "Bloodbead Earring",
+        right_ear  = "Steelflash Earring",
         left_ring  = "Gelatinous Ring",
         right_ring = "Ayanmo Ring",
     }

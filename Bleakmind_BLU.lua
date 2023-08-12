@@ -23,7 +23,7 @@ function get_sets()
         left_ear   = "Odr Earring",
         right_ear  = "Bloodbead Earring",
         left_ring  = "Gelatinous Ring +1",
-        right_ring = "Ayanmo Ring",
+        right_ring = "Warden's Ring",
     }
     sets.TP = set_combine(sets.idle, {
         main  = "Eminent Scimitar",
