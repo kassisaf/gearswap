@@ -271,54 +271,39 @@ function get_sets()
         feet = relic_feet,
     }
 
-    -- TODO: Add M.acc for light/dark shot, stp/damage for the rest
-    sets.precast["Quick Draw"] = set_combine(sets.precast.WS["Leaden Salute"], {
-        body = "Mirke Wardecors",
-        feet = empy_feet,
-        back = leaden_salute_cape, -- Replace with quickdraw_cape: AGI/MDmg/STP/MAB
-    })
-    sets.quickdraw = {}
-    sets.quickdraw["acc"] = set_combine(sets.precast["Quick Draw"], {
-        head       = af_head,
-        -- body      = "Malignance Tabard",
-        hands      = af_hands,
+    -- Quick Draw sets
+    -- Fallback STP set for any shots that aren't specified by name
+    sets.precast["CorsairShot"] = {
+        ammo       = bullets["magic"],
+        head       = "Malignance Chapeau",
+        body       = "Mirke Wardecors",
+        hands      = "Malignance Gloves",
         legs       = "Malignance Tights",
+        feet       = empy_feet,
+
+        neck       = "Marked Gorget",       -- Iskur Gorget
+        left_ear   = "Telos Earring",
+        right_ear  = "Dignitary's Earring",
+        left_ring  = "Chirich Ring +1",
+        right_ring = "Rajas Ring",          -- STP +5 without the enmity from Petrov
+        waist      = "Eschan Stone",
+        back       = leaden_salute_cape,    -- Replace with quickdraw_cape: AGI/MDmg/STP/MAB
+    }
+    quick_draw_acc = set_combine(sets.precast["CorsairShot"], {
+        head       = af_head,
+        hands      = af_hands,
         feet       = af_feet,
 
         neck       = jse_neck,
-        left_ear   = "Dignitary's Earring",
-        -- right_ear = "Gwati Earring",
+        left_ear   = "Chasseur's Earring",  -- 9 macc
+        right_ear  = "Dignitary's Earring",
         left_ring  = "Stikini Ring",
         right_ring = "Stikini Ring",
-        -- waist      = "",
     })
-    sets.quickdraw["stp"] = set_combine(sets.precast["Quick Draw"], {
-        head       = "Malignance Chapeau",
-        -- body       = "Malignance Tabard",
-        hands      = "Malignance Gloves",
-        legs       = "Malignance Tights",
-        feet       = "Malignance Boots",
-        -- neck       = "Iskur Gorget",
-        -- left_ear   = "Dedition Earring",
-        right_ear  = "Telos Earring",
-        left_ring  = "Chirich Ring +1",
-        right_ring = "Chirich Ring +1",
-        -- waist      = "",
+    sets.precast["Light Shot"] = quick_draw_acc
+    sets.precast["Dark Shot"]  = set_combine(quick_draw_acc, {
+        right_ring = "Archon Ring",
     })
-    sets.precast["Light Shot"]   = sets.quickdraw["acc"]
-    sets.precast["Dark Shot"]    = set_combine(sets.quickdraw["acc"], {waist = "Hachirin-no-Obi"})
-    sets.precast["Fire Shot"]    = sets.quickdraw["stp"]
-    sets.precast["Water Shot"]   = sets.quickdraw["stp"]
-    sets.precast["Thunder Shot"] = set_combine(sets.quickdraw["acc"], {
-        feet = empy_feet,
-    })
-    sets.precast["Earth Shot"]   = sets.quickdraw["stp"]
-    sets.precast["Wind Shot"]    = sets.quickdraw["stp"]
-    sets.precast["Ice Shot"]     = sets.quickdraw["stp"]
-
-    sets.midcast.JA["Thunder Shot"] = {
-        feet = empy_feet,
-    }
 
     -- All Curing and Divine waltzes fall back to Waltz when spell mappings are checked
     sets.precast["Waltz"] = {
