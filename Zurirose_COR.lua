@@ -199,7 +199,7 @@ function get_sets()
         right_ear  = "Moonshade Earring",
         left_ring  = "Archon Ring",
         right_ring = "Apate Ring",        -- Get Dingir Ring
-        waist      = "Hachirin-no-Obi",
+        waist      = "Eschan Stone",      -- 7 macc, 7 mab  (Hachirin will override if weather/day appropriate)
         back       = savage_cape,
     })
     sets.precast.WS["Wildfire"] = set_combine(sets.precast.WS["Leaden Salute"], {

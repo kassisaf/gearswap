@@ -54,7 +54,7 @@ end
 
 function print_spell_info_if_debug_enabled(spell)
     if modes["debug"] then
-        send_command('input /echo precast spell.english:' .. spell.english .. ', type: ' .. spell.type .. ', action_type:' .. spell.action_type)
+        send_command('input /echo precast spell.english:' .. spell.english .. ', type: ' .. spell.type .. ', action_type:' .. spell.action_type .. ', element: ' .. spell.element)
     end
 end
 
@@ -115,6 +115,13 @@ function safe_equip(gearset, skip_recheck)
     end
 end
 
+function handle_elemental_obi(spell)
+    use_obi = spell.action_type == "Magic" or spell.type == "WeaponSkill" or spell.type ~= "CorsairShot"
+    -- world.weather_element reports SCH weather over zone weather, if present
+    if use_obi and (spell.element == world.weather_element or spell.element == world.day_element) then
+        equip({waist = "Hachirin-no-Obi"})
+    end
+end
 
 ------------------------------------------------------
 -- Helper functions for set swaps with custom logic --
@@ -217,6 +224,11 @@ function precast(spell, position)
     elseif spell_maps[spell.english] and sets.precast[spell_maps[spell.english]] then
         safe_equip(sets.precast[spell_maps[spell.english]])
     end
+
+    -- Only handle obi in precast for offensive abilities (WS, cor shots, etc.)
+    if spell.action_type == "Ability" and player.target.type == "MONSTER" then
+        handle_elemental_obi(spell)
+    end
 end -- precast()
 
 function midcast(spell)
@@ -255,6 +267,9 @@ function midcast(spell)
     elseif spell.english == "Holy Water" then
         equip(holy_water_set)
     end
+
+    -- Always handle obi in midcast
+    handle_elemental_obi(spell)
 end -- midcast()
 
 function aftercast(spell)
