@@ -38,6 +38,7 @@ local modes = {
     weapon_lock = false,
     has_pet = false,
     dummy_songs = false,
+    debug = false,
 }
 
 -- Function for toggling boolean modes via macro or console commands
@@ -51,6 +52,11 @@ function toggle_mode(key)
     end
 end
 
+function print_spell_info_if_debug_enabled(spell)
+    if modes["debug"] then
+        send_command('input /echo precast spell.english:' .. spell.english .. ', type: ' .. spell.type .. ', action_type:' .. spell.action_type)
+    end
+end
 
 ----------------------------------------------
 -- Utility functions for use in job scripts --
@@ -177,8 +183,7 @@ end
 -----------------------------
 
 function precast(spell, position)
-    -- Uncomment for debugging only
-    -- send_command('input /echo spell.english:' .. spell.english .. ', type: ' .. spell.type .. ', action_type:' .. spell.action_type)
+    print_spell_info_if_debug_enabled(spell)
 
     -- Use WS-specific set if it exists, or fall back to generic ranged or melee WS set
     if spell.type == "WeaponSkill" then
@@ -206,6 +211,8 @@ function precast(spell, position)
 end -- precast()
 
 function midcast(spell)
+    print_spell_info_if_debug_enabled(spell)
+
     if spell.action_type == "Ranged Attack" then
         safe_equip(sets.midcast.RA)
         return
@@ -282,5 +289,9 @@ function self_command(command)
         toggle_mode("dummy_songs")
     elseif command == "melee" then
         toggle_mode("weapon_lock")
+    elseif command == "debug" then
+        send_command("gs showswaps")
+        send_command("gs debugmode")
+        toggle_mode("debug")
     end
 end -- self_command()
