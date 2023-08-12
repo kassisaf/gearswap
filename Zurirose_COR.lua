@@ -279,8 +279,7 @@ function get_sets()
         body       = "Mirke Wardecors",
         hands      = "Malignance Gloves",
         legs       = "Malignance Tights",
-        feet       = empy_feet,
-
+        feet       = empy_feet,             -- Bonus to consecutive spells
         neck       = "Marked Gorget",       -- Iskur Gorget
         left_ear   = "Telos Earring",
         right_ear  = "Dignitary's Earring",

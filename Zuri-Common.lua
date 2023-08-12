@@ -6,6 +6,15 @@ include('Zuri-Globals.lua')
 -- Helper functions --
 ----------------------
 
+-- Generic table to set converter (equivalent to S{} in other Gearswap libs)
+function to_set(t)
+    set = {}
+    for _, v in pairs(t) do
+        set[v] = true
+    end
+    return set
+end
+
 function ends_with(str, ending)
     return ending == "" or str:sub(-#ending) == ending
 end
@@ -16,7 +25,7 @@ end
 
 ENABLED_OR_DISABLED = { ["true"] = "enabled", ["false"] = "disabled" }
 
-lockables_set = S(lockables) -- from Zuri-Settings.lua
+lockables_set = to_set(lockables) -- from Zuri-Settings.lua
 
 ------------------------
 -- Modes and commands --
@@ -25,7 +34,6 @@ lockables_set = S(lockables) -- from Zuri-Settings.lua
 -- State flags for various modes and settings
 local modes = {
     TH = false,
-    weapon_lock = false,
     has_pet = false,
     dummy_songs = false,
     debug = false,
@@ -80,10 +88,6 @@ end
 function safe_equip(gearset, skip_recheck)
     -- Skip lockables check only if explicitly specified
     if not skip_recheck then
-        -- If weapon lock is on, don't equip main or sub
-        if modes["weapon_lock"] then
-            disable("main", "sub")
-        end
         -- If player is wearing a lockable item in any slot in this gearset, disable that slot
         if gearset then
             for slot, item in pairs(gearset) do
@@ -305,8 +309,6 @@ function self_command(command)
         equip_idle_or_tp_set()
     elseif command == "dummy" then
         toggle_mode("dummy_songs")
-    elseif command == "melee" then
-        toggle_mode("weapon_lock")
     elseif command == "debug" then
         send_command("gs showswaps")
         send_command("gs debugmode")
