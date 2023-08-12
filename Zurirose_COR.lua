@@ -108,22 +108,6 @@ function get_sets()
         waist      = "Sailfi Belt +1",
     }
 
-    sets.macc = {
-        ammo = bullets["magic"], -- Orichalcum
-    }
-
-    sets.midcast["Utsusemi"] = set_combine(sets.idle, {
-        neck = "Magoraga Beads",
-        body = "Passion Jacket",
-    })
-    sets.precast["Curing Waltz"] = set_combine(sets.idle,{
-        body       = "Passion Jacket",
-        left_ring  = "Defending Ring",
-        right_ring = "Asklepian Ring",
-    })
-    sets.precast["Curing Waltz II"]  = sets.precast["Curing Waltz"]
-    sets.precast["Curing Waltz III"] = sets.precast["Curing Waltz"]
-
     -- Shooting sets
     -- Preshot should contain: Snapshot, Rapid Shot
     -- Snapshot caps at 70 (-10% from gifts)
@@ -279,7 +263,7 @@ function get_sets()
         body       = "Mirke Wardecors",
         hands      = "Malignance Gloves",
         legs       = "Malignance Tights",
-        feet       = empy_feet,             -- Bonus to consecutive spells
+        feet       = empy_feet,             -- Empy quickdraw traight gives 25/28/31% bonus to next elemental damage of same element
         neck       = "Marked Gorget",       -- Iskur Gorget
         left_ear   = "Telos Earring",
         right_ear  = "Dignitary's Earring",
@@ -291,8 +275,7 @@ function get_sets()
     quick_draw_acc = set_combine(sets.precast["CorsairShot"], {
         head       = af_head,
         hands      = af_hands,
-        feet       = af_feet,
-
+        feet       = af_feet,               -- AF quickdraw trait gives flat damage +20 and macc +20
         neck       = jse_neck,
         left_ear   = "Chasseur's Earring",  -- 9 macc
         right_ear  = "Dignitary's Earring",
@@ -306,13 +289,20 @@ function get_sets()
 
     -- All Curing and Divine waltzes fall back to Waltz when spell mappings are checked
     sets.precast["Waltz"] = {
+        body       = "Passion Jacket",
         left_ring  = "Defending Ring",
         right_ring = "Asklepian Ring",
     }
 
     -- Use TH for targeted JA's
-    sets.precast["Box Step"] = sets.TH
+    sets.precast["Box Step"]   = sets.TH
     sets.precast["Quick Step"] = sets.TH
+
+    -- Midcast sets
+    sets.midcast["Utsusemi"] = set_combine(sets.idle, {
+        neck = "Magoraga Beads",
+        body = "Passion Jacket",
+    })
 
     -- Other sets
     sets.TH = {
