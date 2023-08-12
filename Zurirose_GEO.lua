@@ -204,9 +204,12 @@ function get_sets()
         head = "Chironic Hat", -- Aquaveil +1
         -- legs = "Shedir Seraweels" -- Aquaveil +1
     })
-    sets.midcast["Aspir"] = {
-        
-    }
+    sets.midcast["Aspir"] = set_combine(sets.midcast["Elemental Magic"], {
+        left_ring = "Evanescence Ring",
+    })
+    sets.midcast["Drain"] = set_combine(sets.midcast["Elemental Magic"], {
+        left_ring = "Evanescence Ring",
+    })
 
     sets.midcast["Cure"] = {
         main       = "Daybreak",
