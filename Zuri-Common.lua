@@ -1,12 +1,11 @@
-include('Zuri-Mappings.lua')
 include('Zuri-Globals.lua')
-
+include('Zuri-Settings.lua')
 
 ----------------------
 -- Helper functions --
 ----------------------
 
--- Generic table to set converter (equivalent to S{} in other Gearswap libs)
+-- Generic table to set converter
 function to_set(t)
     set = {}
     for _, v in pairs(t) do
@@ -22,8 +21,6 @@ end
 ---------------------
 -- Misc. variables --
 ---------------------
-
-ENABLED_OR_DISABLED = { ["true"] = "enabled", ["false"] = "disabled" }
 
 lockables_set = to_set(lockables) -- from Zuri-Settings.lua
 
@@ -109,9 +106,13 @@ function safe_equip(gearset, skip_recheck)
     end
 end
 
+function remove_lockables()
+    -- TODO implement this
+end
+
 function handle_elemental_obi(spell)
     use_obi = spell.action_type == "Magic"
-        or (spell.type == "WeaponSkill" and elemental_obi_weaponskills[spell.english])  -- Obi WS list from Zuri-Mappings.lua
+        or (spell.type == "WeaponSkill" and elemental_obi_weaponskills[spell.english])  -- Obi WS list from Zuri-Globals.lua
         or spell.type ~= "CorsairShot"
 
     -- world.weather_element reports SCH weather over zone weather, if present
@@ -303,6 +304,7 @@ end -- buff_change()
 --  //gs c melee:    Locks/unlocks main and sub slots
 function self_command(command)
     if command == "u" or command == "update" then
+        remove_lockables()
         equip_idle_or_tp_set()
     elseif command == "th" then
         toggle_mode("TH")
