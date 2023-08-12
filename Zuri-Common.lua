@@ -82,16 +82,18 @@ end
 --------------------------------------------------------
 
 -- Custom equip function that respects items defined in `lockables`
-function safe_equip(gearset, skip_recheck)
+function safe_equip(gearset, skip_lockables)
+    if not gearset then
+        return
+    end
+
     -- Skip lockables check only if explicitly specified
-    if not skip_recheck then
+    if not skip_lockables then
         -- If player is wearing a lockable item in any slot in this gearset, disable that slot
-        if gearset then
-            for slot, item in pairs(gearset) do
-                if lockables_set[player.equipment[slot]] then
-                    disable(slot)
-                    send_command('input /echo ' .. player.equipment[slot] .. ' is equipped, ' .. slot .. ' is locked.')
-                end
+        for slot, item in pairs(gearset) do
+            if lockables_set[player.equipment[slot]] then
+                disable(slot)
+                send_command('input /echo ' .. player.equipment[slot] .. ' is equipped, ' .. slot .. ' is locked.')
             end
         end
     end
@@ -104,10 +106,6 @@ function safe_equip(gearset, skip_recheck)
     else
         equip(gearset)
     end
-end
-
-function remove_lockables()
-    -- TODO implement this
 end
 
 function handle_elemental_obi(spell)
@@ -125,19 +123,19 @@ end
 -- Helper functions for set swaps with custom logic --
 ------------------------------------------------------
 
-function equip_idle_or_tp_set()
+function equip_idle_or_tp_set(skip_lockables)
     if player.status == "Engaged" then
-        equip_tp_set()
+        equip_tp_set(skip_lockables)
     else
-        equip_idle_set()
+        equip_idle_set(skip_lockables)
     end
 end -- equip_idle_or_tp_set()
 
-function equip_idle_set()
+function equip_idle_set(skip_lockables)
     if modes["has_pet"] and sets.idle_with_pet then
-        safe_equip(sets.idle_with_pet)
+        safe_equip(sets.idle_with_pet, skip_lockables)
     else
-        safe_equip(sets.idle)
+        safe_equip(sets.idle, skip_lockables)
     end
     
     if string.find(world.zone, "Adoulin") then
@@ -145,11 +143,11 @@ function equip_idle_set()
     end
 end -- equip_idle_set()
 
-function equip_tp_set()
+function equip_tp_set(skip_lockables)
     if buffactive["Elvorseal"] and sets.DI then
-        safe_equip(sets.DI)
+        safe_equip(sets.DI, skip_lockables)
     else
-        safe_equip(sets.TP)
+        safe_equip(sets.TP, skip_lockables)
     end
 end -- equip_tp()
 
@@ -304,8 +302,7 @@ end -- buff_change()
 --  //gs c melee:    Locks/unlocks main and sub slots
 function self_command(command)
     if command == "u" or command == "update" then
-        remove_lockables()
-        equip_idle_or_tp_set()
+        equip_idle_or_tp_set(true)
     elseif command == "th" then
         toggle_mode("TH")
         equip_idle_or_tp_set()
