@@ -5,7 +5,6 @@ function get_sets()
     -- Leave these empty
     sets.precast    = {}
     sets.precast.WS = {}
-    sets.precast.JA = {}
     sets.midcast    = {}
 
     -- Basic sets
@@ -127,39 +126,39 @@ function get_sets()
     })
 
     -- Job ability sets
-    sets.precast.JA["Conspirator"] = {
+    sets.precast["Conspirator"] = {
         body = "Skulker's Vest +2",
     }
-    sets.precast.JA["Flee"] = {
+    sets.precast["Flee"] = {
         feet = "Rogue's Poulaines",
     }
-    sets.precast.JA["Perfect Dodge"] = {
+    sets.precast["Perfect Dodge"] = {
         hands = "Assassin's Armlets +2", -- +10 seconds
     }
     -- Use TH for targeted JA's
-    sets.precast.JA["Despoil"] = set_combine(sets.th, {
+    sets.precast["Despoil"] = set_combine(sets.th, {
         legs = "Raider's Culottes +1",
         feet = "Skulker's Poulaines +2",
     })
-    sets.precast.JA["Mug"] = set_combine(sets.th, {
+    sets.precast["Mug"] = set_combine(sets.th, {
         head = "Assassin's Bonnet +1",
     })
-    sets.precast.JA["Steal"] = set_combine(sets.th, {
+    sets.precast["Steal"] = set_combine(sets.th, {
         head  = "Rogue's Bonnet",      -- Steal +1
         hands = "Thief's Kote",        -- Steal +3
         legs  = "Assassin's Culottes", -- Steal +5
         feet  = "Rogue's Poulaines",   -- Steal +2
     })
-    sets.precast.JA["Box Step"]   = sets.TH
-    sets.precast.JA["Quick Step"] = sets.TH
-    sets.precast.JA["Curing Waltz"] = set_combine(sets.idle, {
+    sets.precast["Box Step"]   = sets.TH
+    sets.precast["Quick Step"] = sets.TH
+    sets.precast["Curing Waltz"] = set_combine(sets.idle, {
         ammo       = "Yamarang",
         body       = "Passion Jacket",
         left_ring  = "Defending Ring",
         right_ring = "Asklepian Ring",
     })
-    sets.precast.JA["Curing Waltz II"]  = sets.precast.JA["Curing Waltz"]
-    sets.precast.JA["Curing Waltz III"] = sets.precast.JA["Curing Waltz"]
+    sets.precast["Curing Waltz II"]  = sets.precast["Curing Waltz"]
+    sets.precast["Curing Waltz III"] = sets.precast["Curing Waltz"]
     
     -- Midcast sets
     sets.midcast["Utsusemi"] = set_combine(sets.idle, {

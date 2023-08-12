@@ -194,18 +194,22 @@ function precast(spell, position)
         else
             safe_equip(sets.precast.WS.melee)
         end
-    -- Use JA-specific set if it exists
+
+    -- Treat Double-Up as a roll (luzaf's and roll+ gear apply)
     elseif player.main_job == "COR" and (spell.english == "Double-Up" or spell.type == "CorsairRoll") then
         equip_roll_set(spell)
-    elseif spell.type == "JobAbility" and sets.precast.JA[spell.english] then
-        safe_equip(sets.precast.JA[spell.english])
     elseif spell.action_type == "Ranged Attack" then
         safe_equip(sets.precast.RA)
-    -- Use spell-specific precast set if it exists
+
+    -- General handing if nothing more specific matches above
+    -- Check for set based on spell name first
     elseif sets.precast[spell.english] then
         safe_equip(sets.precast[spell.english])
+    -- Then spell type
+    elseif sets.precast[spell.type] then
+        safe_equip(sets.precast[spell.type])
     -- Use fastcast set for magic if nothing else matched
-    elseif spell.type ~= "JobAbility" and spell.type ~= "WeaponSkill" then
+    elseif spell.action_type == "Magic" then
         safe_equip(sets.FC)
     end
 end -- precast()
@@ -231,6 +235,7 @@ function midcast(spell)
     elseif sets.midcast[spell.type] then
         safe_equip(sets.midcast[spell.type])
     end
+
     -- Then, if we have spell-specific gear, equip that last
     -- Look for exact matches first, then try the tiered spell map (i.e. sets.midcast["Fire IV"] and then sets.midcast.Fire)
     if sets.midcast[spell.english] then

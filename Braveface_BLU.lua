@@ -5,7 +5,6 @@ function get_sets()
     -- Leave these empty
     sets.precast    = {}
     sets.precast.WS = {}
-    sets.precast.JA = {}
     sets.midcast    = {}
 
     -- Gear aliases
@@ -43,8 +42,6 @@ function get_sets()
     -- })
 
     -- Job ability sets
-    -- sets.precast.JA["Conspirator"] = {
-    -- }
     
     -- Midcast sets
     sets.midcast["BlueMagic"] = {

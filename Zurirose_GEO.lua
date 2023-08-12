@@ -5,7 +5,6 @@ function get_sets()
     -- Leave these empty
     sets.precast    = {}
     sets.precast.WS = {}
-    sets.precast.JA = {}
     sets.midcast    = {}
 
     -- Gear aliases
@@ -124,23 +123,23 @@ function get_sets()
     }
 
     -- Job ability sets
-    sets.precast.JA["Full Circle"] = {
+    sets.precast["Full Circle"] = {
         head = empy_head,
     }
-    sets.precast.JA["Radial Arcana"] = {
+    sets.precast["Radial Arcana"] = {
         feet = relic_feet,
     }
-    sets.precast.JA["Bolster"] = {
+    sets.precast["Bolster"] = {
         body = relic_body,
     }
-    sets.precast.JA["Life Cycle"] = {
+    sets.precast["Life Cycle"] = {
         body = "Geomancy Tunic +1",
         back = nuke_cape,
     }
-    sets.precast.JA["Mending Halation"] = {
+    sets.precast["Mending Halation"] = {
         legs = relic_legs,
     }
-    sets.precast.JA["Cardinal Chant"] = {
+    sets.precast["Cardinal Chant"] = {
         head = af_head,
     }
 

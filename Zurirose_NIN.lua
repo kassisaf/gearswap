@@ -5,7 +5,6 @@ function get_sets()
     -- Leave these empty
     sets.precast    = {}
     sets.precast.WS = {}
-    sets.precast.JA = {}
     sets.midcast    = {}
 
     -- Basic sets
@@ -101,7 +100,7 @@ function get_sets()
     -- Job ability sets
 
     -- Use TH for targeted JA's
-    -- sets.precast.JA["Box Step"]   = sets.TH
+    -- sets.precast["Box Step"]   = sets.TH
 
     -- Other sets
     sets.TH = {

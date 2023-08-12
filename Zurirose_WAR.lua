@@ -5,7 +5,6 @@ function get_sets()
     -- Leave these empty
     sets.precast    = {}
     sets.precast.WS = {}
-    sets.precast.JA = {}
     sets.midcast    = {}
 
     -- Basic sets

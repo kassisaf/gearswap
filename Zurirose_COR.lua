@@ -5,9 +5,7 @@ function get_sets()
     -- Leave these empty
     sets.precast    = {}
     sets.precast.WS = {}
-    sets.precast.JA = {}
     sets.midcast    = {}
-    sets.midcast.JA = {}
 
     -- Gear Aliases
     bullets = {
@@ -118,13 +116,13 @@ function get_sets()
         neck = "Magoraga Beads",
         body = "Passion Jacket",
     })
-    sets.precast.JA["Curing Waltz"] = set_combine(sets.idle,{
+    sets.precast["Curing Waltz"] = set_combine(sets.idle,{
         body       = "Passion Jacket",
         left_ring  = "Defending Ring",
         right_ring = "Asklepian Ring",
     })
-    sets.precast.JA["Curing Waltz II"]  = sets.precast.JA["Curing Waltz"]
-    sets.precast.JA["Curing Waltz III"] = sets.precast.JA["Curing Waltz"]
+    sets.precast["Curing Waltz II"]  = sets.precast["Curing Waltz"]
+    sets.precast["Curing Waltz III"] = sets.precast["Curing Waltz"]
 
     -- Shooting sets
     -- Preshot should contain: Snapshot, Rapid Shot
@@ -132,7 +130,7 @@ function get_sets()
     -- Rapid shot reduces delay up to 50%, proc rate caps at 99%
     sets.precast.RA = {
         ammo  = bullets["physical"],
-        -- 44 Snapshot, 29 Rapid Shot
+        -- 46 Snapshot, 29 Rapid Shot
         head  = empy_head,          -- 16 Rapid Shot
         body  = "Ikenga's Vest",    -- 9 Snapshot
         hands = relic_hands,        -- 9 Snapshot
@@ -231,7 +229,7 @@ function get_sets()
     -- Job ability sets
 
     -- Rolls
-    sets.precast.JA["Phantom Roll"] = set_combine(sets.idle, {
+    sets.precast["Phantom Roll"] = set_combine(sets.idle, {
         -- Purely defensive
         feet       = "Malignance Boots",
         left_ring  = "Defending Ring",
@@ -246,41 +244,41 @@ function get_sets()
         right_ring = "Luzaf's Ring",
         back       = snapshot_roll_cape,
     })
-    sets.precast.JA["Blitzer's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {
+    sets.precast["Blitzer's Roll"] = set_combine(sets.precast["Phantom Roll"], {
         head = empy_head,
     })
-    sets.precast.JA["Tactician's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {
+    sets.precast["Tactician's Roll"] = set_combine(sets.precast["Phantom Roll"], {
         body = empy_body,
     })
-    sets.precast.JA["Caster's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {
+    sets.precast["Caster's Roll"] = set_combine(sets.precast["Phantom Roll"], {
         legs = empy_legs,
     })
-    sets.precast.JA["Courser's Roll"] = set_combine(sets.precast.JA["Phantom Roll"], {
+    sets.precast["Courser's Roll"] = set_combine(sets.precast["Phantom Roll"], {
         feet = empy_feet,
     })
 
     -- Other JA's
-    sets.precast.JA["Fold"] = {
+    sets.precast["Fold"] = {
         hands = relic_hands,
     }
-    sets.precast.JA["Random Deal"] = {
+    sets.precast["Random Deal"] = {
         body = relic_body,
     }
-    sets.precast.JA["Snake Eye"] = {
+    sets.precast["Snake Eye"] = {
         legs = relic_legs,
     }
-    sets.precast.JA["Wild Card"] = {
+    sets.precast["Wild Card"] = {
         feet = relic_feet,
     }
 
     -- TODO: Add M.acc for light/dark shot, stp/damage for the rest
-    sets.precast.JA["Quick Draw"] = set_combine(sets.precast.WS["Leaden Salute"], {
+    sets.precast["Quick Draw"] = set_combine(sets.precast.WS["Leaden Salute"], {
         body = "Mirke Wardecors",
         feet = empy_feet,
         back = leaden_salute_cape, -- Replace with quickdraw_cape: AGI/MDmg/STP/MAB
     })
     sets.quickdraw = {}
-    sets.quickdraw["acc"] = set_combine(sets.precast.JA["Quick Draw"], {
+    sets.quickdraw["acc"] = set_combine(sets.precast["Quick Draw"], {
         head       = af_head,
         -- body      = "Malignance Tabard",
         hands      = af_hands,
@@ -294,7 +292,7 @@ function get_sets()
         right_ring = "Stikini Ring",
         -- waist      = "",
     })
-    sets.quickdraw["stp"] = set_combine(sets.precast.JA["Quick Draw"], {
+    sets.quickdraw["stp"] = set_combine(sets.precast["Quick Draw"], {
         head       = "Malignance Chapeau",
         -- body       = "Malignance Tabard",
         hands      = "Malignance Gloves",
@@ -307,30 +305,30 @@ function get_sets()
         right_ring = "Chirich Ring +1",
         -- waist      = "",
     })
-    sets.precast.JA["Light Shot"]   = sets.quickdraw["acc"]
-    sets.precast.JA["Dark Shot"]    = set_combine(sets.quickdraw["acc"], {waist = "Hachirin-no-Obi"})
-    sets.precast.JA["Fire Shot"]    = sets.quickdraw["stp"]
-    sets.precast.JA["Water Shot"]   = sets.quickdraw["stp"]
-    sets.precast.JA["Thunder Shot"] = set_combine(sets.quickdraw["acc"], {
+    sets.precast["Light Shot"]   = sets.quickdraw["acc"]
+    sets.precast["Dark Shot"]    = set_combine(sets.quickdraw["acc"], {waist = "Hachirin-no-Obi"})
+    sets.precast["Fire Shot"]    = sets.quickdraw["stp"]
+    sets.precast["Water Shot"]   = sets.quickdraw["stp"]
+    sets.precast["Thunder Shot"] = set_combine(sets.quickdraw["acc"], {
         feet = empy_feet,
     })
-    sets.precast.JA["Earth Shot"]   = sets.quickdraw["stp"]
-    sets.precast.JA["Wind Shot"]    = sets.quickdraw["stp"]
-    sets.precast.JA["Ice Shot"]     = sets.quickdraw["stp"]
+    sets.precast["Earth Shot"]   = sets.quickdraw["stp"]
+    sets.precast["Wind Shot"]    = sets.quickdraw["stp"]
+    sets.precast["Ice Shot"]     = sets.quickdraw["stp"]
 
     sets.midcast.JA["Thunder Shot"] = {
         feet = empy_feet,
     }
 
     -- All Curing and Divine waltzes fall back to Waltz when spell mappings are checked
-    sets.precast.JA["Waltz"] = {
+    sets.precast["Waltz"] = {
         left_ring  = "Defending Ring",
         right_ring = "Asklepian Ring",
     }
 
     -- Use TH for targeted JA's
-    sets.precast.JA["Box Step"] = sets.TH
-    sets.precast.JA["Quick Step"] = sets.TH
+    sets.precast["Box Step"] = sets.TH
+    sets.precast["Quick Step"] = sets.TH
 
     -- Other sets
     sets.TH = {

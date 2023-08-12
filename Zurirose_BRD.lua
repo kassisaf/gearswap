@@ -10,7 +10,6 @@ function get_sets()
     -- Leave these empty
     sets.precast    = {}
     sets.precast.WS = {}
-    sets.precast.JA = {}
     sets.midcast    = {}
 
     -- State flags
@@ -119,13 +118,13 @@ function get_sets()
     })
 
     -- Job ability sets
-    sets.precast.JA["Soul Voice"] = {
+    sets.precast["Soul Voice"] = {
         legs = relic_legs -- Soul Voice duration +30s
     }
-    sets.precast.JA["Nightingale"] = {
+    sets.precast["Nightingale"] = {
         feet = relic_feet -- Nightingale duration +20s (with full merits)
     }
-    sets.precast.JA["Troubador"] = {
+    sets.precast["Troubador"] = {
         body = relic_body -- Troubador duration +20s (with full merits)
     }
 
@@ -266,12 +265,12 @@ function get_sets()
     }
     sets.midcast["Curaga"] = sets.midcast["Cure"]
 
-    sets.precast.JA["Curing Waltz"] = set_combine(sets.idle,{
+    sets.precast["Curing Waltz"] = set_combine(sets.idle,{
         left_ring  = "Defending Ring",
         right_ring = "Asklepian Ring",
     })
-    sets.precast.JA["Curing Waltz II"]  = sets.precast.JA["Curing Waltz"]
-    sets.precast.JA["Curing Waltz III"] = sets.precast.JA["Curing Waltz"]
+    sets.precast["Curing Waltz II"]  = sets.precast["Curing Waltz"]
+    sets.precast["Curing Waltz III"] = sets.precast["Curing Waltz"]
 
     -- Other sets
     sets.TH = {

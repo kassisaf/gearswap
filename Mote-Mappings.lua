@@ -306,14 +306,14 @@ spell_maps = {
     ['Curing Waltz V']        = 'Waltz',
     ['Divine Waltz']          = 'Waltz',
     ['Divine Waltz II']       = 'Waltz',
-    ['Light Shot']            = 'Quick Draw',
-    ['Dark Shot']             = 'Quick Draw',
-    ['Fire Shot']             = 'Quick Draw',
-    ['Earth Shot']            = 'Quick Draw',
-    ['Water Shot']            = 'Quick Draw',
-    ['Thunder Shot']          = 'Quick Draw',
-    ['Wind Shot']             = 'Quick Draw',
-    ['Ice Shot']              = 'Quick Draw',
+    -- ['Light Shot']            = 'Quick Draw',
+    -- ['Dark Shot']             = 'Quick Draw',
+    -- ['Fire Shot']             = 'Quick Draw',
+    -- ['Earth Shot']            = 'Quick Draw',
+    -- ['Water Shot']            = 'Quick Draw',
+    -- ['Thunder Shot']          = 'Quick Draw',
+    -- ['Wind Shot']             = 'Quick Draw',
+    -- ['Ice Shot']              = 'Quick Draw',
 }
 
 ranged_weaponskills = S{
