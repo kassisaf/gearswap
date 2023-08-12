@@ -102,10 +102,9 @@ function get_sets()
         back       = melee_tp_cape,
     })
     sets.FC = {
-        neck       = "Magoraga Beads",
-        left_ear   = "Loquacious Earring",
-        right_ring = "Kishar Ring",
-        waist      = "Sailfi Belt +1",
+        left_ear   = "Loquacious Earring", -- "Enhances"
+        right_ring = "Kishar Ring",        -- 4%
+        waist      = "Cornelia's Belt",    -- For 10% haste if midcast doesn't swap it off
     }
 
     -- Shooting sets
@@ -142,6 +141,10 @@ function get_sets()
     }
 
     -- Precast sets
+    sets.precast["Utsusemi"] = set_combine(sets.FC, {
+        neck = "Magoraga Beads",
+        body = "Passion Jacket",
+    })
 
     -- Weaponskill sets
     sets.precast.WS.melee = set_combine(full_nyame, {
@@ -186,9 +189,8 @@ function get_sets()
         waist      = "Eschan Stone",      -- 7 macc, 7 mab  (Hachirin will override if weather/day appropriate)
         back       = savage_cape,
     })
-    sets.precast.WS["Wildfire"] = set_combine(sets.precast.WS["Leaden Salute"], {
-        waist = "Eschan Stone",
-    })
+    sets.precast.WS["Wildfire"] = sets.precast.WS["Leaden Salute"]
+    sets.precast.WS["Aeolian Edge"] = sets.precast.WS["Leaden Salute"]
     sets.precast.WS["Hot Shot"] = set_combine(sets.precast.WS["Leaden Salute"], {
         ammo       = bullets["magic"],     -- Orichalcum
         head       = "Malignance Chapeau",
@@ -207,8 +209,6 @@ function get_sets()
         neck  = "Fotia Gorget",
         waist = "Fotia Belt",
     })
-
-    sets.precast.WS["Aeolian Edge"] = sets.precast.WS["Wildfire"]
     
     -- Job ability sets
 
@@ -299,10 +299,6 @@ function get_sets()
     sets.precast["Quick Step"] = sets.TH
 
     -- Midcast sets
-    sets.midcast["Utsusemi"] = set_combine(sets.idle, {
-        neck = "Magoraga Beads",
-        body = "Passion Jacket",
-    })
 
     -- Other sets
     sets.TH = {

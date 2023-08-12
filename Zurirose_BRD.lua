@@ -89,8 +89,7 @@ function get_sets()
         hands      = "Inyan. Dastanas +2",
         legs       = "Ayanmo Cosciales +2", -- FC +6%
         feet       = empy_feet,             -- FC +10%
-        -- waist      = "Channeler's Stone",   -- Fast Cast +2%
-        waist      = "Cornelia's Ring",     -- Haste +10%
+        waist      = "Cornelia's Belt",     -- For 10% haste if midcast doesn't swap it off
         left_ear   = "Malignance Earring",  -- FC +4%
         right_ear  = "Loquacious Earring",  -- FC +2%
         left_ring  = "Kishar Ring",         -- FC +4%

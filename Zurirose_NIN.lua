@@ -41,8 +41,13 @@ function get_sets()
         right_ring = "Petrov Ring",
         back       = "Atheling Mantle",       -- Replace with ambu TP cape
     }
-    sets.FC = {}
+    sets.FC = {
+        left_ear   = "Loquacious Earring", -- "Enhances"
+        right_ring = "Kishar Ring",        -- 4%
+        waist      = "Cornelia's Belt",    -- For 10% haste if midcast doesn't swap it off
+    }
 
+    -- Shooting sets
     -- Preshot should contain: Snapshot, Rapid Shot
     sets.precast.RA = {
         range      = "Jinx Discus",
@@ -66,6 +71,10 @@ function get_sets()
     }
 
     -- Precast sets
+    sets.precast["Utsusemi"] = set_combine(sets.FC, {
+        neck       = "Magoraga Beads",
+        body       = "Passion Jacket",
+    })
 
     -- Weaponskill sets
     sets.precast.WS.melee = {
@@ -92,10 +101,6 @@ function get_sets()
     })
 
     -- Midcast sets
-    sets.midcast["Utsusemi"] = set_combine(sets.idle, {
-        neck = "Magoraga Beads",
-        body = "Passion Jacket",
-    })
 
     -- Job ability sets
 

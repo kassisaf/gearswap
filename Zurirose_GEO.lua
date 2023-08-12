@@ -86,7 +86,7 @@ function get_sets()
         body       = "Merlinic Jubbah",    -- Fast Cast +10%
         hands      = empy_hands,           -- Fast Cast +5%
         legs       = af_legs,              -- Fast Cast +11%
-        waist      = "Channeler's Stone",  -- Fast Cast +2%
+        waist      = "Cornelia's Belt",    -- For 10% haste if midcast doesn't swap it off
         left_ear   = "Malignance Earring", -- Fast Cast +4%
         right_ear  = "Loquacious Earring", -- Fast Cast +2%
         left_ring  = "Kishar Ring",        -- Fast Cast +4%
@@ -206,10 +206,9 @@ function get_sets()
     })
     sets.midcast["Aspir"] = set_combine(sets.midcast["Elemental Magic"], {
         left_ring = "Evanescence Ring",
+        waist     = "Fucho-no-Obi",
     })
-    sets.midcast["Drain"] = set_combine(sets.midcast["Elemental Magic"], {
-        left_ring = "Evanescence Ring",
-    })
+    sets.midcast["Drain"] = sets.midcast["Aspir"]
 
     sets.midcast["Cure"] = {
         main       = "Daybreak",

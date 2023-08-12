@@ -45,9 +45,13 @@ function get_sets()
         right_ring = "Petrov Ring",       -- Get Epona's Ring
         back       = "Toutatis's Cape",
     }
-    sets.FC = {}
+    sets.FC = {
+        legs       = "Limbo Trousers",     -- 3%
+        left_ear   = "Loquacious Earring", -- "Enhances"
+        waist      = "Cornelia's Belt",    -- For 10% haste if midcast doesn't swap it off
+    }
 
-    -- Precast sets
+    -- Shooting sets
     sets.precast.RA = {
         range      = "Jinx Discus",
         ammo       = empty,
@@ -61,6 +65,12 @@ function get_sets()
         left_ear   = "Telos Earring",
         right_ear  = "Dignitary's Earring",
         back       = "Sokolski Mantle",
+    })
+
+    -- Precast sets
+    sets.precast["Utsusemi"] = set_combine(sets.FC, {
+        neck = "Magoraga Beads",
+        body = "Passion Jacket",
     })
 
     -- Weaponskill sets
@@ -157,10 +167,6 @@ function get_sets()
     sets.precast["Curing Waltz III"] = sets.precast["Curing Waltz"]
     
     -- Midcast sets
-    sets.midcast["Utsusemi"] = set_combine(sets.idle, {
-        neck = "Magoraga Beads",
-        body = "Passion Jacket",
-    })
 
     -- Other sets
     sets.TH = {
