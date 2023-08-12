@@ -54,21 +54,16 @@ function get_sets()
         ammo       = empty,
     }
     -- Midshot should contain: R.acc, STP, crit, R.atk, Recycle, etc.
-    sets.midcast.RA = {
-        -- TODO update with malignance, cacoethic, beyla, etc.
-        head       = "Meghanada Visor +2",
+    sets.midcast.RA = set_combine(full_malignance, {
         body       = "Meghanada Cuirie +2",
-        hands      = "Meghanada Gloves +2",
-        legs       = "Meghanada Chausses +2",
-        feet       = "Malignance Boots",
-        back       = "Sokolski Mantle",
-        neck       = "Caro Necklace",
+        neck       = "Marked Gorget",
         waist      = "Eschan Stone",
-        left_ring  = "Mummu Ring",
-        right_ring = "Meghanada Ring",
+        left_ring  = "Cacoethic Ring +1",
+        right_ring = "Cacoethic Ring",
         left_ear   = "Telos Earring",
         right_ear  = "Odr Earring",
-    }
+        back       = "Sokolski Mantle",
+    })
 
     -- Precast sets
     sets.precast["Utsusemi"] = set_combine(sets.FC, {
@@ -87,8 +82,8 @@ function get_sets()
         neck      = "Fotia Gorget",
         left_ear  = "Moonshade Earring",
         right_ear = "Odr Earring",
-        left_ring = "Meghanada Ring",
         left_ring = "Rufescent Ring",
+        left_ring = "Apate Ring",
         waist     = "Fotia Belt",
         -- back      = snapshot_roll_cape,
     }
