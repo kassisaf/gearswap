@@ -185,6 +185,16 @@ end
 function precast(spell, position)
     print_spell_info_if_debug_enabled(spell)
 
+    if spell.action_type == "Ranged Attack" then
+        safe_equip(sets.precast.RA)
+        return
+    end
+
+    -- FC first for all magic
+    if spell.action_type == "Magic" then
+        safe_equip(sets.FC)
+    end
+
     -- Use WS-specific set if it exists, or fall back to generic ranged or melee WS set
     if spell.type == "WeaponSkill" then
         if sets.precast.WS[spell.english] then
@@ -194,13 +204,9 @@ function precast(spell, position)
         else
             safe_equip(sets.precast.WS.melee)
         end
-
     -- Treat Double-Up as a roll (luzaf's and roll+ gear apply)
     elseif player.main_job == "COR" and (spell.english == "Double-Up" or spell.type == "CorsairRoll") then
         equip_roll_set(spell)
-    elseif spell.action_type == "Ranged Attack" then
-        safe_equip(sets.precast.RA)
-
     -- General handing if nothing more specific matches above
     -- Check for set based on spell name first
     elseif sets.precast[spell.english] then
@@ -208,9 +214,8 @@ function precast(spell, position)
     -- Then spell type
     elseif sets.precast[spell.type] then
         safe_equip(sets.precast[spell.type])
-    -- Use fastcast set for magic if nothing else matched
-    elseif spell.action_type == "Magic" then
-        safe_equip(sets.FC)
+    elseif spell_maps[spell.english] and sets.precast[spell_maps[spell.english]] then
+        safe_equip(sets.precast[spell_maps[spell.english]])
     end
 end -- precast()
 
