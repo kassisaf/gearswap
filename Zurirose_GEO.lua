@@ -236,11 +236,6 @@ function get_sets()
         -- waist = "Chaac Belt",
     }
     -- Maximize crit rate for Domain Invasion
-    sets.DI = set_combine(sets.tp, {
-    })
-    sets.doomed = {
-        left_ring  = "Blenmot's Ring +1",
-        right_ring = "Blenmot's Ring +1",
-    }
+    -- sets.DI = set_combine(sets.tp, {})
 
 end -- get_sets()

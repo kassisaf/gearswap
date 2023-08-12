@@ -305,13 +305,13 @@ function get_sets()
         ammo = "Perfect Lucky Egg",
         head = "Herculean Helm",
     }
+    -- Maximize crit rate for Domain Invasion
     sets.DI = set_combine(sets.TP, {
-        -- Maximize crit rate and multi-attack for Domain Invasion
+        main      = "Voluspa Knife",
+        hands     = "Mummu Wrists +2",
+        left_ear  = "Odr Earring",
+        left_ring = "Mummu Ring",
     })
-    sets.doomed = {
-        left_ring  = "Blenmot's Ring +1",
-        right_ring = "Blenmot's Ring +1",
-    }
     sets.dynamis_rp = {
         sub  = stp_knife,
         -- neck = jse_neck,

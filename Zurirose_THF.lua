@@ -178,17 +178,12 @@ function get_sets()
     }
     -- Maximize crit rate for Domain Invasion
     sets.DI = set_combine(sets.TP, {
-        main       = "Voluspa Knife",
-        sub        = "Shijo",
-        ammo       = "Yetshila",
-        hands      = "Mummu Wrists +2",
-        left_ear   = "Odr Earring",
-        left_ring  = "Mummu Ring",
-        right_ring = "Meghanada Ring",
+        main      = "Voluspa Knife",
+        sub       = "Shijo",
+        ammo      = "Yetshila",
+        hands     = "Mummu Wrists +2",
+        left_ear  = "Odr Earring",
+        left_ring = "Mummu Ring",
     })
-    sets.doomed = {
-        left_ring  = "Blenmot's Ring +1",
-        right_ring = "Blenmot's Ring +1",
-    }
 
 end -- get_sets()

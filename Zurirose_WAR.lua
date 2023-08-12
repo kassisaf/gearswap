@@ -61,9 +61,5 @@ function get_sets()
     }
     -- Maximize crit rate for Domain Invasion
     -- sets.DI = set_combine(sets.TP, {})
-    sets.doomed = {
-        left_ring  = "Blenmot's Ring +1",
-        right_ring = "Blenmot's Ring +1",
-    }
 
 end -- get_sets()
