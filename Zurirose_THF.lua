@@ -61,7 +61,8 @@ function get_sets()
         neck       = "Caro Necklace",
         waist      = "Eschan Stone",
         left_ring  = "Cacoethic Ring +1",
-        right_ring = "Cacoethic Ring",
+        -- right_ring = "Cacoethic Ring",
+        right_ring = "Ephramad's Ring",
         left_ear   = "Telos Earring",
         right_ear  = "Dignitary's Earring",
         back       = "Sokolski Mantle",
@@ -87,8 +88,9 @@ function get_sets()
         right_ear  = "Odr Earring",
         -- left_ring  = "Ilabrat Ring",
         -- right_ring = "Regal Ring",
-        left_ring  = "Apate Ring",
-        right_ring = "Rufescent Ring",
+        left_ring  = "Rufescent Ring",
+        -- right_ring = "Apate Ring",
+        right_ring = "Ephramad's Ring",
         back       = "Toutatis's Cape",
     })
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS.melee, {
@@ -101,12 +103,13 @@ function get_sets()
     })
     sets.precast.WS["Shark Bite"] = sets.precast.WS["Rudra's Storm"]
     sets.precast.WS["Evisceration"] = set_combine(sets.precast.WS.melee, {
-        ammo      = "Yetshila",
-        hands     = "Adhemar Wristbands +1",
-        feet      = "Adhemar Gamashes +1",
-        neck      = "Fotia Gorget",
-        waist     = "Fotia Belt",
-        left_ring = "Mummu Ring",
+        ammo       = "Yetshila",
+        hands      = "Adhemar Wristbands +1",
+        feet       = "Adhemar Gamashes +1",
+        neck       = "Fotia Gorget",
+        waist      = "Fotia Belt",
+        left_ring  = "Mummu Ring",
+        right_ring = "Ephramad's Ring",
     })
     sets.precast.WS["Extenterator"] = set_combine(sets.precast.WS.melee, {
         -- ammo      = "Seething Bomblet +1",
@@ -126,8 +129,8 @@ function get_sets()
         right_ring = "Stikini Ring",
     })
     sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
-        neck  = "Republican Platinum Medal",
-        waist = "Sailfi Belt +1",
+        neck      = "Republican Platinum Medal",
+        waist     = "Sailfi Belt +1",
         right_ear = "Ishvara Earring",
     })
 

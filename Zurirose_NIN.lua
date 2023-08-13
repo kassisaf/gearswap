@@ -58,10 +58,11 @@ function get_sets()
         body       = "Meghanada Cuirie +2",
         neck       = "Marked Gorget",
         waist      = "Eschan Stone",
-        left_ring  = "Cacoethic Ring +1",
-        right_ring = "Cacoethic Ring",
         left_ear   = "Telos Earring",
         right_ear  = "Odr Earring",
+        left_ring  = "Cacoethic Ring +1",
+        -- right_ring = "Cacoethic Ring",
+        right_ring = "Ephramad's Ring",
         back       = "Sokolski Mantle",
     })
 
@@ -73,26 +74,25 @@ function get_sets()
 
     -- Weaponskill sets
     sets.precast.WS.melee = {
-        head      = "Meghanada Visor +2",
-        body      = "Meghanada Cuirie +2",
-        hands     = "Meghanada Gloves +2",
-        legs      = "Meghanada Chausses +2",
-        feet      = "Meghanada Jambeaux +2",
-        back      = "Sokolski Mantle",
-        neck      = "Fotia Gorget",
-        left_ear  = "Moonshade Earring",
-        right_ear = "Odr Earring",
-        left_ring = "Rufescent Ring",
-        left_ring = "Apate Ring",
-        waist     = "Fotia Belt",
+        head       = "Meghanada Visor +2",
+        body       = "Meghanada Cuirie +2",
+        hands      = "Meghanada Gloves +2",
+        legs       = "Meghanada Chausses +2",
+        feet       = "Meghanada Jambeaux +2",
+        back       = "Sokolski Mantle",
+        neck       = "Fotia Gorget",
+        left_ear   = "Moonshade Earring",
+        right_ear  = "Odr Earring",
+        left_ring  = "Rufescent Ring",
+        -- right_ring = "Apate Ring",
+        right_ring = "Ephramad's Ring",
+        waist      = "Fotia Belt",
         -- back      = snapshot_roll_cape,
     }
     sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
         neck       = "Republican Platinum Medal",
         waist      = "Sailfi Belt +1",
         right_ear  = "Ishvara Earring",
-        left_ring  = "Rufescent Ring",
-        right_ring = "Apate Ring",
     })
 
     -- Midcast sets

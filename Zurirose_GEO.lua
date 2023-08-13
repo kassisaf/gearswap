@@ -117,10 +117,12 @@ function get_sets()
     })
 
     -- Weaponskill sets
-    sets.precast.WS.melee = {
-        neck  = "Fotia Gorget",
-        waist = "Fotia Belt",
-    }
+    sets.precast.WS.melee = set_combine(full_nyame, {
+        neck       = "Fotia Gorget",
+        waist      = "Fotia Belt",
+        left_ring  = "Rufescent Ring",
+        right_ring = "Ephramad's Ring",
+    })
 
     -- Job ability sets
     sets.precast["Full Circle"] = {

@@ -134,7 +134,8 @@ function get_sets()
         neck       = "Marked Gorget",  -- Iskur Gorget
         waist      = "Eschan Stone",
         left_ring  = "Cacoethic Ring +1",
-        right_ring = "Cacoethic Ring",
+        -- right_ring = "Cacoethic Ring",
+        right_ring = "Ephramad's Ring",
         left_ear   = "Telos Earring",
         right_ear  = "Beyla Earring",
         back       = leaden_salute_cape,   -- Replace with shooting cape?
@@ -154,7 +155,8 @@ function get_sets()
         left_ear   = "Moonshade Earring",
         right_ear  = "Ishvara Earring",
         left_ring  = "Rufescent Ring",
-        right_ring = "Apate Ring",
+        -- right_ring = "Apate Ring",
+        right_ring = "Ephramad's Ring",
         back       = leaden_salute_cape, -- 10% WSD
     })
     sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
@@ -185,7 +187,7 @@ function get_sets()
         left_ear   = "Friomisi Earring",
         right_ear  = "Moonshade Earring",
         left_ring  = "Archon Ring",
-        right_ring = "Apate Ring",        -- Get Dingir Ring
+        right_ring = "Ephramad's Ring",   -- Get Dingir Ring
         waist      = "Eschan Stone",      -- 7 macc, 7 mab  (Hachirin will override if weather/day appropriate)
         back       = savage_cape,
     })
@@ -199,7 +201,8 @@ function get_sets()
         legs       = empy_legs,
         feet       = empy_feet,
         left_ring  = "Cacoethic Ring +1",
-        right_ring = "Cacoethic Ring",
+        -- right_ring = "Cacoethic Ring",
+        right_ring = "Ephramad's Ring",
         left_ear   = "Telos Earring",
         right_ear  = "Beyla Earring",
         waist      = "Hachirin-no-Obi",

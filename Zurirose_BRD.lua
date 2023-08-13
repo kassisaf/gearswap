@@ -111,7 +111,8 @@ function get_sets()
         left_ear   = "Moonshade Earring",
         right_ear  = "Ishvara Earring",
         left_ring  = "Rufescent Ring",
-        right_ring = "Apate Ring",
+        -- right_ring = "Apate Ring",
+        right_ring = "Ephramad's Ring",
         back       = "Phalangite Mantle",
     })
     sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
