@@ -99,6 +99,9 @@ function get_sets()
 
     -- Precast sets
     sets.precast.RA = {}
+    sets.precast["Cure"] = set_combine(sets.FC, {
+        right_ear = "Mendicant's Earring",
+    })
 
     -- Weaponskill sets
     sets.precast.WS.melee = set_combine(full_nyame, {
@@ -257,7 +260,7 @@ function get_sets()
         neck       = "Incanter's Torque",
         waist      = "Luminary Sash",
         left_ear   = "Meili Earring",
-        right_ear  = "Fili Earring",
+        right_ear  = "Mendicant's Earring",
         left_ring  = "Stikini Ring",
         right_ring = "Stikini Ring",
         back       = "Solemnity Cape",

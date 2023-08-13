@@ -112,9 +112,9 @@ function get_sets()
 
     -- Precast sets
     sets.precast.RA = {}
-    sets.precast["Cure"] = {
+    sets.precast["Cure"] = set_combine(sets.FC, {
         right_ear = "Mendicant's Earring",
-    }
+    })
 
     -- Weaponskill sets
     sets.precast.WS.melee = {
