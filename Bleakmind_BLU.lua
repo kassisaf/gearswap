@@ -26,6 +26,7 @@ function get_sets()
     }
     sets.TP = set_combine(sets.idle, {
         main  = "Eminent Scimitar",
+        sub   = "Moogle Guard +1",
         hands = "Magus Bazubands",
     })
     sets.FC = {}
