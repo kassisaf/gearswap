@@ -112,17 +112,6 @@ function safe_equip(gearset, skip_lockables)
     end
 end
 
-function handle_elemental_obi(spell)
-    use_obi = (spell.action_type == "Magic" and spell.type ~= "Trust")
-        or (spell.type == "WeaponSkill" and elemental_obi_weaponskills[spell.english])  -- Obi WS list from Zuri-Globals.lua
-        or spell.type ~= "CorsairShot"
-
-    -- world.weather_element reports SCH weather over zone weather, if present
-    if use_obi and (spell.element == world.weather_element or spell.element == world.day_element) then
-        equip({waist = "Hachirin-no-Obi"})
-    end
-end
-
 ------------------------------------------------------
 -- Helper functions for set swaps with custom logic --
 ------------------------------------------------------
@@ -185,6 +174,28 @@ function equip_roll_set(spell)
     end
 end
 
+function handle_geomancy_midcast(spell)
+    safe_equip(sets.midcast["Geomancy"])
+    if starts_with(spell.english, "Indi") then
+        if buffactive["Entrust"] then
+            safe_equip(sets.midcast["Indi-Entrust"])
+        else
+            safe_equip(sets.midcast["Indi"])
+        end
+    end
+end
+
+function handle_elemental_obi(spell)
+    use_obi = (spell.action_type == "Magic" and spell.type ~= "Trust")
+        or (spell.type == "WeaponSkill" and elemental_obi_weaponskills[spell.english])  -- Obi WS list from Zuri-Globals.lua
+        or spell.type ~= "CorsairShot"
+
+    -- world.weather_element reports SCH weather over zone weather, if present
+    if use_obi and (spell.element == world.weather_element or spell.element == world.day_element) then
+        equip({waist = "Hachirin-no-Obi"})
+    end
+end
+
 -----------------------------
 -- Standard Gearswap Hooks --
 -----------------------------
@@ -234,8 +245,12 @@ end -- precast()
 function midcast(spell)
     print_spell_info_if_debug_enabled(spell)
 
+    -- Early return for RA and item usage
     if spell.action_type == "Ranged Attack" then
         safe_equip(sets.midcast.RA)
+        return
+    elseif spell.english == "Holy Water" and not sets.midcast["Holy Water"] then
+        equip(holy_water_set)
         return
     end
 
@@ -247,6 +262,8 @@ function midcast(spell)
     -- Then equip base set for spell type
     if spell.type == "BardSong" then
         equip_base_song_set(spell)
+    elseif spell.type == "Geomancy" then
+        handle_geomancy_midcast(spell)
     elseif sets.midcast[spell.skill] then
         safe_equip(sets.midcast[spell.skill])
     elseif sets.midcast[spell.type] then
@@ -261,13 +278,9 @@ function midcast(spell)
         safe_equip(sets.midcast[spell_tier_map[spell.english]])
     end
 
-    -- Equip the appropriate instrument last
+    -- For songs, equip the appropriate instrument last
     if spell.type == "BardSong" then
         equip_instrument(spell)
-    end
-
-    if spell.english == "Holy Water" and not sets.midcast["Holy Water"] then
-        equip(holy_water_set)
     end
 
     -- Always handle obi in midcast

@@ -62,6 +62,7 @@ function get_sets()
         right_ear = "Handler's Earring",
         feet      = relic_feet,
         back      = idle_cape,
+        waist     = "Isa Belt",
 
         -- Telchine augs: pet DT -4%, pet regen +3
         -- head  = "Telchine Cap",
@@ -70,6 +71,9 @@ function get_sets()
         -- waist = "Isa Belt"
     })
     sets.TP = set_combine(full_nyame, {
+        main       = "Solstice",      -- Ternion +1?
+        sub        = "Genmei Shield",
+
         neck       = "Loricate Torque +1",
         left_ear   = "Telos Earring",
         right_ear  = "Brutal Earring",
@@ -113,7 +117,11 @@ function get_sets()
     -- Precast sets
     sets.precast.RA = {}
     sets.precast["Cure"] = set_combine(sets.FC, {
+        legs      = "Doyen Pants",         -- -15% Cure cast time
         right_ear = "Mendicant's Earring",
+    })
+    sets.precast["Stoneskin"] = set_combine(sets.FC, {
+        legs = "Doyen Pants", -- -10% Stoneskin cast time
     })
 
     -- Weaponskill sets
@@ -147,22 +155,35 @@ function get_sets()
 
     -- Midcast sets
     sets.midcast["Geomancy"] = {
-        main       = "Solstice",
-        sub        = "Genbu's Shield",
-        range      = "Dunna",
-        head       = empy_head,
-        body       = relic_body,
-        hands      = af_hands,
-        legs       = relic_legs,
-        feet       = empy_feet,
-        neck       = jse_neck,
-        left_ring  = "Stikini Ring",
-        right_ring = "Stikini Ring",
-        left_ear   = "Handler's Earring +1",
-        right_ear  = "Handler's Earring",
-        back       = "Lifestream Cape",
-        waist      = "Isa Belt",
+        -- Naked skill at ML9: 434 handbell + 434 geomancy = 868 (need 32 to hit 900 tier)
+        -- Fill remaining slots with duration, defense, and empy set bonus to cast without MP
+        -- Gada with 11% duration lasts ~10s longer than Solstice, but loses 6 conserve MP
+        main  = "Gada",          -- Duration +11%
+        sub   = "Genmei Shield", -- PDT -10%
+        range = "Dunna",         -- Skill +18
+
+        head  = empy_head,  -- Skill +20, DT -11%
+        body  = empy_body,  -- For empy bonus... no DT
+        hands = empy_hands, -- DT -11%
+        legs  = relic_legs, -- Indi Duration +18, no DT
+        feet  = empy_feet,  -- Indi Duration +25, DT -10%
+
+        neck       = jse_neck,              -- Geomancy +6
+        back       = nuke_cape,             -- Indi Duration +20, DT -5%
+        waist      = "Luminary Sash",       -- Conserve MP +4
+        left_ear   = "Mendicant's Earring", -- Conserve MP +2
+        right_ear  = "Lugalbanda Earring",  -- m.eva +10
+        left_ring  = "Defending Ring",      -- DT -10%
+        right_ring = "Gelatinous Ring +1",  -- PDT -7% MDT +1%
     }
+    sets.midcast["Indi"] = {
+        back = "Lifestream Cape", -- Indi Duration +20%, no DT (~30s longer than ambu cape)
+    }
+    sets.midcast["Indi-Entrust"] = set_combine(sets.midcast["Indi"], {
+        main = "Gada",
+        sub  = "Genmei Shield",
+    })
+
     sets.midcast["Elemental Magic"] = set_combine(sets.macc,{
         main       = "Daybreak",
         sub        = "Ammurapi Shield",
@@ -181,7 +202,7 @@ function get_sets()
         back       = nuke_cape,
     })
     sets.midcast["Enhancing Magic"] = {
-        main       = "Daybreak",
+        main       = "Gada",              -- 18 enhancing skill
         sub        = "Ammurapi Shield",   -- Enhancing duration +10%
         neck       = "Incanter's Torque",
         left_ring  = "Stikini Ring",
