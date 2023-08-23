@@ -62,14 +62,10 @@ function get_sets()
         right_ring = "Defending Ring",
         back       = "Intarabus's Cape",
     }
-    sets.TP = set_combine(sets.idle,{
-        -- main       = "Naegling",
-        sub        = "Genbu's Shield",
-        head       = "Nyame Helm",
-        body       = "Nyame Mail",
-        hands      = "Nyame Gauntlets",
-        legs       = "Nyame Flanchard",
-        feet       = "Nyame Sollerets",
+    sets.TP = set_combine(full_nyame, {
+        main       = "Naegling",
+        sub        = "Genmei Shield",
+
         neck       = "Sanctity Necklace",
         waist      = "Sailfi Belt +1",
         left_ear   = "Digni. Earring",
@@ -100,7 +96,14 @@ function get_sets()
     -- Precast sets
     sets.precast.RA = {}
     sets.precast["Cure"] = set_combine(sets.FC, {
-        right_ear = "Mendicant's Earring",
+        legs      = "Doyen Pants",         -- -15% Cure cast time
+        right_ear = "Mendicant's Earring", -- -5% Cure cast time
+    })
+    sets.precast["Stoneskin"] = set_combine(sets.FC, {
+        legs = "Doyen Pants", -- -10% Stoneskin cast time
+    })
+    sets.precast["BardSong"] = set_combine(sets.FC, {
+        legs = "Doyen Pants", -- -6% Song cast time
     })
 
     -- Weaponskill sets
@@ -141,6 +144,9 @@ function get_sets()
         left_ring  = "Stikini Ring",
         right_ring = "Stikini Ring",
     }
+    sets.midcast["Enfeebling Magic"] = set_combine(sets.macc, {
+        right_ring = "Kishar Ring", -- Enfeebling duration +10%
+    })
     sets.midcast["Enhancing Magic"] = {
         sub        = "Ammurapi Shield",     -- Enhancing duration +10%
         hands      = "Inyanga Dastanas +2",
@@ -149,9 +155,6 @@ function get_sets()
         right_ring = "Stikini Ring",
         waist      = "Siegel Sash",         -- Enhancing cast time -8%
     }
-    sets.midcast["Enfeebling Magic"] = set_combine(sets.macc, {
-        right_ring = "Kishar Ring", -- Enfeebling duration +10%
-    })
     sets.midcast["Stoneskin"] = set_combine(sets.midcast["Enhancing Magic"], {
         -- legs     = "Shedir Seraweels", -- Stoneskin +35
         neck     = "Nodens Gorget",    -- Stoneskin +30

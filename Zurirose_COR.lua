@@ -10,6 +10,7 @@ function get_sets()
     -- Gear Aliases
     bullets = {
         physical = "Eminent Bullet",
+        acc      = "Devastating Bullet",
         magic    = "Orichalcum Bullet",
     }
     snapshot_roll_cape = {name="Camulus's Mantle", augments={
@@ -109,18 +110,19 @@ function get_sets()
 
     -- Shooting sets
     -- Preshot should contain: Snapshot, Rapid Shot
-    -- Snapshot caps at 70 (-10% from gifts)
-    -- Rapid shot reduces delay up to 50%, proc rate caps at 99%
+    -- Snapshot caps at 70% (-10% from gifts) and applies to aiming delay directly
+    -- Rapid Shot caps at 99%, and reduces aiming delay by up to 50% on proc
     sets.precast.RA = {
-        ammo  = bullets["physical"],
-        -- 46 Snapshot, 29 Rapid Shot
-        head  = empy_head,          -- 16 Rapid Shot
-        body  = "Ikenga's Vest",    -- 9 Snapshot
-        hands = relic_hands,        -- 9 Snapshot
-        legs  = "Adhemar Kecks +1", -- 10 Snapshot, 13 Rapid Shot
-        feet  = "Ikenga's Clogs",   -- 5 Snapshot
-        neck  = jse_neck,           -- 3 Snapshot
-        back  = snapshot_roll_cape, -- 10 Snapshot
+        ammo  = bullets["acc"],
+        -- ammo  = bullets["physical"],
+        -- Total from gear: 45 Snapshot, 40 Rapid Shot
+        head  = empy_head,                     -- 0 Snapshot, 16 Rapid Shot
+        body  = "Ikenga's Vest",               -- 9 Snapshot
+        hands = "Carmine Finger Gauntlets +1", -- 8 Snapshot, 11 Rapid Shot (path D)
+        legs  = "Adhemar Kecks +1",            -- 10 Snapshot, 13 Rapid Shot
+        feet  = "Ikenga's Clogs",              -- 5 Snapshot
+        neck  = jse_neck,                      -- 3 Snapshot
+        back  = snapshot_roll_cape,            -- 10 Snapshot
         -- waist = "Yemaya Belt",
     }
     -- Midshot should contain: R.acc, STP, crit, R.atk, Recycle, etc.
@@ -191,7 +193,10 @@ function get_sets()
         waist      = "Eschan Stone",      -- 7 macc, 7 mab  (Hachirin will override if weather/day appropriate)
         back       = savage_cape,
     })
-    sets.precast.WS["Wildfire"] = sets.precast.WS["Leaden Salute"]
+    sets.precast.WS["Wildfire"] = set_combine(sets.precast.WS["Leaden Salute"], {
+        head      = "Nyame Helm",
+        right_ear = "Hecate's Earring",
+    })
     sets.precast.WS["Aeolian Edge"] = sets.precast.WS["Leaden Salute"]
     sets.precast.WS["Hot Shot"] = set_combine(sets.precast.WS["Leaden Salute"], {
         ammo       = bullets["magic"],     -- Orichalcum
@@ -259,7 +264,7 @@ function get_sets()
     }
 
     -- Quick Draw sets
-    -- Fallback STP set for any shots that aren't specified by name
+    -- Default Quick Draw set is optimized for STP
     sets.precast["CorsairShot"] = {
         ammo       = bullets["magic"],
         head       = "Malignance Chapeau",
@@ -285,6 +290,7 @@ function get_sets()
         left_ring  = "Stikini Ring",
         right_ring = "Stikini Ring",
     })
+    -- Light and dark shots optimized for m.acc
     sets.precast["Light Shot"] = quick_draw_acc
     sets.precast["Dark Shot"]  = set_combine(quick_draw_acc, {
         right_ring = "Archon Ring",
@@ -316,7 +322,7 @@ function get_sets()
         left_ring = "Mummu Ring",
     })
     sets.dynamis_rp = {
-        sub  = stp_knife,
+        -- sub  = stp_knife,
         -- neck = jse_neck,
     }
 
