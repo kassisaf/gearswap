@@ -43,26 +43,28 @@ function get_sets()
         main       = "Malignance Pole",
         sub        = "Kaja Grip",
         range      = "Dunna",
-        head       = empy_head,
-        body       = empy_body,
-        hands      = af_hands,
-        legs       = "Nyame Flanchard",
-        feet       = empy_feet,
-        neck       = "Loricate Torque +1",
-        left_ear   = "Handler's Earring +1",
-        right_ear  = "Lugalbanda Earring",
-        left_ring  = "Defending Ring",
-        right_ring = "Shneddick Ring",
-        waist      = "Carrier's Sash",
-        back       = nuke_cape, -- Until I add DT to the other one
+        head       = empy_head,            -- DT -11%
+        body       = empy_body,            -- Refresh +3, no DT
+        hands      = empy_hands,           -- DT -11%
+        legs       = "Nyame Flanchard",    -- DT -8%
+        feet       = empy_feet,            -- DT -10%
+        neck       = "Loricate Torque +1", -- DT -6%, 55-60 def
+        left_ear   = "Lugalbanda Earring", -- m.eva +10, mdb +5
+        right_ear  = "Eabani Earring",     -- m.eva +8
+        left_ring  = "Defending Ring",     -- DT -10%
+        right_ring = "Shneddick Ring",     -- Movespeed
+        waist      = "Carrier's Sash",     -- Ele resist tier
+        back       = nuke_cape,            -- DT -5%
     }
     sets.idle_with_pet = set_combine(sets.idle, {
-        main      = "Solstice",
+        main      = "Solstice",             -- pet DT -4%
         sub       = "Genbu's Shield",
-        right_ear = "Handler's Earring",
-        feet      = relic_feet,
-        back      = idle_cape,
-        waist     = "Isa Belt",
+        hands     = af_hands,               -- luopan DT -13%
+        left_ear  = "Handler's Earring +1", -- pet PDT -4%
+        right_ear = "Handler's Earring",    -- pet PDT -3%
+        feet      = relic_feet,             -- pet regen +4
+        back      = idle_cape,              -- pet regen +10, pet DT -2%
+        waist     = "Isa Belt",             -- pet regen +1,  pet DT -3%
 
         -- Telchine augs: pet DT -4%, pet regen +3
         -- head  = "Telchine Cap",
@@ -84,7 +86,7 @@ function get_sets()
     sets.FC = {
         -- TODO optimize with haste
         main       = "Solstice",           -- Fast Cast +5%
-        sub        = "Genbu's Shield",
+        sub        = "Genmei Shield",
         range      = "Dunna",              -- Fast Cast +3%
         head       = vanya_head_d,         -- Fast Cast +10%
         body       = "Merlinic Jubbah",    -- Fast Cast +10%
@@ -215,6 +217,7 @@ function get_sets()
         right_ring = "Kishar Ring", -- Enfeebling duration +10%
     })
     sets.midcast["Dark Magic"] = set_combine(sets.macc, {
+        legs       = empy_legs,          -- Dark Magic skill +30
         right_ring = "Evanescence Ring",
     })
     sets.midcast["Stoneskin"] = set_combine(sets.midcast["Enhancing Magic"], {
