@@ -47,7 +47,7 @@ function get_sets()
     -- Basic sets
     sets.idle = {
         main       = "Sangoma",
-        sub        = "Genbu's Shield",
+        sub        = "Genmei Shield",
         range      = instrument_general,
         head       = empy_head,
         body       = "Inyanga Jubbah +2",

@@ -50,7 +50,7 @@ function get_sets()
         feet       = empy_feet,            -- DT -10%
         neck       = "Loricate Torque +1", -- DT -6%, 55-60 def
         left_ear   = "Lugalbanda Earring", -- m.eva +10, mdb +5
-        right_ear  = "Eabani Earring",     -- m.eva +8
+        right_ear  = "Eabani Earring",     -- m.eva +8, eva +15
         left_ring  = "Defending Ring",     -- DT -10%
         right_ring = "Shneddick Ring",     -- Movespeed
         waist      = "Carrier's Sash",     -- Ele resist tier
@@ -70,7 +70,6 @@ function get_sets()
         -- head  = "Telchine Cap",
         -- legs  = "Telchine Braconi",
         -- feet  = "Bagua Sandals +3",
-        -- waist = "Isa Belt"
     })
     sets.TP = set_combine(full_nyame, {
         main       = "Solstice",      -- Ternion +1?

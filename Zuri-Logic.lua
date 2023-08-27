@@ -137,8 +137,12 @@ function equip_idle_set(skip_lockables)
 end -- equip_idle_set()
 
 function equip_tp_set(skip_lockables)
-    if buffactive["Elvorseal"] and sets.DI then
-        safe_equip(sets.DI, skip_lockables)
+    if buffactive["Elvorseal"] then
+        if player.target.name == "Mireu" and sets.Mireu then
+            safe_equip(sets.Mireu, skip_lockables)
+        elseif sets.DI then
+            safe_equip(sets.DI, skip_lockables)
+        end
     else
         safe_equip(sets.TP, skip_lockables)
     end

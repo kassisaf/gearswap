@@ -186,8 +186,10 @@ function get_sets()
         ammo      = "Yetshila",
         hands     = "Mummu Wrists +2",
         legs      = "Meghanada Chausses +2",
-        left_ear  = "Odr Earring",
+        left_ear  = "Eabani Earring",
+        right_ear = "Odr Earring",
         left_ring = "Mummu Ring",
     })
+    sets.Mireu = set_combine(sets.DI, full_nyame)
 
 end -- get_sets()
