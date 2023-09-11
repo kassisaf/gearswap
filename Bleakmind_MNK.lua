@@ -51,6 +51,7 @@ function get_sets()
     -- Weaponskill sets
     sets.precast.WS.melee = {
         hands     = "Boor Bracelets",
+        right_ear = "Moonshade Earring",
         left_ring = "Rufescent Ring",
     }
     -- sets.precast.WS["Rudra's Storm"] = sets.precast.WS.melee

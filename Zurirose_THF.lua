@@ -125,8 +125,8 @@ function get_sets()
         waist      = "Eschan Stone",
         left_ear   = "Moonshade Earring",
         right_ear  = "Friomisi Earring",
-        left_ring  = "Stikini Ring",
-        right_ring = "Stikini Ring",
+        left_ring  = "Dingir Ring",
+        right_ring = "Shiva Ring +1",
     })
     sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
         neck      = "Republican Platinum Medal",

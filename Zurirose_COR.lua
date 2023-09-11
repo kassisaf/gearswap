@@ -9,9 +9,10 @@ function get_sets()
 
     -- Gear Aliases
     bullets = {
-        physical = "Eminent Bullet",
-        acc      = "Devastating Bullet",
-        magic    = "Orichalcum Bullet",
+        physical  = "Eminent Bullet",
+        acc       = "Decimating Bullet",
+        macc      = "Orichalcum Bullet",
+        quickdraw = "Hauksbok Bullet",   -- 1000 DI points
     }
     snapshot_roll_cape = {name="Camulus's Mantle", augments={
         'INT+20',
@@ -115,12 +116,12 @@ function get_sets()
     sets.precast.RA = {
         ammo  = bullets["acc"],
         -- ammo  = bullets["physical"],
-        -- Total from gear: 45 Snapshot, 40 Rapid Shot
+        -- Total from gear: 50 Snapshot, 40 Rapid Shot
         head  = empy_head,                     -- 0 Snapshot, 16 Rapid Shot
         body  = "Ikenga's Vest",               -- 9 Snapshot
         hands = "Carmine Finger Gauntlets +1", -- 8 Snapshot, 11 Rapid Shot (path D)
         legs  = "Adhemar Kecks +1",            -- 10 Snapshot, 13 Rapid Shot
-        feet  = "Ikenga's Clogs",              -- 5 Snapshot
+        feet  = "Meghanada Jambeaux +2",       -- 10 Snapshot
         neck  = jse_neck,                      -- 3 Snapshot
         back  = snapshot_roll_cape,            -- 10 Snapshot
         -- waist = "Yemaya Belt",
@@ -157,13 +158,26 @@ function get_sets()
         left_ear   = "Moonshade Earring",
         right_ear  = "Ishvara Earring",
         left_ring  = "Rufescent Ring",
-        -- right_ring = "Apate Ring",
-        right_ring = "Ephramad's Ring",
-        back       = leaden_salute_cape, -- 10% WSD
+        right_ring = "Ephramad's Ring",     -- Fall back to Regal or Apate if swapping TVR ring
+        back       = leaden_salute_cape,    -- 10% WSD
     })
     sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
         neck  = "Republican Platinum Medal",
         waist = "Sailfi Belt +1",
+    })
+    sets.precast.WS["Requiescat"] = set_combine(sets.precast.WS.melee, {
+        right_ear = "Telos Earring",
+        -- back = "" MND/Atk./Acc./DA
+    })
+    sets.precast.WS["Aeolian Edge"] = set_combine(sets.precast.WS.melee, {
+        ammo       = bullets["macc"],
+        body       = relic_body,
+        feet       = relic_feet,
+        neck       = "Sanctity Necklace",
+        waist      = "Eschan Stone",
+        right_ear  = "Friomisi Earring",
+        left_ring  = "Dingir Ring",
+        right_ring = "Shiva Ring +1",
     })
 
     -- Default ranged WS assumes physical
@@ -179,7 +193,7 @@ function get_sets()
         back      = leaden_salute_cape,   -- Replace with WS capes
     })
     sets.precast.WS["Leaden Salute"] = set_combine(sets.precast.WS.ranged, {
-        ammo       = bullets["magic"],    -- Orichalcum
+        ammo       = bullets["macc"],
         head       = "Pixie Hairpin +1",
         body       = relic_body,
         hands      = "Nyame Gauntlets",
@@ -189,17 +203,18 @@ function get_sets()
         left_ear   = "Friomisi Earring",
         right_ear  = "Moonshade Earring",
         left_ring  = "Archon Ring",
-        right_ring = "Ephramad's Ring",   -- Get Dingir Ring
+        right_ring = "Dingir Ring",
         waist      = "Eschan Stone",      -- 7 macc, 7 mab  (Hachirin will override if weather/day appropriate)
-        back       = savage_cape,
+        back       = leaden_salute_cape,
     })
     sets.precast.WS["Wildfire"] = set_combine(sets.precast.WS["Leaden Salute"], {
+        ammo      = bullets["macc"],
         head      = "Nyame Helm",
         right_ear = "Hecate's Earring",
     })
     sets.precast.WS["Aeolian Edge"] = sets.precast.WS["Leaden Salute"]
     sets.precast.WS["Hot Shot"] = set_combine(sets.precast.WS["Leaden Salute"], {
-        ammo       = bullets["magic"],     -- Orichalcum
+        ammo       = bullets["macc"],
         head       = "Malignance Chapeau",
         body       = af_body,
         hands      = "Malignance Gloves",
@@ -214,6 +229,8 @@ function get_sets()
         back       = leaden_salute_cape,
     })
     sets.precast.WS["Last Stand"] = set_combine(sets.precast.WS.ranged, {
+        body  = af_body,
+        ammo  = bullets["acc"],
         neck  = "Fotia Gorget",
         waist = "Fotia Belt",
     })
@@ -264,9 +281,8 @@ function get_sets()
     }
 
     -- Quick Draw sets
-    -- Default Quick Draw set is optimized for STP
-    sets.precast["CorsairShot"] = {
-        ammo       = bullets["magic"],
+    quick_draw_stp = {
+        ammo       = bullets["quickdraw"],
         head       = "Malignance Chapeau",
         body       = "Mirke Wardecors",
         hands      = "Malignance Gloves",
@@ -280,7 +296,8 @@ function get_sets()
         waist      = "Eschan Stone",
         back       = leaden_salute_cape,    -- Replace with quickdraw_cape: AGI/MDmg/STP/MAB
     }
-    quick_draw_acc = set_combine(sets.precast["CorsairShot"], {
+    quick_draw_acc = set_combine(quick_draw_stp, {
+        ammo       = bullets["macc"],
         head       = af_head,
         hands      = af_hands,
         feet       = af_feet,               -- AF quickdraw trait gives flat damage +20 and macc +20
@@ -290,6 +307,21 @@ function get_sets()
         left_ring  = "Stikini Ring",
         right_ring = "Stikini Ring",
     })
+    quick_draw_dmg = set_combine(quick_draw_stp, {
+        head       = "Nyame Helm",
+        body       = relic_body,
+        hands      = "Carmine Finger Gauntlets +1",
+        legs       = "Nyame Flanchard",
+        -- feet       = relic_feet,
+        neck       = jse_neck,
+        left_ear   = "Friomisi Earring",
+        right_ear  = "Hecate's Earring",
+        left_ring  = "Dingir Ring",
+        right_ring = "Shiva Ring +1",               -- Fenrir Ring +1
+        waist      = "Eschan Stone",                -- Skrymir Cord +1
+    })
+    -- Use STP for quickdraw by default
+    sets.precast["CorsairShot"] = quick_draw_stp
     -- Light and dark shots optimized for m.acc
     sets.precast["Light Shot"] = quick_draw_acc
     sets.precast["Dark Shot"]  = set_combine(quick_draw_acc, {
