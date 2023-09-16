@@ -50,6 +50,7 @@ function get_sets()
 
     -- Weaponskill sets
     sets.precast.WS.melee = {
+        neck      = "Anu Torque",
         left_ring = "Rufescent Ring",
         back      = ws_cape,
     }

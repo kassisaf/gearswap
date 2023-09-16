@@ -69,10 +69,8 @@ function get_sets()
     -- Basic sets
     sets.idle = {
         main       = "Naegling",
-        -- sub        = "Gleti's Knife",
         sub        = "Tauret",
         range      = "Ataktos",
-        -- range      = "Molybdosis",
         ammo       = bullets["physical"],
         head       = "Nyame Helm",
         body       = empy_body,
@@ -225,7 +223,7 @@ function get_sets()
         right_ring = "Ephramad's Ring",
         left_ear   = "Telos Earring",
         right_ear  = "Beyla Earring",
-        waist      = "Hachirin-no-Obi",
+        waist      = "Fotia Belt",
         back       = leaden_salute_cape,
     })
     sets.precast.WS["Last Stand"] = set_combine(sets.precast.WS.ranged, {
@@ -349,6 +347,7 @@ function get_sets()
     -- Maximize crit rate for Domain Invasion
     sets.DI = set_combine(sets.TP, {
         main      = "Voluspa Knife",
+        sub       = "Gleti's Knife",
         hands     = "Mummu Wrists +2",
         left_ear  = "Odr Earring",
         left_ring = "Mummu Ring",

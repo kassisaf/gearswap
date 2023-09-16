@@ -9,9 +9,12 @@ function get_sets()
 
     -- Gear aliases
     idle_cape = {name="Nantosuelta's Cape", augments={
-        -- TODO: Add defensive stats
+        -- TODO: Needle resin DT for 5 more regen
+        'VIT+20',
+        'Eva.+20 /Mag. Eva.+20',
+        -- TODO: Add dye (eva, meva?)
         'Pet: "Regen"+10',
-        'Pet: Damage taken -2%',
+        'Pet: Damage taken -5%',
     }}
     nuke_cape = {name="Nantosuelta's Cape", augments={
         'INT+20',
@@ -52,17 +55,18 @@ function get_sets()
         left_ear   = "Lugalbanda Earring", -- m.eva +10, mdb +5
         right_ear  = "Eabani Earring",     -- m.eva +8, eva +15
         left_ring  = "Defending Ring",     -- DT -10%
-        right_ring = "Shneddick Ring",     -- Movespeed
+        right_ring = "Shneddick Ring",     -- Movespeed, status resists
         waist      = "Carrier's Sash",     -- Ele resist tier
         back       = nuke_cape,            -- DT -5%
     }
     sets.idle_with_pet = set_combine(sets.idle, {
-        main      = "Solstice",             -- pet DT -4%
-        sub       = "Genbu's Shield",
-        hands     = af_hands,               -- luopan DT -13%
+        main      = "Idris",                -- Luopan DT -25%
+        sub       = "Genmei Shield",
+        hands     = af_hands,               -- Luopan DT -13%
+        feet      = relic_feet,             -- pet regen +4
+        neck      = jse_neck,               -- Luopan absorb damage +8%
         left_ear  = "Handler's Earring +1", -- pet PDT -4%
         right_ear = "Handler's Earring",    -- pet PDT -3%
-        feet      = relic_feet,             -- pet regen +4
         back      = idle_cape,              -- pet regen +10, pet DT -2%
         waist     = "Isa Belt",             -- pet regen +1,  pet DT -3%
 
@@ -83,9 +87,11 @@ function get_sets()
         waist      = "Eschan Stone",
     })
     sets.FC = {
+        -- Fast Cast reduces spellcasting time up to 80%, and half of that applies to recast
+        -- FC is multiplied by total haste and JA mods in the recast calculation
         -- TODO optimize with haste
-        main       = "Solstice",           -- Fast Cast +5%
-        sub        = "Genmei Shield",
+        -- main       = "Solstice",           -- Fast Cast +5%
+        -- sub        = "Genmei Shield",
         range      = "Dunna",              -- Fast Cast +3%
         head       = vanya_head_d,         -- Fast Cast +10%
         body       = "Merlinic Jubbah",    -- Fast Cast +10%
@@ -96,6 +102,7 @@ function get_sets()
         right_ear  = "Loquacious Earring", -- Fast Cast +2%
         left_ring  = "Kishar Ring",        -- Fast Cast +4%
         right_ring = "Naji's Loop",        -- Fast Cast +1%
+        -- Total: 55% FC
     }
     sets.macc = {
         main       = "Malignance Pole",
@@ -159,7 +166,8 @@ function get_sets()
         -- Naked skill at ML9: 434 handbell + 434 geomancy = 868 (need 32 to hit 900 tier)
         -- Fill remaining slots with duration, defense, and empy set bonus to cast without MP
         -- Gada with 11% duration lasts ~10s longer than Solstice, but loses 6 conserve MP
-        main  = "Gada",          -- Duration +11%
+        -- main  = "Gada",          -- Duration +11%
+        main  = "Idris",
         sub   = "Genmei Shield", -- PDT -10%
         range = "Dunna",         -- Skill +18
 
@@ -169,7 +177,7 @@ function get_sets()
         legs  = relic_legs, -- Indi Duration +18, no DT
         feet  = empy_feet,  -- Indi Duration +25, DT -10%
 
-        neck       = jse_neck,              -- Geomancy +6
+        neck       = jse_neck,              -- Luopan duration +20%
         back       = nuke_cape,             -- Indi Duration +20, DT -5%
         waist      = "Luminary Sash",       -- Conserve MP +4
         left_ear   = "Mendicant's Earring", -- Conserve MP +2
@@ -181,7 +189,8 @@ function get_sets()
         back = "Lifestream Cape", -- Indi Duration +20%, no DT (~30s longer than ambu cape)
     }
     sets.midcast["Indi-Entrust"] = set_combine(sets.midcast["Indi"], {
-        main = "Gada",
+        -- Potency doesn't apply to entrust, so swap Idris for Gada
+        main = "Gada",          -- Indi Duration +11%
         sub  = "Genmei Shield",
     })
 
@@ -237,7 +246,7 @@ function get_sets()
 
     sets.midcast["Cure"] = {
         main       = "Daybreak",
-        sub        = "Ammurapi Shield",
+        sub        = "Genbu's Shield",      -- 3% cure potency augment
         ammo       = "Hydrocera",
         head       = vanya_head_b,
         body       = vanya_body_b,
