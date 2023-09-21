@@ -9,12 +9,11 @@ function get_sets()
 
     -- Gear aliases
     idle_cape = {name="Nantosuelta's Cape", augments={
-        -- TODO: Needle resin DT for 5 more regen
         'VIT+20',
         'Eva.+20 /Mag. Eva.+20',
         -- TODO: Add dye (eva, meva?)
         'Pet: "Regen"+10',
-        'Pet: Damage taken -5%',
+        'Pet: "Regen"+5',
     }}
     nuke_cape = {name="Nantosuelta's Cape", augments={
         'INT+20',
@@ -76,7 +75,7 @@ function get_sets()
         -- feet  = "Bagua Sandals +3",
     })
     sets.TP = set_combine(full_nyame, {
-        main       = "Solstice",      -- Ternion +1?
+        main       = "Idris",      -- Ternion +1?
         sub        = "Genmei Shield",
 
         neck       = "Loricate Torque +1",
@@ -239,6 +238,7 @@ function get_sets()
         -- legs = "Shedir Seraweels" -- Aquaveil +1
     })
     sets.midcast["Aspir"] = set_combine(sets.midcast["Elemental Magic"], {
+        neck      = "Erra Pendant",
         left_ring = "Evanescence Ring",
         waist     = "Fucho-no-Obi",
     })

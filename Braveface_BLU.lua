@@ -21,7 +21,7 @@ function get_sets()
         waist      = "Eschan Stone",
         left_ear   = "Odr Earring",
         right_ear  = "Steelflash Earring",
-        left_ring  = "Gelatinous Ring",
+        left_ring  = "Shneddick Ring",
         right_ring = "Ayanmo Ring",
     }
     sets.TP = set_combine(sets.idle, {
