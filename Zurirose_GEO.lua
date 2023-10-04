@@ -227,6 +227,11 @@ function get_sets()
         legs       = empy_legs,          -- Dark Magic skill +30
         right_ring = "Evanescence Ring",
     })
+    sets.midcast["Aspir"] = set_combine(sets.midcast["Dark Magic"], {
+        neck      = "Erra Pendant",
+        left_ring = "Evanescence Ring",
+        waist     = "Fucho-no-Obi",
+    })
     sets.midcast["Stoneskin"] = set_combine(sets.midcast["Enhancing Magic"], {
         -- legs = "Shedir Seraweels", -- Stoneskin +35
         neck  = "Nodens Gorget", -- Stoneskin +30
@@ -236,11 +241,6 @@ function get_sets()
     sets.midcast["Aquaveil"] = set_combine(sets.midcast["Enhancing Magic"], {
         head = "Chironic Hat", -- Aquaveil +1
         -- legs = "Shedir Seraweels" -- Aquaveil +1
-    })
-    sets.midcast["Aspir"] = set_combine(sets.midcast["Elemental Magic"], {
-        neck      = "Erra Pendant",
-        left_ring = "Evanescence Ring",
-        waist     = "Fucho-no-Obi",
     })
     sets.midcast["Drain"] = sets.midcast["Aspir"]
 
