@@ -228,9 +228,10 @@ function get_sets()
         right_ring = "Evanescence Ring",
     })
     sets.midcast["Aspir"] = set_combine(sets.midcast["Dark Magic"], {
-        neck      = "Erra Pendant",
-        left_ring = "Evanescence Ring",
-        waist     = "Fucho-no-Obi",
+        neck       = "Erra Pendant",
+        left_ring  = "Shiva Ring +1",
+        right_ring = "Evanescence Ring",
+        waist      = "Fucho-no-Obi",
     })
     sets.midcast["Stoneskin"] = set_combine(sets.midcast["Enhancing Magic"], {
         -- legs = "Shedir Seraweels", -- Stoneskin +35
