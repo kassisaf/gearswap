@@ -26,7 +26,7 @@ function get_sets()
     af_head     = "Geomancy Galero +1"
     af_body     = "Geomancy Tunic +1"
     af_hands    = "Geomancy Mitaines +3"
-    af_legs     = "Geomanic Pants +1"
+    af_legs     = "Geomancy Pants +1"
     af_feet     = "Geomancy Sandals +1"
     relic_head  = "Bagua Galero"
     relic_body  = "Bagua Tunic +3"
