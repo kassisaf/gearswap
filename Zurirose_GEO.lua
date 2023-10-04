@@ -233,6 +233,7 @@ function get_sets()
         right_ring = "Evanescence Ring",
         waist      = "Fucho-no-Obi",
     })
+    sets.midcast["Drain"] = sets.midcast["Aspir"]
     sets.midcast["Stoneskin"] = set_combine(sets.midcast["Enhancing Magic"], {
         -- legs = "Shedir Seraweels", -- Stoneskin +35
         neck  = "Nodens Gorget", -- Stoneskin +30
@@ -243,7 +244,6 @@ function get_sets()
         head = "Chironic Hat", -- Aquaveil +1
         -- legs = "Shedir Seraweels" -- Aquaveil +1
     })
-    sets.midcast["Drain"] = sets.midcast["Aspir"]
 
     sets.midcast["Cure"] = {
         main       = "Daybreak",
