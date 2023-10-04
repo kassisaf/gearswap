@@ -285,7 +285,7 @@ function get_sets()
         body       = "Mirke Wardecors",
         hands      = "Malignance Gloves",
         legs       = "Malignance Tights",
-        feet       = empy_feet,             -- Empy quickdraw traight gives 25/28/31% bonus to next elemental damage of same element
+        feet       = empy_feet,             -- Empy quickdraw trait gives 25/28/31% bonus to next elemental damage of same element
         neck       = "Marked Gorget",       -- Iskur Gorget
         left_ear   = "Telos Earring",
         right_ear  = "Dignitary's Earring",
