@@ -34,10 +34,10 @@ function get_sets()
     relic_legs  = "Bagua Pants +2"
     relic_feet  = "Bagua Sandals +2"
     empy_head   = "Azimuth Hood +2"
-    empy_body   = "Azimuth Coat +2"
+    empy_body   = "Azimuth Coat +3"
     empy_hands  = "Azimuth Gloves +2"
     empy_legs   = "Azimuth Tights +3"
-    empy_feet   = "Azimuth Gaiters +2"
+    empy_feet   = "Azimuth Gaiters +3"
     jse_neck    = "Bagua Charm +1"
 
     -- Basic sets
@@ -162,7 +162,7 @@ function get_sets()
 
     -- Midcast sets
     sets.midcast["Geomancy"] = {
-        -- Naked skill at ML9: 434 handbell + 434 geomancy = 868 (need 32 to hit 900 tier)
+        -- Naked skill at ML10: 435 handbell + 435 geomancy = 870 (need 30 to hit 900 tier)
         -- Fill remaining slots with duration, defense, and empy set bonus to cast without MP
         -- Gada with 11% duration lasts ~10s longer than Solstice, but loses 6 conserve MP
         -- main  = "Gada",          -- Duration +11%
@@ -221,7 +221,8 @@ function get_sets()
     sets.midcast["Enfeebling Magic"] = set_combine(sets.macc, {
         neck       = "Incanter's Torque",
         left_ring  = "Stikini Ring",
-        right_ring = "Kishar Ring", -- Enfeebling duration +10%
+        right_ring = "Kishar Ring",       -- Enfeebling duration +10%
+        waist      = "Obstinate Sash",    -- Enfeebling duration +5%, m.acc+15 at R15
     })
     sets.midcast["Dark Magic"] = set_combine(sets.macc, {
         legs       = empy_legs,          -- Dark Magic skill +30
