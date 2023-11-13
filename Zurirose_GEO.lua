@@ -96,12 +96,13 @@ function get_sets()
         body       = "Merlinic Jubbah",    -- Fast Cast +10%
         hands      = empy_hands,           -- Fast Cast +5%
         legs       = af_legs,              -- Fast Cast +11%
+        feet       = "Agwu's Pigaches",    -- Fast Cast +4%
         waist      = "Cornelia's Belt",    -- For 10% haste if midcast doesn't swap it off
         left_ear   = "Malignance Earring", -- Fast Cast +4%
         right_ear  = "Loquacious Earring", -- Fast Cast +2%
         left_ring  = "Kishar Ring",        -- Fast Cast +4%
         right_ring = "Naji's Loop",        -- Fast Cast +1%
-        -- Total: 55% FC
+        -- Total: 59% FC
     }
     sets.macc = {
         main       = "Malignance Pole",
