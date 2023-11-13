@@ -122,7 +122,7 @@ function get_sets()
         feet  = "Meghanada Jambeaux +2",       -- 10 Snapshot
         neck  = jse_neck,                      -- 3 Snapshot
         back  = snapshot_roll_cape,            -- 10 Snapshot
-        -- waist = "Yemaya Belt",
+        waist = "Tellen Belt",
     }
     -- Midshot should contain: R.acc, STP, crit, R.atk, Recycle, etc.
     sets.midcast.RA = {
@@ -188,6 +188,7 @@ function get_sets()
         feet      = "Malignance Boots",   -- Replace with Relic
         left_ear  = "Ishvara Earring",
         right_ear = "Telos Earring",
+        waist     = "Tellen Belt",
         back      = leaden_salute_cape,   -- Replace with WS capes
     })
     sets.precast.WS["Leaden Salute"] = set_combine(sets.precast.WS.ranged, {

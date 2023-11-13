@@ -230,6 +230,7 @@ function get_sets()
     })
     sets.midcast["Aspir"] = set_combine(sets.midcast["Dark Magic"], {
         neck       = "Erra Pendant",
+        feet       = "Agwu's Pigaches",
         left_ring  = "Shiva Ring +1",
         right_ring = "Evanescence Ring",
         waist      = "Fucho-no-Obi",
