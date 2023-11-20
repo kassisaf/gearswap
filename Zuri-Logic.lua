@@ -157,7 +157,9 @@ function equip_base_song_set(spell)
 end
 
 function equip_instrument(spell)
-    if string.find(spell.english, "Horde Lullaby II") then
+    if spell.english == "Honor March" then
+        instrument_to_equip = "Marsyas"
+    elseif string.find(spell.english, "Horde Lullaby II") then
         instrument_to_equip = instrument_lullaby_h2
     elseif string.find(spell.english, "Lullaby") then
         instrument_to_equip = instrument_lullaby
@@ -215,6 +217,11 @@ function precast(spell, position)
     -- FC first for all magic
     if spell.action_type == "Magic" then
         safe_equip(sets.FC)
+        if spell.english == "Honor March" then
+            equip({range = "Marsyas"})
+        elseif spell.english == "Dispelga" then
+            equip({main = "Daybreak"})
+        end
     end
 
     -- Use WS-specific set if it exists, or fall back to generic ranged or melee WS set

@@ -17,7 +17,7 @@ function get_sets()
 
     -- Gear aliases
     instrument_general    = "Gjallarhorn"
-    instrument_lullaby    = "Gjallarhorn" -- All lullaby except Horde II. Replace with Marsyas
+    instrument_lullaby    = "Marsyas"     -- All lullaby except Horde II
     instrument_lullaby_h2 = "Daurdabla"   -- Use Blurred +1 if/when 567 string skill can be obtained without the +20 from Daurdabla
     instrument_dummy      = "Daurdabla"
     kali_a = {name="Kali", augments={
