@@ -7,6 +7,27 @@ function get_sets()
     sets.precast.WS = {}
     sets.midcast    = {}
 
+    -- JSE Notes:
+    -- Artifact: Rogue's / Pillager's
+    -- Relic:    Assassin's / Plunderer's
+    -- Empyrean: Raider's / Skulker's
+    af_head     = "Rogue's Bonnet"
+    -- af_body     = "Rogue's Vest" -- Storage slip 4
+    af_hands    = "Pillager's Armlets"
+    af_legs     = "Rogue's Culottes"
+    af_feet     = "Rogue's Poulaines"
+    relic_head  = "Assassin's Bonnet +1"
+    -- relic_body  = "Assassin's Vest" -- Storage slip
+    relic_hands = "Assassin's Armlets +2"
+    relic_legs  = "Assassin's Culottes +2"
+    relic_feet  = "Plunderer's Poulaines +1"
+    empy_head   = "Skulker's Bonnet +2"
+    empy_body   = "Skulker's Vest +2"
+    -- empy_hands  = ""
+    empy_legs   = "Raider's Culottes +1"
+    empy_feet   = "Skulker's Poulaines +2"
+    -- jse_neck    = ""
+
     -- Basic sets
     sets.idle = {
         head       = "Nyame Helm",
@@ -93,13 +114,19 @@ function get_sets()
         right_ring = "Ephramad's Ring",
         back       = "Toutatis's Cape",
     })
-    sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS.melee, {
-        -- ammo      = "Seething Bomblet +1",
-        legs      = "Nyame Flanchard",
-        feet      = "Nyame Sollerets",
-        -- neck      = jse_neck,
-        -- waist     = "Kentarch Belt +1",
-        right_ear = "Sherida Earring",
+    -- TODO meg body and crit stuff (gletis?) when SA or TA active
+    sets.precast.WS["Rudra's Storm"] = set_combine(full_nyame, {
+        ammo       = "Coiste Bodhar", -- Voluspa Tathlum, osh treatise, 
+        body       = empy_body,
+        neck       = "Caro Necklace",
+        left_ring  = "Rufescent Ring",
+        right_ring = "Ephramad's Ring",
+        left_ear   = "Moonshade Earring",
+        right_ear  = "Odr Earring",
+        -- ammo       = get Cath Palug Stone
+        -- neck       = jse_neck,
+        -- waist      = "Kentarch Belt +1",
+        -- back -- Get ambu cape or sacro mantle
     })
     sets.precast.WS["Shark Bite"] = sets.precast.WS["Rudra's Storm"]
     sets.precast.WS["Evisceration"] = set_combine(sets.precast.WS.melee, {
