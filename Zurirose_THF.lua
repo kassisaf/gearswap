@@ -98,11 +98,11 @@ function get_sets()
     -- Weaponskill sets
     sets.precast.WS.melee = set_combine(full_nyame, {
         ammo       = "Yetshila",
-        head       = "Skulker's Bonnet +2",
-        body       = "Skulker's Vest +2",
+        head       = empy_head,
+        body       = empy_body,
         hands      = "Meghanada Gloves +2",
         legs       = "Meghanada Chausses +2",
-        feet       = "Skulker's Poulaines +2",
+        feet       = empy_feet,
         neck       = "Caro Necklace",
         waist      = "Grunfeld Rope",
         left_ear   = "Moonshade Earring",
@@ -114,18 +114,17 @@ function get_sets()
         right_ring = "Ephramad's Ring",
         back       = "Toutatis's Cape",
     })
-    -- TODO meg body and crit stuff (gletis?) when SA or TA active
+    -- TODO meg body and crit stuff (gletis?) when SA or TA active, yetshila?
     sets.precast.WS["Rudra's Storm"] = set_combine(full_nyame, {
-        ammo       = "Coiste Bodhar", -- Voluspa Tathlum, osh treatise, 
+        ammo       = "Coiste Bodhar", -- Voluspa Tathlum, oshasha's treatise, 
         body       = empy_body,
         neck       = "Caro Necklace",
-        left_ring  = "Rufescent Ring",
+        left_ring  = "Apate Ring",
         right_ring = "Ephramad's Ring",
         left_ear   = "Moonshade Earring",
         right_ear  = "Odr Earring",
-        -- ammo       = get Cath Palug Stone
+        waist      = "Grunfeld Rope", -- get "Kentarch Belt +1"
         -- neck       = jse_neck,
-        -- waist      = "Kentarch Belt +1",
         -- back -- Get ambu cape or sacro mantle
     })
     sets.precast.WS["Shark Bite"] = sets.precast.WS["Rudra's Storm"]
