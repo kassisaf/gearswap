@@ -3,9 +3,8 @@ function get_sets()
     job_init(3, 3, 3)   -- Macro book, macro page, lockstyle set
 
     -- Leave these empty
-    sets.precast    = {}
-    sets.precast.WS = {}
-    sets.midcast    = {}
+    sets.precast = {WS = {crit = {}}}
+    sets.midcast = {}
 
     -- Gear Aliases
     bullets = {

@@ -227,6 +227,9 @@ function precast(spell, position)
     -- Use WS-specific set if it exists, or fall back to generic ranged or melee WS set
     if spell.type == "WeaponSkill" then
         if sets.precast.WS[spell.english] then
+            if sets.precast.WS.crit[spell.english] and (buffactive["Sneak Attack"] or buffactive["Trick Attack"]) then
+                safe_equip(sets.precast.WS.crit[spell.english])
+            end
             safe_equip(sets.precast.WS[spell.english])
         elseif ranged_weaponskills[spell.english] then
             safe_equip(sets.precast.WS.ranged)

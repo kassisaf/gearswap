@@ -3,9 +3,16 @@ function get_sets()
     job_init(2, 2, 17)  -- Macro book, macro page, lockstyle set
 
     -- Leave these empty
-    sets.precast    = {}
-    sets.precast.WS = {}
-    sets.midcast    = {}
+    sets.precast = {WS = {crit = {}}}
+    sets.midcast = {}
+
+    my_only_thf_cape = {name="Toutatis's Cape", augments={
+        'DEX+20',
+        'Accuracy+20 Attack+20',
+        'DEX+10',
+        '"Store TP"+10',
+        'Damage taken-5%',
+    }}
 
     -- JSE Notes:
     -- Artifact: Rogue's / Pillager's
@@ -112,9 +119,8 @@ function get_sets()
         left_ring  = "Rufescent Ring",
         -- right_ring = "Apate Ring",
         right_ring = "Ephramad's Ring",
-        back       = "Toutatis's Cape",
+        back       = my_only_thf_cape,
     })
-    -- TODO meg body and crit stuff (gletis?) when SA or TA active, yetshila?
     sets.precast.WS["Rudra's Storm"] = set_combine(full_nyame, {
         ammo       = "Coiste Bodhar", -- Voluspa Tathlum, oshasha's treatise, 
         body       = empy_body,
@@ -124,8 +130,13 @@ function get_sets()
         left_ear   = "Moonshade Earring",
         right_ear  = "Odr Earring",
         waist      = "Grunfeld Rope", -- get "Kentarch Belt +1"
+        back       = my_only_thf_cape,
         -- neck       = jse_neck,
-        -- back -- Get ambu cape or sacro mantle
+    })
+    sets.precast.WS.crit["Rudra's Storm"] = set_combine(sets.precast.WS["Rudra's Storm"], {
+        -- TODO add more crit (Gleti's?)
+        ammo = "Yetshila",
+        body = "Meghanada Cuirie +2",
     })
     sets.precast.WS["Shark Bite"] = sets.precast.WS["Rudra's Storm"]
     sets.precast.WS["Evisceration"] = set_combine(sets.precast.WS.melee, {

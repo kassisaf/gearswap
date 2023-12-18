@@ -8,9 +8,8 @@ function get_sets()
     job_init(1, 1, 16)  -- Macro book, macro page, lockstyle set
 
     -- Leave these empty
-    sets.precast    = {}
-    sets.precast.WS = {}
-    sets.midcast    = {}
+    sets.precast = {WS = {crit = {}}}
+    sets.midcast = {}
 
     -- State flags
     dual_wield_available = player.sub_job == "NIN" -- TODO check for DW trait

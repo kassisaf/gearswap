@@ -3,9 +3,8 @@ function get_sets()
     -- job_init(2, 2, 17)  -- Macro book, macro page, lockstyle set
 
     -- Leave these empty
-    sets.precast    = {}
-    sets.precast.WS = {}
-    sets.midcast    = {}
+    sets.precast = {WS = {crit = {}}}
+    sets.midcast = {}
 
     -- Gear aliases
     tp_cape = {name="Segomo's Mantle", augments={
